@@ -1,372 +1,223 @@
 .swiper, .featured-swiper {
-    // width: 100vw;
+    width: 100vw;
     // height: 300px;
     position: relative;
     overflow: hidden;
 }
 
-.featured-slider{
-    position: relative;
-    padding: 40px 0px;
-    margin-bottom: 148px;
-    @include mq(lapS2){
-        padding: 80px 0px;
-        margin-bottom: 92px;
-    }
-    &::before{
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: var(--azul-200);
-        opacity: 0.1;
-        z-index: -1;
-    }
-    .container{
-        display: grid;
-        gap: 24px;
-        @include mq(lapS2){
-            grid-template-columns: 0.6fr 1fr;
-            gap: 64px 0px;
-            padding-right: 0;
-        }
-        @include mq(deskS){
-            padding-left: calc((100% - 1320px) / 2);
-            max-width: unset;
-        }
-    }
-    &__wrapper{
-        @include mq(lapS2){
-            padding: 40px 24px 24px;
-            background-color: var(--gris-0);
-            border: 1px solid var(--gris-200);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-end;        
-        }
-        &__buttons{
-            display: none;
-            @include mq(lapS2){
-                display: flex;
-                gap: 32px;
-            }
-        }
-    }
-    &__title{
-        @include headline2();
-        color: var(--gris-900);
-        margin-bottom: 16px;
-        @include mq(lapS2){
-            margin-bottom: 32px
-        }
-    }
-    &__description{
-        @include body();
-        color: var(--gris-400);
-    }
-    &__slider{
-        min-width: 0;
-        .swiper{
-            &-slide{
+.main-swiper{
+    .swiper-wrapper{
+        .swiper-slide{
+            .container{
+                position: relative;
+                z-index: 2;
+                padding: 24px;
                 @include mq(lapS2){
-                    padding-left: 50px;
+                    padding: 0 44px 0 80px;
+                    display: grid;
+                    grid-template-columns: 1fr 1.4fr;
+                    gap: 110px;
+                    position: unset;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 55%;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    background: linear-gradient(180deg, #1D1D1D 0%, rgba(29, 29, 29, 0.00) 100%);
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 70%;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 1;
+                    background: linear-gradient(0deg, #1D1D1D 0%, rgba(29, 29, 29, 0.00) 100%);
                 }
             }
-        }
-    }
-    &__buttons{
-        &__slider{
-            display: flex;
-            gap: 75px;
-            justify-content: center;
-            @include mq(lapS3){
-                display: none;
-            }
-        }
-        &__wrapper{
-            @include mq(lapS2){
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 24px;
-            }
-            .button{
-                width: 100%;
-                justify-content: center;
-                &.blue{
-                    margin-top: 32px;
-                    @include mq(lapS2){
-                        margin-top: unset;
-                    }
-                }
-                &.outline{
-                    margin-top: 16px;
-                    @include mq(lapS2){
-                        margin-top: unset;
-                    }
-                    &.icon{
-                        &::after,
-                        &::before{
-                            right: 30px;
-                        }
-                        &:hover{
-                            padding-right: 56px;
-                            &::after,
-                            &::before{
-                                right: 15px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateY(30%);
-    }
-  
-    60% {
-        transform: translateY(-5%);
-    }
-
-    100% {
-        transform: translateY(0%);
-    }
-}
-
-.main-banner {
-    display: grid;
-    position: relative;
-    grid-template-rows: max-content 1fr;
-    margin-bottom: 104px;
-    border: 1px solid var(--gris-200);
-    @include mq(lapS2){
-        grid-template-columns: 1.4fr 1fr;
-        grid-template-rows: 1fr;
-        margin-bottom: 120px;
-    }
-    &__image-slider {
-        position: relative;
-        min-width: 0;
-        background-color: #f1f1f1;
-        overflow: hidden;
-        .image-slider{
-            height: 100%;
-            .swiper-slide{
-                .swiper-slide-inner {
-                    display: flex;
-                    height: 100%;
-                    img{
-                        width: 100%;
-                        height: 100%;
-                        max-height: 240px;
-                        min-height: 100%;
-                        object-fit: cover;
-                        object-position: 50% 50%;
-                        @include mq(lapS2){
-                            // min-height: 540px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    &__quote-slider {
-        min-width: 0;
-        z-index: 2;
-        overflow: hidden;
-        position: relative;
-        height: fit-content;
-        &__buttons{
-            position: absolute;
-            bottom: 36px;
-            right: 24px;
-            display: flex;
-            gap: 24px;
-            z-index: 4;
-            @include mq(lapS2){
-                bottom: 48px;
-                right: 64px;
-            }
-        }
-        .swiper{
-            &-wrapper{
-                display: grid;
-            }
-            &-slide{
-                background-color: var(--gris-0);
-            }
-        }
-        .quote-slider {
-            height: 100%;
             &__wrapper{
-                padding: 24px 24px 32px;
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-                justify-content: space-between;
-                gap: 32px;
-                @include mq(lapS2){
-                    padding: 40px 64px;
-                    gap: 78px;
+                position: relative;
+                background-size: cover;
+                background-position: center 70%;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 0;
+                    backdrop-filter: blur(20px);
+                }
+                &__image{
+                    z-index: 0;
+                    img{
+                        border-radius: 12px;
+                        max-height: 500px;
+                        width: 100%;
+                        object-fit: cover;
+                        @include mq(lapS2){
+                            max-height: 665px;
+                        }
+                    }
                 }
                 &__texts{
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    gap: 12px 8px;
-                    transition: all 300ms ease-in-out;
+                    position: absolute;
+                    z-index: 2;
+                    bottom: 88px;
+                    left: 40px;
+                    right: 40px;
                     @include mq(lapS2){
-                        gap: 0;
+                        position: relative;
+                        bottom: unset;
+                        left: unset;
+                        right: unset;
+                        order: -1;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        padding-bottom: 120px;             
                     }
-                }
-                &.icon{
-                    .quote-slider__wrapper__texts{
-                        grid-template-columns: 2.8fr 1fr;
+                    .title{
+                        color: var(--main-coffee-light, #F8EFEE);
+                        text-align: center;
+                        /* Desktop/Heading/Mobile/H1 */
+                        font-family: Garamond;
+                        font-size: 42px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 50px; /* 119.048% */
+                        letter-spacing: 1px;
+                        margin-bottom: 16px;
                         @include mq(lapS2){
-                            grid-template-columns: 1fr;
+                            text-align: left;
+                            font-size: 64px;
+                            line-height: 68px; /* 106.25% */
                         }
                     }
-                    .quote-slider__description{
-                        grid-column: 1/3;
+                    .description{
+                        color: var(--main-coffee-light, #F8EFEE);
+                        text-align: center;
+                        /* Text/400/Small */
+                        font-family: "Gotham-book";
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: 22px; /* 157.143% */
+                        letter-spacing: 1px;
+                        margin-bottom: 32px;
                         @include mq(lapS2){
-                            grid-column: unset
+                            text-align: left;
+                            font-size: 16px;
+                            line-height: 24px;
+                            margin-bottom: 40px;
                         }
                     }
-                }
-                .clippath{
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-                    transition: all 300ms ease-in-out;
-                }
-            }
-            &__title{
-                @include headline3mobile();
-                color: var(--gris-900);
-                @include mq(lapS2){
-                    @include headline3();
-                    margin-bottom: 16px;
-                }
-            }
-            &__subtitle{
-                @include bodyBold();
-                color: var(--gris-400);
-                margin: 24px 0 8px;
-                @include mq(lapS2){
-                    @include subtitle();
-                    margin: 24px 0 16px;
-                }
-            }
-            &__image{
-                @include mq(lapS2){
-                    order: -1;
-                    margin-bottom: 38px;
-                    width: 160px
-                }
-            }
-            &__description{
-                @include body();
-                color: var(--gris-400);
-                @include mq(lapS2){
-                    @include subtitle2();
-                }
-            }
-            &__button{
-                width: fit-content;
-                transition: all 300ms ease-in-out;
-                .button{
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-                    transition: all 300ms ease-in-out;
-                }
-            }
-        }
-        .swiper-pagination{
-            z-index: 3;
-            top: 0;
-            bottom: unset;
-            display: grid;
-            gap: 10px;
-            border: 1px solid transparent;
-            @include mq(lapS2){
-                top: unset;
-                bottom: 0;
-            }
-            &-bullet{
-                margin: 0 !important;
-                width: 100%;
-                height: 6px;
-                border-radius: 0;
-                background-color: var(--azul-200);
-                transition: all 450ms ease-in-out;
-                &-active{
-                    background-color: var(--azul-300);
+                    .button{
+                        color: var(--main-white, #FFF);
+                        font-family: "Gotham-book";
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 22px;
+                        letter-spacing: 1px;
+                        border-radius: 4px;
+                        background: var(--main-coffee, #AA8364);
+                        padding: 12px 32px;
+                        border: 0;
+                        width: 100%;
+                        cursor: pointer;
+                        justify-content: center;
+                        @include mq(lapS2){
+                            width: fit-content;
+                        }
+                    }
                 }
             }
         }
     }
-    .swiper-slide {
-        position: relative;
-        overflow: hidden;
-        &-prev{
-            transition-property: unset;
-            .quote-slider {
-                &__wrapper{
-                    &__texts{
-                        transform: translateY(30%);
-                    }
-                    .clippath{
-                        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
-                    }
-                }
-                &__button{
-                    transform: translateY(100%);
-                    .button{
-                        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
-                    }
-                }
+    .scroll-bar{
+        position: absolute;
+        bottom: 50px;
+        left: 40px;
+        right: 40px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        @include mq(lapS2){
+            right: 80px;
+            bottom: 72px;
+            left: 70%;
+        }
+        & > * {
+            position: relative;
+        }
+        .swiper-button-prev,
+        .swiper-button-next{
+            color: var(--main-coffee-light, #F8EFEE);
+            top: unset;
+            left: unset;
+            right: unset;
+            bottom: unset;
+            min-width: 12px;
+            min-height: 12px;
+            max-width: 12px;
+            max-height: 12px;
+            margin: 0;
+            &::after{
+                font-size: 12px;
             }
         }
-        &-active{
-            transition-property: unset;
-            .quote-slider {
-                &__wrapper{
-                    &__texts{
-                        animation: slideIn 600ms ease-in-out 900ms;
-                    }
-                    .clippath{
-                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-                        transition-delay: 900ms;
-                    }
-                }
-                &__button{
-                    animation: slideIn 600ms ease-in-out 900ms;
-                    .button{
-                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-                        transition-delay: 900ms;
-                    }
-                }
+        .swiper-scrollbar{
+            background-color: var(--main-coffee-light, #F8EFEE);
+            height: 1px;
+            margin: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            .swiper-scrollbar-drag{
+                background-color: var(--main-coffee-light, #F8EFEE);
+                margin-top: -2px;
+                height: 2px;
             }
         }
-        &-next{
-            transition-property: unset;
-            .quote-slider {
-                &__wrapper{
-                    &__texts{
-                        transform: translateY(30%);
-                    }
-                    .clippath{
-                        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
-                    }
-                }
-                &__button{
-                    transform: translateY(100%);
-                    .button{
-                        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
-                    }
-                }
+        .counter{
+            color: var(--main-coffee-light, #F8EFEE);
+            font-family: "Gotham-book";
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+    }
+}
+
+.pride-swiper{
+    overflow: hidden;
+    margin-bottom: 32px;
+    @include mq(lapS2){
+        margin-bottom: 60px;
+    }
+    .swiper-wrapper{
+        .swiper-slide{
+            width: fit-content;
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+            &:first-child{
+                border-radius: 10px 0 0 10px;
+            }
+            &:last-child{
+                border-radius: 0 10px 10px 0;
             }
         }
     }

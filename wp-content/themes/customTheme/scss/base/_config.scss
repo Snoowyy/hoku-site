@@ -1,7 +1,7 @@
 /* VARIABLES */
 :root {
   // Escala de grices
-  --white: #FFFFF1;
+  --white: #FFFFFF;
   --black: #000000;
   --gris-0: #FAFAFA;
   --gris-100: #F5F5F5;
@@ -126,8 +126,29 @@ $aleoFonts: (
   }
 }
 
+$gothamFonts: (
+  "Gotham": (
+    ("Thin", 100, normal),
+    ("Light", 300, normal),
+    ("Book", 400, normal),
+    ("Medium", 500, normal),
+    ("Bold", 700, normal)
+  )
+);
+
+@each $font-family, $weights in $gothamFonts {
+  @each $weight in $weights {
+    @font-face {
+      font-family: unquote($font-family);
+      src: url('#{$base-path}gotham/#{$font-family}-#{nth($weight, 1)}.ttf') format('truetype');
+      font-weight: nth($weight, 2);
+      font-style: nth($weight, 3);
+    }
+  }
+}
+
 @mixin display(){
-  font-family: 'Aleo', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 54px;
   font-style: normal;
   font-weight: 700;
@@ -136,7 +157,7 @@ $aleoFonts: (
 }
 
 @mixin headline1(){
-  font-family: 'Aleo', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 48px;
   font-style: normal;
   font-weight: 700;
@@ -145,7 +166,7 @@ $aleoFonts: (
 }
 
 @mixin headline1mobile(){
-  font-family: 'Aleo', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
@@ -154,7 +175,7 @@ $aleoFonts: (
 }
 
 @mixin headline2() {
-  font-family: 'Aleo', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -163,7 +184,7 @@ $aleoFonts: (
 }
 
 @mixin headline3(){
-  font-family: 'Aleo', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -172,7 +193,7 @@ $aleoFonts: (
 }
 
 @mixin headline3mobile(){
-  font-family: 'Aleo', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
@@ -181,7 +202,7 @@ $aleoFonts: (
 }
 
 @mixin subtitle(){
-  font-family: 'Aleo', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -190,7 +211,7 @@ $aleoFonts: (
 }
 
 @mixin subtitle2(){
-  font-family: 'Aleo', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -223,7 +244,7 @@ $aleoFonts: (
 }
 
 @mixin caption(){
-  font-family: 'Aleo', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -232,7 +253,7 @@ $aleoFonts: (
 }
 
 @mixin caption2(){
-  font-family: 'Aleo', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -241,7 +262,7 @@ $aleoFonts: (
 }
 
 @mixin overline(){
-  font-family: 'Aleo', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
@@ -277,7 +298,7 @@ $aleoFonts: (
 }
 
 @mixin checkbox(){
-  font-family: 'Aleo', sans-serif;
+  font-family: 'Gotham', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;

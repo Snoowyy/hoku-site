@@ -21,5 +21,8 @@ require_once( 'library/acf-options.php' );
 /** Pagina de opciones ACF */
 require_once( 'library/utilities.php' );
 
+/** Pagina de shortcodes */
+require_once( 'library/shortcodes.php' );
+
 /** Pagina de opciones ACF */
 ?>
