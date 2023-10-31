@@ -1,0 +1,16 @@
+.breadcrum{
+    padding: 24px 0;
+    @include mq(lapS2){
+        padding: 32px 0;
+    }
+    &__wrapper{
+        @include overline();
+        color: var(--gris-900);
+        a{
+            transition: all 300ms ease-in-out;
+            &:hover{
+                color: var(--azul-300);
+            }
+        }
+    }
+}

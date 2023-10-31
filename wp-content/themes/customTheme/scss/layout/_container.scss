@@ -1,0 +1,9 @@
+.container{
+  padding: 0 24px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  @include mq(lapS2){
+    padding: 0 64px;
+  }
+}

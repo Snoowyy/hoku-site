@@ -1,0 +1,373 @@
+.swiper, .featured-swiper {
+    // width: 100vw;
+    // height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-slider{
+    position: relative;
+    padding: 40px 0px;
+    margin-bottom: 148px;
+    @include mq(lapS2){
+        padding: 80px 0px;
+        margin-bottom: 92px;
+    }
+    &::before{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--azul-200);
+        opacity: 0.1;
+        z-index: -1;
+    }
+    .container{
+        display: grid;
+        gap: 24px;
+        @include mq(lapS2){
+            grid-template-columns: 0.6fr 1fr;
+            gap: 64px 0px;
+            padding-right: 0;
+        }
+        @include mq(deskS){
+            padding-left: calc((100% - 1320px) / 2);
+            max-width: unset;
+        }
+    }
+    &__wrapper{
+        @include mq(lapS2){
+            padding: 40px 24px 24px;
+            background-color: var(--gris-0);
+            border: 1px solid var(--gris-200);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;        
+        }
+        &__buttons{
+            display: none;
+            @include mq(lapS2){
+                display: flex;
+                gap: 32px;
+            }
+        }
+    }
+    &__title{
+        @include headline2();
+        color: var(--gris-900);
+        margin-bottom: 16px;
+        @include mq(lapS2){
+            margin-bottom: 32px
+        }
+    }
+    &__description{
+        @include body();
+        color: var(--gris-400);
+    }
+    &__slider{
+        min-width: 0;
+        .swiper{
+            &-slide{
+                @include mq(lapS2){
+                    padding-left: 50px;
+                }
+            }
+        }
+    }
+    &__buttons{
+        &__slider{
+            display: flex;
+            gap: 75px;
+            justify-content: center;
+            @include mq(lapS3){
+                display: none;
+            }
+        }
+        &__wrapper{
+            @include mq(lapS2){
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+            .button{
+                width: 100%;
+                justify-content: center;
+                &.blue{
+                    margin-top: 32px;
+                    @include mq(lapS2){
+                        margin-top: unset;
+                    }
+                }
+                &.outline{
+                    margin-top: 16px;
+                    @include mq(lapS2){
+                        margin-top: unset;
+                    }
+                    &.icon{
+                        &::after,
+                        &::before{
+                            right: 30px;
+                        }
+                        &:hover{
+                            padding-right: 56px;
+                            &::after,
+                            &::before{
+                                right: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(30%);
+    }
+  
+    60% {
+        transform: translateY(-5%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.main-banner {
+    display: grid;
+    position: relative;
+    grid-template-rows: max-content 1fr;
+    margin-bottom: 104px;
+    border: 1px solid var(--gris-200);
+    @include mq(lapS2){
+        grid-template-columns: 1.4fr 1fr;
+        grid-template-rows: 1fr;
+        margin-bottom: 120px;
+    }
+    &__image-slider {
+        position: relative;
+        min-width: 0;
+        background-color: #f1f1f1;
+        overflow: hidden;
+        .image-slider{
+            height: 100%;
+            .swiper-slide{
+                .swiper-slide-inner {
+                    display: flex;
+                    height: 100%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        max-height: 240px;
+                        min-height: 100%;
+                        object-fit: cover;
+                        object-position: 50% 50%;
+                        @include mq(lapS2){
+                            // min-height: 540px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__quote-slider {
+        min-width: 0;
+        z-index: 2;
+        overflow: hidden;
+        position: relative;
+        height: fit-content;
+        &__buttons{
+            position: absolute;
+            bottom: 36px;
+            right: 24px;
+            display: flex;
+            gap: 24px;
+            z-index: 4;
+            @include mq(lapS2){
+                bottom: 48px;
+                right: 64px;
+            }
+        }
+        .swiper{
+            &-wrapper{
+                display: grid;
+            }
+            &-slide{
+                background-color: var(--gris-0);
+            }
+        }
+        .quote-slider {
+            height: 100%;
+            &__wrapper{
+                padding: 24px 24px 32px;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: space-between;
+                gap: 32px;
+                @include mq(lapS2){
+                    padding: 40px 64px;
+                    gap: 78px;
+                }
+                &__texts{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 12px 8px;
+                    transition: all 300ms ease-in-out;
+                    @include mq(lapS2){
+                        gap: 0;
+                    }
+                }
+                &.icon{
+                    .quote-slider__wrapper__texts{
+                        grid-template-columns: 2.8fr 1fr;
+                        @include mq(lapS2){
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                    .quote-slider__description{
+                        grid-column: 1/3;
+                        @include mq(lapS2){
+                            grid-column: unset
+                        }
+                    }
+                }
+                .clippath{
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                    transition: all 300ms ease-in-out;
+                }
+            }
+            &__title{
+                @include headline3mobile();
+                color: var(--gris-900);
+                @include mq(lapS2){
+                    @include headline3();
+                    margin-bottom: 16px;
+                }
+            }
+            &__subtitle{
+                @include bodyBold();
+                color: var(--gris-400);
+                margin: 24px 0 8px;
+                @include mq(lapS2){
+                    @include subtitle();
+                    margin: 24px 0 16px;
+                }
+            }
+            &__image{
+                @include mq(lapS2){
+                    order: -1;
+                    margin-bottom: 38px;
+                    width: 160px
+                }
+            }
+            &__description{
+                @include body();
+                color: var(--gris-400);
+                @include mq(lapS2){
+                    @include subtitle2();
+                }
+            }
+            &__button{
+                width: fit-content;
+                transition: all 300ms ease-in-out;
+                .button{
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                    transition: all 300ms ease-in-out;
+                }
+            }
+        }
+        .swiper-pagination{
+            z-index: 3;
+            top: 0;
+            bottom: unset;
+            display: grid;
+            gap: 10px;
+            border: 1px solid transparent;
+            @include mq(lapS2){
+                top: unset;
+                bottom: 0;
+            }
+            &-bullet{
+                margin: 0 !important;
+                width: 100%;
+                height: 6px;
+                border-radius: 0;
+                background-color: var(--azul-200);
+                transition: all 450ms ease-in-out;
+                &-active{
+                    background-color: var(--azul-300);
+                }
+            }
+        }
+    }
+    .swiper-slide {
+        position: relative;
+        overflow: hidden;
+        &-prev{
+            transition-property: unset;
+            .quote-slider {
+                &__wrapper{
+                    &__texts{
+                        transform: translateY(30%);
+                    }
+                    .clippath{
+                        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+                    }
+                }
+                &__button{
+                    transform: translateY(100%);
+                    .button{
+                        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+                    }
+                }
+            }
+        }
+        &-active{
+            transition-property: unset;
+            .quote-slider {
+                &__wrapper{
+                    &__texts{
+                        animation: slideIn 600ms ease-in-out 900ms;
+                    }
+                    .clippath{
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                        transition-delay: 900ms;
+                    }
+                }
+                &__button{
+                    animation: slideIn 600ms ease-in-out 900ms;
+                    .button{
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                        transition-delay: 900ms;
+                    }
+                }
+            }
+        }
+        &-next{
+            transition-property: unset;
+            .quote-slider {
+                &__wrapper{
+                    &__texts{
+                        transform: translateY(30%);
+                    }
+                    .clippath{
+                        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+                    }
+                }
+                &__button{
+                    transform: translateY(100%);
+                    .button{
+                        clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 0%);
+                    }
+                }
+            }
+        }
+    }
+}

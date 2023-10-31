@@ -1,0 +1,36 @@
+/* BASE */
+@import "base/config";
+
+/* UTILITIES */
+@import "utilities/mixins";
+@import "base/fonts";
+@import "base/reset";
+@import "base/general";
+@import "utilities/placeholders";
+@import "utilities/animations";
+@import "utilities/states";
+// @import "utilities/text";
+
+/* LIBRARIES */
+// @import "libraries/animateCSS";
+// @import "libraries/grid-bootstrap";
+
+/* COMPONENTS */
+@import "components/loader";
+// @import "components/modal";
+@import "components/banners";
+@import "components/cards";
+@import "components/hamburger-menu";
+@import "components/sliders";
+@import "components/boxes";
+@import "components/buttons";
+@import "components/forms";
+
+/* LAYOUT */
+@import "layout/container";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/breadcrum";
+
+/* PAGES */
+@import "pages/index";

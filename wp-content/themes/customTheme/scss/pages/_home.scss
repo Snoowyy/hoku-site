@@ -1,0 +1,103 @@
+.information{
+    margin-bottom: 104px;
+    @include mq(lapS2){
+        margin-bottom: 120px;
+    }
+    .container{
+        display: grid;
+        gap: 24px;
+        @include mq(lapS2){
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            padding: 0 174px;
+        }
+    }
+    &__title{
+        @include headline1mobile();
+        color: var(--azul-400);
+        @include mq(lapS2){
+            @include headline1();
+            text-align: right;
+        }
+    }
+    &__description{
+        @include body();
+        color: var(--gris-400);
+        margin-bottom: 32px;
+    }
+}
+
+.featured{
+    margin-bottom: 80px;
+    @include mq(lapS2){
+        margin-bottom: 120px;
+    }
+    &__title{
+        @include headline2();
+        color: var(--gris-900);
+        margin-bottom: 24px;
+    }
+    &__wrapper{
+        margin-top: 40px;
+        display: grid;
+        gap: 16px;
+        @include mq(lapS2){
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        &__main{
+            .product-card{
+                &__container{
+                    display: contents;
+                    @include mq(lapS2){
+                    display: grid;
+                    grid-template-columns: 6fr 1fr;}
+                }
+                &__button{
+                    display: none;
+                    @include mq(lapS2){
+                    display: flex;
+                    padding: 26px;
+                    background-color: var(--azul-400);}
+                }
+                &.icon{
+                    .product-card__image::before{
+                        display: none;
+                    }
+                } 
+                &.main.icon{
+                    .product-card__image::after{
+                        display: none;
+                    }
+                } 
+            }
+        }
+        &__items{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            @include mq(lapS2){
+                order: -1;
+                gap: 24px;
+            }
+        }
+    }
+    &__button{
+        content: '';
+        background-color: var(--azul-400);
+    }
+}
+.training{
+    .info-banner{
+        &__wrapper{
+            border: none;
+            background-color: white;
+        }
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 300px 0 0;
+        max-width: 100%;
+    }
+}

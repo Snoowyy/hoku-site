@@ -1,0 +1,184 @@
+html,
+body,
+body *,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--white);
+  overflow: hidden auto;
+}
+
+body,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1,
+p,
+button,
+input,
+textarea,
+select {
+  font-family: $fontFamily;
+}
+
+body,
+html,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1,
+p {
+  font-size: $baseFontLargeScreen + px;
+
+  @include mq(deskB) {
+    font-size: $baseFontBigScreen + px;
+  }
+
+  @include mq(desk) {
+    font-size: $baseFont + px;
+  }
+
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: currentColor;
+  width: fit-content;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+p {
+  margin-bottom: 0;
+}
+
+input:focus,
+textarea:focus,
+a:focus {
+  outline: none;
+}
+
+.scrollBar {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: var(--color-grayL);
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, $alpha: 0.8);
+  }
+
+  &-inverse {
+    @extend .scrollBar;
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--white);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px rgba(#333, 0.4);
+      border-radius: 10px;
+      background: transparent;
+    }
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+
+  &-cover {
+    @extend .image;
+    object-fit: cover;
+  }
+
+  &-contain {
+    @extend .image;
+    object-fit: contain;
+  }
+  &-luminosity {
+    mix-blend-mode: luminosity;
+    opacity: 0.3;
+  }
+}
+
+.noScroll {
+  overflow: hidden;
+}
+
+.bg-grayLightest {
+  background-color: var(--color-grayLightest);
+}
+
+.relative {
+  position: relative;
+}
+
+.mobile--full {
+  @include mq(tabS) {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.mobile-m-bottom {
+  @include mq(tabS) {
+    margin-bottom: 60px;
+  }
+}
+
+.outsideBox {
+  @include mq(mob) {
+    &--left {
+      margin-left: -6vw;
+    }
+
+    &-right {
+      margin-right: -6vw;
+    }
+  }
+}
+
+@include mq(mob) {
+  .flex-xs-column-reverse {
+    flex-direction: column-reverse;
+  }
+}

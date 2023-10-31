@@ -1,0 +1,326 @@
+/* VARIABLES */
+:root {
+  // Escala de grices
+  --white: #FFFFF1;
+  --black: #000000;
+  --gris-0: #FAFAFA;
+  --gris-100: #F5F5F5;
+  --gris-200: #D8D8D8;
+  --gris-300: #9A9A9A;
+  --gris-400: #4A4A49;
+  --gris-900: #3A3A3A;
+  // Principal
+  --rojo-200: #F97A8A;
+  --rojo-300: #E40520;
+  --rojo-400: #A50519;
+  --azul-0: #F0F9FF;
+  --azul-100: #D3EDFE;
+  --azul-200: #8FC7EC;
+  --azul-250: #097FCB;
+  --azul-300: #0573BA;
+  --azul-400: #055C94;
+  // Principal 2
+  --verde-50: #F4FFDB;
+  --verde-100: #E1F6CB;
+  --verde-200: #A9DA87;
+  --verde-300: #65B32E;
+  --verde-400: #429700;
+  // Estados
+  --estados-warning: #EDA942;
+  --estados-error: #DE4646;
+  --estados-succes: #59E277;
+  --estados-info: #1F80DA;
+}
+
+// FONTS
+
+$base-path: "../fonts/";
+
+$openFonts: (
+  "OpenSans_Condensed": (
+    ("Light", 300, normal),
+    ("Regular", 400, normal),
+    ("Medium", 500, normal),
+    ("SemiBold", 600, normal),
+    ("Bold", 700, normal),
+    ("ExtraBold", 800, normal),
+    ("LightItalic", 300, italic),
+    ("Italic", 400, italic),
+    ("MediumItalic", 500, italic),
+    ("SemiBoldItalic", 600, italic),
+    ("BoldItalic", 700, italic),
+    ("ExtraBoldItalic", 800, italic)
+  ),
+  "OpenSans_SemiCondensed": (
+    ("Light", 300, normal),
+    ("Regular", 400, normal),
+    ("Medium", 500, normal),
+    ("SemiBold", 600, normal),
+    ("Bold", 700, normal),
+    ("ExtraBold", 800, normal),
+    ("LightItalic", 300, italic),
+    ("Italic", 400, italic),
+    ("MediumItalic", 500, italic),
+    ("SemiBoldItalic", 600, italic),
+    ("BoldItalic", 700, italic),
+    ("ExtraBoldItalic", 800, italic)
+  ),
+  "OpenSans": (
+    ("Light", 300, normal),
+    ("Regular", 400, normal),
+    ("Medium", 500, normal),
+    ("SemiBold", 600, normal),
+    ("Bold", 700, normal),
+    ("ExtraBold", 800, normal),
+    ("LightItalic", 300, italic),
+    ("Italic", 400, italic),
+    ("MediumItalic", 500, italic),
+    ("SemiBoldItalic", 600, italic),
+    ("BoldItalic", 700, italic),
+    ("ExtraBoldItalic", 800, italic)
+  )
+);
+
+@each $font-family, $weights in $openFonts {
+  @each $weight in $weights {
+    @font-face {
+      font-family: unquote($font-family);
+      src: url('#{$base-path}opensans/#{$font-family}-#{nth($weight, 1)}.ttf') format('truetype');
+      font-weight: nth($weight, 2);
+      font-style: nth($weight, 3);
+    }
+  }
+}
+
+$aleoFonts: (
+  "Aleo": (
+    ("Thin", 100, normal),
+    ("ExtraLight", 200, normal),
+    ("Light", 300, normal),
+    ("Regular", 400, normal),
+    ("Medium", 500, normal),
+    ("SemiBold", 600, normal),
+    ("Bold", 700, normal),
+    ("ExtraBold", 800, normal),
+    ("Black", 900, normal),
+    ("ThinItalic", 100, italic),
+    ("ExtraLightItalic", 200, italic),
+    ("LightItalic", 300, italic),
+    ("Italic", 400, italic),
+    ("MediumItalic", 500, italic),
+    ("SemiBoldItalic", 600, italic),
+    ("BoldItalic", 700, italic),
+    ("ExtraBoldItalic", 800, italic),
+    ("BlackItalic", 900, italic)
+  )
+);
+
+@each $font-family, $weights in $aleoFonts {
+  @each $weight in $weights {
+    @font-face {
+      font-family: unquote($font-family);
+      src: url('#{$base-path}aleo/#{$font-family}-#{nth($weight, 1)}.ttf') format('truetype');
+      font-weight: nth($weight, 2);
+      font-style: nth($weight, 3);
+    }
+  }
+}
+
+@mixin display(){
+  font-family: 'Aleo', sans-serif;
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 70px;
+  letter-spacing: 0.4px;
+}
+
+@mixin headline1(){
+  font-family: 'Aleo', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: 0.4px;
+}
+
+@mixin headline1mobile(){
+  font-family: 'Aleo', sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 0.4px;
+}
+
+@mixin headline2() {
+  font-family: 'Aleo', sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 54px;
+  letter-spacing: 0.4px;
+}
+
+@mixin headline3(){
+  font-family: 'Aleo', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 0.4px;
+}
+
+@mixin headline3mobile(){
+  font-family: 'Aleo', sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0.4px;
+}
+
+@mixin subtitle(){
+  font-family: 'Aleo', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0.4px;
+}
+
+@mixin subtitle2(){
+  font-family: 'Aleo', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.4px;
+}
+
+@mixin body(){
+  font-family: 'OpenSans', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@mixin bodyBold(){
+  font-family: 'OpenSans', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+@mixin body2(){
+  font-family: 'OpenSans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+@mixin caption(){
+  font-family: 'Aleo', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+}
+
+@mixin caption2(){
+  font-family: 'Aleo', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.4px;
+}
+
+@mixin overline(){
+  font-family: 'Aleo', sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+}
+
+@mixin button(){
+  font-family: 'OpenSans', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+@mixin buttonLink(){
+  font-family: 'OpenSans', sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 1px;
+  text-decoration-line: underline;
+}
+
+@mixin buttonLink2(){
+  font-family: 'OpenSans', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 1px;
+}
+
+@mixin checkbox(){
+  font-family: 'Aleo', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.4px;
+}
+// MEDIAQUERIES
+$mediaqueries: (
+  hover: "(hover: hover)",
+  ie: "screen and (-ms-high-contrast: active), (-ms-high-contrast: none)",
+  safari: "screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)",
+  safari2: "not all and (min-resolution:.001dpcm)",
+  safari5:
+    "only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2)",
+  safari6s:
+    "only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2)",
+  safari6p:
+    "only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3)",
+  safariX:
+    "only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3)",
+  mobS4: 320,
+  mobS3: 360,
+  mobS2: 480,
+  mobS: 640,
+  mob: 767,
+  tabS: 820,
+  tab: 991,
+  lapS3: 1024,
+  lapS2: 1199,
+  lapS: 1280,
+  lap: 1367,
+  deskS: 1440,
+  desk: 1560,
+  deskB: 1680,
+  deskL: 1792
+);
+
+// Global Font
+$fontFamily: "Gotham-Book", sans-serif;
+$baseFont: 16;
+$baseFontBigScreen: 20;
+$baseFontLargeScreen: 22;
+
+$widthLimit: 1280px;
+$widthLimitM: 1560px;
+$paddingLimit: 15px;
