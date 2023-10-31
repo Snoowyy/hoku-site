@@ -10,7 +10,7 @@ get_header('wordpress'); ?>
 		
 		<?php get_template_part( 'template-parts/content', 'producto' ); ?>
 
-		<p>inicio de sidebar</p>
+		<p>inicio de sidebar?</p>
 		<?php get_sidebar(); ?>
 		
 	</div><!-- fin container -->

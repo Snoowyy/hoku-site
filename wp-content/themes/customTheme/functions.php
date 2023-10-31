@@ -1,5 +1,8 @@
 <?php 
-
+function mytheme_add_woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
 /** colores de status de post - Soporte de thumbnails y carpetas tambn deshabilita barra de admin wordpress */
 require_once( 'library/basicos.php' );
 

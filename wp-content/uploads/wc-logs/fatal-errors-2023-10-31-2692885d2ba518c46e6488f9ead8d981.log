@@ -1,0 +1,48 @@
+2023-10-31T05:20:24+00:00 CRITICAL Uncaught Error: Object of class WP_Post could not be converted to string in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/home.php:14
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/home.php on line 14
+
+2023-10-31T05:20:50+00:00 CRITICAL Uncaught Error: Object of class WP_Post could not be converted to string in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/home.php:14
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/home.php on line 14
+
+2023-10-31T05:22:37+00:00 CRITICAL Uncaught Error: Object of class WP_Post could not be converted to string in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/home.php:14
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/home.php on line 14
+
+2023-10-31T05:23:00+00:00 CRITICAL Uncaught Error: Object of class WP_Post could not be converted to string in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/home.php:14
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/home.php on line 14
+
+2023-10-31T06:26:03+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::get_short_description() in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/home.php:27
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/home.php on line 27
+
+2023-10-31T07:12:37+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Post::get_price_html() in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/home.php:42
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/home.php on line 42
+
