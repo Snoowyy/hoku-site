@@ -1,0 +1,26 @@
+.wc-block-grid {
+    &__product-title {
+        color: var(--main-gray-dark, #1D1D1D) !important;
+        margin: 24px 0 8px 0 !important;
+        /* Desktop/Heading/Mobile/H6 */
+        font-family: Garamond !important;
+        font-size: 18px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        line-height: 22px !important; /* 122.222% */
+        letter-spacing: 1px !important;
+        text-align: left;
+    }
+    &__product-price {
+        color: var(--main-gray-dark, #1D1D1D) !important;
+        margin: 0 0 0 !important;
+        /* Text/400/Small */
+        font-family: Gotham Light !important;
+        font-size: 14px !important;
+        font-style: normal !important;
+        font-weight: 300 !important;
+        line-height: 22px !important; /* 157.143% */
+        letter-spacing: 1px !important;
+        text-align: left;
+    }
+}

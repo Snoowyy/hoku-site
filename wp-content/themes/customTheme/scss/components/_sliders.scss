@@ -85,6 +85,7 @@
                     }
                     .title{
                         color: var(--main-coffee-light, #F8EFEE);
+                        
                         text-align: center;
                         /* Desktop/Heading/Mobile/H1 */
                         font-family: Garamond;
@@ -102,9 +103,10 @@
                     }
                     .description{
                         color: var(--main-coffee-light, #F8EFEE);
-                        text-align: center;
+                        color: var(--main-coffee-light, #F8EFEE);
+
                         /* Text/400/Small */
-                        font-family: "Gotham-book";
+                        font-family: Gotham Light;
                         font-size: 14px;
                         font-style: normal;
                         font-weight: 300;

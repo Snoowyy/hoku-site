@@ -25,11 +25,11 @@ $featured_products = [
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="swiper-slide__wrapper" style="
-                    background-image: url('/wp-content/themes/customTheme/images/Lifestyle.jpg');
+                    background-image: url('wp-content/themes/customTheme/images/Lifestyle.jpg');
                 ">
                     <div class="container">
                         <div class="swiper-slide__wrapper__image">
-                            <img src="/wp-content/themes/customTheme/images/Lifestyle.jpg" alt="">
+                            <img src="wp-content/themes/customTheme/images/Lifestyle.jpg" alt="">
                         </div>
                         <div class="swiper-slide__wrapper__texts">
                             <p class="title">PASO A LA ELEGANCIA</p>
@@ -41,11 +41,11 @@ $featured_products = [
             </div>
             <div class="swiper-slide">
                 <div class="swiper-slide__wrapper" style="
-                    background-image: url('/wp-content/themes/customTheme/images/Lifestyle3.jpg');
+                    background-image: url('wp-content/themes/customTheme/images/Lifestyle3.jpg');
                 ">
                     <div class="container">
                         <div class="swiper-slide__wrapper__image">
-                            <img src="/wp-content/themes/customTheme/images/Lifestyle3.jpg" alt="">
+                            <img src="wp-content/themes/customTheme/images/Lifestyle3.jpg" alt="">
                         </div>
                         <div class="swiper-slide__wrapper__texts">
                             <p class="title">PASO A LA ELEGANCIA</p>
@@ -57,11 +57,11 @@ $featured_products = [
             </div>
             <div class="swiper-slide">
                 <div class="swiper-slide__wrapper" style="
-                    background-image: url('/wp-content/themes/customTheme/images/Lifestyle.jpg');
+                    background-image: url('wp-content/themes/customTheme/images/Lifestyle.jpg');
                 ">
                     <div class="container">
                         <div class="swiper-slide__wrapper__image">
-                            <img src="/wp-content/themes/customTheme/images/Lifestyle.jpg" alt="">
+                            <img src="wp-content/themes/customTheme/images/Lifestyle.jpg" alt="">
                         </div>
                         <div class="swiper-slide__wrapper__texts">
                             <p class="title">PASO A LA ELEGANCIA</p>
@@ -150,7 +150,7 @@ $featured_products = [
                     <h6 class="title"><?= $product->post_title ?></h6>
                     <?php echo $product_data->get_price_html(); ?>
                 </div>
-                <? } ?>
+                <?php } ?>
                 <!-- If we need scrollbar -->
             </div>
             <div class="swiper-scrollbar"></div>
@@ -177,6 +177,7 @@ $featured_products = [
     </section>
     <!-- End Categories Section -->
 </div>
+<?php do_shortcode("[products]"); ?>
 <?php do_shortcode("[bannerPride]"); ?>
 <?php do_shortcode("[bannerHelp]"); ?>
 <?php do_shortcode("[BannerNewsletter]"); ?>

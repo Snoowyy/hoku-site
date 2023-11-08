@@ -71,7 +71,21 @@ function my_wp_nav_menu_items( $items, $args ) {
                 <span id="second_bar" class="hamburguer__bar"></span>
                 <span id="third_bar" class="hamburguer__bar"></span>
             </div>
-        </div>';
+        </div>
+        <script>
+        document.getElementById("cart_icon").addEventListener("click", function() {
+            var backgroundBlur = document.querySelector(".background-blur");
+            var sideCart = document.getElementById("side-cart");
+            
+            if (sideCart.classList.contains("open")) {
+                sideCart.classList.remove("open");
+                backgroundBlur.style.display = "none"; // Oculta el fondo con desenfoque
+            } else {
+                sideCart.classList.add("open");
+                backgroundBlur.style.display = "block"; // Muestra el fondo con desenfoque
+            }
+        });
+       </script>';
 
         $items = $html_logo . $items_wrapper . $icons_wrapper;
     }
@@ -233,4 +247,3 @@ add_action('admin_menu', 'post_remove');   //adding action for triggering functi
 // add_action('get_header', 'buffer_start');
 
 // add_action('wp_footer', 'buffer_end');
-
