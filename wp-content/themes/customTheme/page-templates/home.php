@@ -20,6 +20,67 @@ $featured_products = [
 ];
 
 ?>
+<section class="main-banner">
+    <div class="main-swiper swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="swiper-slide__wrapper" style="
+                    background-image: url('/wp-content/themes/customTheme/images/Lifestyle.jpg');
+                ">
+                    <div class="container">
+                        <div class="swiper-slide__wrapper__image">
+                            <img src="/wp-content/themes/customTheme/images/Lifestyle.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide__wrapper__texts">
+                            <p class="title">PASO A LA ELEGANCIA</p>
+                            <p class="description">Encuentra el par perfecto en nuestra colección de zapatos. Comodidad y estilo que te harán destacar.</p>
+                            <a href="#" class="button">Descubre más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__wrapper" style="
+                    background-image: url('/wp-content/themes/customTheme/images/Lifestyle3.jpg');
+                ">
+                    <div class="container">
+                        <div class="swiper-slide__wrapper__image">
+                            <img src="/wp-content/themes/customTheme/images/Lifestyle3.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide__wrapper__texts">
+                            <p class="title">PASO A LA ELEGANCIA</p>
+                            <p class="description">Encuentra el par perfecto en nuestra colección de zapatos. Comodidad y estilo que te harán destacar.</p>
+                            <a href="#" class="button">Descubre más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-slide__wrapper" style="
+                    background-image: url('/wp-content/themes/customTheme/images/Lifestyle.jpg');
+                ">
+                    <div class="container">
+                        <div class="swiper-slide__wrapper__image">
+                            <img src="/wp-content/themes/customTheme/images/Lifestyle.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide__wrapper__texts">
+                            <p class="title">PASO A LA ELEGANCIA</p>
+                            <p class="description">Encuentra el par perfecto en nuestra colección de zapatos. Comodidad y estilo que te harán destacar.</p>
+                            <a href="#" class="button">Descubre más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-bar">
+            <div id="main_banner_slider_prev" class="swiper-button-prev"></div>
+            <span class="counter">01</span>
+            <div class="swiper-scrollbar"></div>
+            <span id="max_slides" class="counter">00</span>
+            <div id="main_banner_slider_next" class="swiper-button-next"></div>
+        </div>
+    </div>
+</section>
 <div class="container">
     <!-- Init Support Section -->
     <section class="support_section">
@@ -54,7 +115,9 @@ $featured_products = [
     </section>
     <!-- End Values Section -->
     <!-- Init Featured Products Section -->
-    <section class="featured_section">
+</div>
+<section class="featured_section">
+    <div class="container">
         <span class="featured_section__subtitle"> <?= $featured_products['subtitle'] ?> </span>
         <h2 class="featured_section__title"> <?= $featured_products['title'] ?> </h2>
         <?php if( $featured_products['main'] ): ?>
@@ -94,9 +157,11 @@ $featured_products = [
         </div>
         
         <div class="featured_section__button">
-           <button>Ver todos los productos</button>
+        <button>Ver todos los productos</button>
         </div>
-    </section>
+    </div>
+</section>
+<div class="container">
     <!-- End Featured Products Section-->
     <!-- Init Categories Section -->
     <section class="categories_section">
@@ -112,18 +177,7 @@ $featured_products = [
     </section>
     <!-- End Categories Section -->
 </div>
-<script>
-    const swiper = new Swiper('.swiper', {
-        slidesPerView: 1,
-        scrollbar: {
-            el: '.swiper-scrollbar',
-            draggable: true,
-        },
-        breakpoints: {
-            1440: {
-                slidesPerView: 3,
-            }
-        }
-        });
-</script>
+<?php do_shortcode("[bannerPride]"); ?>
+<?php do_shortcode("[bannerHelp]"); ?>
+<?php do_shortcode("[BannerNewsletter]"); ?>
 <?php get_footer(); ?>

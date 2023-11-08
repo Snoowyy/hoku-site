@@ -76,5 +76,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    //Control Product slider
+
+    const productSwiper = new Swiper('.featured_section__slider', {
+        speed: 500,
+        followFinger: true,
+        grabCursor: true,
+        slidesPerView: 1.4,
+        spaceBetween: 28,
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true,
+        },
+        breakpoints: {
+            1440: {
+                slidesPerView: 3,
+            }
+        }
+    });
+
 });
   
