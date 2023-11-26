@@ -117,4 +117,36 @@ function banner_pride(){
     echo $print;
 }
 add_shortcode('bannerPride', 'banner_pride');
+
+/* START: Banner categories */
+function banner_categories(){
+    $categories = get_field('categories_repeater', 'option');
+
+    $print = 
+    '<section class="categories_section">
+        <div class="container">';
+            foreach( $categories as $categorie ) {
+                $image = $categorie['image'];
+                $type = $categorie['type'];
+                $title = $categorie['title'];
+                $url = $categorie['url'];
+
+                $print .= 
+                '<div class="categories_section__block" style="background: url('.$image['url'].'), lightgray 50% / cover no-repeat;">
+                    <div class="categories_section__block__wrapper">
+                        <span class="categories_section__block__wrapper__type">'.$type.'</span>
+                        <h2 class="categories_section__block__wrapper__title">'.$title.'</h2>
+                        <a href="'.$url.'" class="categories_section__block__wrapper__button">Ver productos</a>
+                    </div>
+                </div>';
+            };
+            $print .=
+            '</div>
+        </div>
+    </section>';
+
+    wp_reset_postdata();
+    echo $print;
+}
+add_shortcode('bannerCategories', 'banner_categories');
 ?>

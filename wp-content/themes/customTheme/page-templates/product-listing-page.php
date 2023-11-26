@@ -12,10 +12,10 @@ $postId = get_the_ID();
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="swiper-slide__wrapper" style="
-                    background-image: url('/hoku-site/wp-content/themes/customTheme/images/Lifestyle2.jpg');">
+                    background-image: url('/wp-content/themes/customTheme/images/Lifestyle2.jpg');">
                     <div class="container">
                         <div class="swiper-slide__wrapper__image">
-                            <img src="/hoku-site/wp-content/themes/customTheme/images/Lifestyle2.jpg" alt="">
+                            <img src="/wp-content/themes/customTheme/images/Lifestyle2.jpg" alt="">
                         </div>
                         <div class="swiper-slide__wrapper__texts">
                             <p class="title">TIENDA</p>
@@ -34,6 +34,7 @@ $postId = get_the_ID();
         endwhile;
     ?>
 </div>
+<?php do_shortcode("[bannerCategories]"); ?>
 <?php do_shortcode("[featured_products]"); ?>
 <?php do_shortcode("[bannerPride]"); ?>
 <?php do_shortcode("[bannerHelp]"); ?>

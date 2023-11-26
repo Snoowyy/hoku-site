@@ -1,4 +1,10 @@
 .wc-block-grid {
+    &__products{
+        gap: 40px;
+        @include mq(lapS2){
+            gap: 80px 0px;
+        }
+    }
     &__product-title {
         color: var(--main-gray-dark, #1D1D1D) !important;
         margin: 24px 0 8px 0 !important;

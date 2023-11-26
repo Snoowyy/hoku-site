@@ -1,4 +1,17 @@
 <?php
+add_filter( 'woocommerce_output_related_products_args', 'productos_relacionados_personalizados' );
+
+function productos_relacionados_personalizados( $args ) {
+    $args['posts_per_page'] = 3; // Número de productos relacionados para mostrar.
+    $args['columns'] = 3; // Número de columnas en las que se muestran los productos.
+    return $args;
+}
+
+function thenga_single_add_to_cart_text( $text ) {
+    return __( 'Agregar a la bolsa de compra', 'textdomain' );
+}
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'thenga_single_add_to_cart_text', 10, 1 );
+
 /*==============menus y widgets========================*/
 
 add_theme_support('nav-menus');

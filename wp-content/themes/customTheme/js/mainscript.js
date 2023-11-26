@@ -55,7 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
     //Control scrollbar counter
 
     const mainSlides = document.querySelectorAll('.main-banner .swiper-slide');
-    document.getElementById('max_slides').innerHTML = '0' + mainSlides.length;
+    if(document.getElementById('max_slides')){
+        document.getElementById('max_slides').innerHTML = '0' + mainSlides.length;
+    }
 
     //Control Pride Slider
 
@@ -95,5 +97,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Control color picker style
+    let colorPicker = document.querySelectorAll('.variable-item-span-color');
+    if(colorPicker){
+        colorPicker.forEach(element => {
+            let style = window.getComputedStyle(element);
+            let colorFondo = style.getPropertyValue('background-color');
+            element.parentElement.parentElement.style.borderColor = colorFondo;
+        });
+    }
+
+    // Control product card tabs
+    let productTabs = document.querySelectorAll('.tab__title');
+    if(productTabs){
+        productTabs.forEach(element => {
+            element.addEventListener('click', () => {
+                element.parentElement.classList.toggle('active');
+            })
+        });
+    }
 });
   

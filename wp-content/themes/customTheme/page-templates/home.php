@@ -161,23 +161,8 @@ $featured_products = [
         </div>
     </div>
 </section>
-<div class="container">
-    <!-- End Featured Products Section-->
-    <!-- Init Categories Section -->
-    <section class="categories_section">
-        <?php foreach ($categories as $key => $category) { ?>
-            <div class="categories_section__block" style="background: url('<?= $category['category_image']?>'), lightgray 50% / cover no-repeat;">
-                <div class="categories_section__block__wrapper">
-                    <span class="categories_section__block__wrapper__type"><?= $category['category_type'] ?></span>
-                    <h2 class="categories_section__block__wrapper__title"><?= $category['category_title'] ?></h2>
-                    <a href="<?= $category['category_url'] ?>" class="categories_section__block__wrapper__button">Ver productos</a>
-                </div>
-            </div>
-        <?php } ?>
-    </section>
-    <!-- End Categories Section -->
-</div>
-<?php do_shortcode("[products]"); ?>
+<!-- End Featured Products Section-->
+<?php do_shortcode("[bannerCategories]"); ?>
 <?php do_shortcode("[bannerPride]"); ?>
 <?php do_shortcode("[bannerHelp]"); ?>
 <?php do_shortcode("[BannerNewsletter]"); ?>
