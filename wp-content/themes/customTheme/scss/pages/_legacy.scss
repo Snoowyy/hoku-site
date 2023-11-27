@@ -11,6 +11,9 @@
             grid-template-columns: 1fr 1.2fr;
             padding-left: 80px;
         }
+        @include mq(deskS){
+            padding: 0 80px;
+        }
     }
     &__content{
         padding: 0 16px;
@@ -46,6 +49,161 @@
             img{
                 width: 100%;
                 border-radius: 12px;
+            }
+        }
+    }
+}
+
+.legacy-info{
+    padding: 80px 0;
+    @include mq(lapS2){
+        padding: 120px 0;
+    }
+    .container{
+        display: grid;
+        gap: 32px;
+        align-items: center;
+        @include mq(lapS2){
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    &__image{
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        padding: 16px;
+        @include mq(lapS2){
+            padding: 40px;
+        }
+        &--filter{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            filter: blur(20px);
+            z-index: 1;
+            img{
+                max-height: unset !important;
+            }
+        }
+        img{
+            position: relative;
+            z-index: 2;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            max-height: 360px;
+            @include mq(lapS2){
+                max-height: unset;
+            }
+        }
+    }
+    &__content{
+        @include mq(lapS2){
+            order: -1;
+        }
+        &__title{
+            color: var(--main-dark-coffee, #76563C);
+            font-family: Garamond;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 52px;
+            letter-spacing: 1px;
+            margin-bottom: 28px;
+            text-transform: uppercase;
+            @include mq(lapS2){
+                font-size: 100px;
+                line-height: 108px;
+            }
+        }
+        &__description{
+            color: var(--main-gray, #373737);
+            font-family: 'Gotham';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 24px;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+.legacy-infoBanner{
+    padding: 60px 0;
+    background: #7BAFCF;
+    @include mq(lapS2){
+        padding: 0;
+    }
+    .container{
+        display: grid;
+        align-items: center;
+        @include mq(lapS2){
+            grid-template-columns: 0.8fr 1.2fr;
+        }
+    }
+    &__image{
+        display: flex;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(0deg, #1D1D1D 0%, rgba(29, 29, 29, 0.00) 100%);
+            mix-blend-mode: overlay;
+            @include mq(lapS2){
+                width: 20%;
+                height: 100%;
+                background: linear-gradient(90deg, #1D1D1D 0%, rgba(29, 29, 29, 0) 100%);
+                opacity: 0;
+            }
+        }
+        img{
+            width: 100%;
+            max-height: 470px;
+            object-fit: cover;
+        }
+    }
+    &__content{
+        position: relative;
+        top: -30px;
+        @include mq(lapS2){
+            order: -1;
+            top: unset;
+            right: -30px;
+            z-index: 2;
+        }
+        &__title{
+            color: var(--main-coffee-light, #F8EFEE);
+            font-family: Garamond;
+            font-size: 42px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 50px;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            @include mq(lapS2){
+                text-align: right;
+                font-size: 64px;
+                line-height: 68px;
+            }
+        }
+        &__description{
+            color: var(--main-coffee-light, #F8EFEE);
+            font-family: 'Gotham';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 24px;
+            letter-spacing: 1px;
+            @include mq(lapS2){
+                text-align: right;
             }
         }
     }

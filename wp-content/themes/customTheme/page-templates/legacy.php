@@ -20,6 +20,10 @@ $info_image = get_field('legacy_information_image', $postId);
 $info_title = get_field('legacy_information_title', $postId);
 $info_description = get_field('legacy_information_description', $postId);
 
+$infoBanner_image = get_field('legacy_infobanner_image', $postId);
+$infoBanner_title = get_field('legacy_infobanner_title', $postId);
+$infoBanner_description = get_field('legacy_infobanner_description', $postId);
+
 ?>
 <section class="legacy-banner">
     <div class="container">
@@ -84,6 +88,18 @@ $info_description = get_field('legacy_information_description', $postId);
         <div class="legacy-info__content">
             <p class="legacy-info__content__title"><?php echo $info_title; ?></p>
             <p class="legacy-info__content__description"><?php echo $info_description; ?></p>
+        </div>
+    </div>
+</section>
+
+<section class="legacy-infoBanner">
+    <div class="container">
+        <div class="legacy-infoBanner__image">
+            <img src="<?php echo $infoBanner_image['url']; ?>" alt="<?php echo $infoBanner_image['alt']; ?>">
+        </div>
+        <div class="legacy-infoBanner__content">
+            <p class="legacy-infoBanner__content__title"><?php echo $infoBanner_title; ?></p>
+            <p class="legacy-infoBanner__content__description"><?php echo $infoBanner_description; ?></p>
         </div>
     </div>
 </section>
