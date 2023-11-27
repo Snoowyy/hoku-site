@@ -119,15 +119,20 @@
     }
     &__value {
         display: flex;
-        padding: 0px 18px;
+        padding: 0px 18px 48px;
         flex-direction: column;
         align-items: center;
         gap: 16px;
         align-self: stretch;
+        border-bottom: 1px solid var(--main-coffee, #AA8364);
+        &:last-child{
+            border-bottom: 0;
+        }
         @include mq(lapS2) {
             min-width: 300px;
             padding: 0px 28px;
             flex: 1 0 0;
+            border: 0;
         }
         &__image {
             width: 80px;
@@ -397,20 +402,18 @@
         padding: 120px 0;
     }
     .container{
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
         align-items: center;
         gap: 28px;
         @include mq(lapS2) {
-            flex-direction: row;
+            grid-template-columns: 1fr 1fr;
         }
     }
     &__block {
         display: flex;
-        width: 328px;
         height: 380px;
         @include mq(lapS2) {
-            width: 626px;
             height: 630px;
         }
         border-radius: 10px;

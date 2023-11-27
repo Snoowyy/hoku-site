@@ -97,7 +97,9 @@ if ( post_password_required() ) {
     .header.scrolled .menu__icons {
         filter: unset;
     }
-
+    .header:not(.scrolled) .header__content .menu__wrapper__items .menu-item a{
+        color: var(--main-gray-dark, #1D1D1D);
+    }
 </style>
 
 

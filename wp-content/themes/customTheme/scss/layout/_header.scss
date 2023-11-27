@@ -236,7 +236,7 @@
 #side-cart {
     position: fixed;
     top: 0;
-    right: -400px; /* Coloca el carrito fuera de la pantalla por defecto */
+    right: -100%; /* Coloca el carrito fuera de la pantalla por defecto */
     width: 100%;
     height: 768px;
     flex-shrink: 0;

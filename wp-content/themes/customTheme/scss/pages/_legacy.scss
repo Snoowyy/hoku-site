@@ -1,0 +1,52 @@
+.story{
+    padding: 80px 0;
+    background: var(--main-coffee-light, #F8EFEE);
+    .container{
+        padding: 0;
+        display: grid;
+        gap: 60px;
+        align-items: center;
+        @include mq(lapS2){
+            gap: 120px;
+            grid-template-columns: 1fr 1.2fr;
+            padding-left: 80px;
+        }
+    }
+    &__content{
+        padding: 0 16px;
+        &__title{
+            color: var(--main-dark-coffee, #76563C);
+            font-family: Garamond;
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 38px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            @include mq(lapS2){
+                font-size: 42px;
+                line-height: 50px;
+            }
+        }
+        &__description{
+            color: var(--main-gray-dark, #1D1D1D);
+            font-family: 'Gotham';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 24px;
+            letter-spacing: 1px;
+        }
+    }
+    &__slider{
+        padding: 0 16px;
+        .swiper-slide{
+            overflow: hidden;
+            img{
+                width: 100%;
+                border-radius: 12px;
+            }
+        }
+    }
+}

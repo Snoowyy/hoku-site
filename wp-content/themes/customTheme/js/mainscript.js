@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     
     let lastScrollTop = 0;
@@ -116,5 +113,19 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         });
     }
+
+    // Control Story Slider
+    const storySwiper = new Swiper('.story__slider', {
+        speed: 500,
+        followFinger: true,
+        grabCursor: true,
+        slidesPerView: 1.1,
+        spaceBetween: 20,
+        // breakpoints: {
+        //     1440: {
+        //         slidesPerView: 3,
+        //     }
+        // }
+    });
 });
   
