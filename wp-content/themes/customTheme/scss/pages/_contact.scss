@@ -1,0 +1,50 @@
+.contact-form{
+    padding-top: 80px;
+    form{
+        .form__input{
+            margin-bottom: 32px;
+        }
+    }
+    .container{
+        display: grid;
+        gap: 40px;
+        @include mq(lapS2){
+            grid-template-columns: 1.5fr 1fr;
+            gap: 136px;
+        }
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        @include mq(lapS2){
+            gap: 64px;
+        }
+        &__item{
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            .title{
+                color: var(--main-dark-coffee, #76563C);
+                font-family: Garamond;
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 38px;
+                letter-spacing: 1px;
+            }
+            .info{
+                color: var(--main-gray-dark, #1D1D1D);
+                font-family: 'Gotham-Book';
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 24px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+    &__wrapper{
+        order: -1;
+    }
+}

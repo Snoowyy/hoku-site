@@ -12,3 +12,27 @@ Stack trace:
 2023-11-30T09:17:17+00:00 CRITICAL syntax error, unexpected token "." in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/library/shortcodes.php on line 175
 >>>>>>> dc351f8887149c45dd914d56a8f4d9a5e1ba5f28
 
+2023-11-30T10:29:13+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/contact.php:19
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/contact.php on line 19
+
+2023-11-30T10:29:40+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/contact.php:19
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/contact.php on line 19
+
+2023-11-30T10:30:20+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/contact.php:19
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/contact.php on line 19
+

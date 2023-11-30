@@ -55,7 +55,9 @@ body{
   }
 }
 
-input[type="text"]{
+input[type="text"],
+input[type="email"],
+textarea{
   border: solid var(--main-dark-coffee, #76563C);
   border-width: 0 0 1px;
   padding: 16px;
@@ -69,5 +71,24 @@ input[type="text"]{
   width: 100%;
   &::placeholder{
     color: var(--main-dark-coffee, #76563C);
+  }
+}
+
+.form__send{
+  input{
+    padding: 12px 32px;
+    border-radius: 4px;
+    background: var(--main-dark-coffee, #76563C);
+    color: var(--main-white, #FFF);
+    font-family: 'Gotham-Book';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 22px;
+    letter-spacing: 1px;
+    text-align: center;
+    justify-content: center;
+    border: 0;
+    width: 100%;
   }
 }
