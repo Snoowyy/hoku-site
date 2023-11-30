@@ -140,6 +140,58 @@
                         }
                     }
                 }
+                &__texts-categories {
+                    position: absolute;
+                    z-index: 2;
+                    gap: 16px;
+                    bottom: 88px;
+                    left: 40px;
+                    right: 40px;
+                    @include mq(lapS2){
+                        position: relative;
+                        bottom: unset;
+                        left: unset;
+                        right: unset;
+                        order: -1;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        padding-bottom: 120px;             
+                    }
+                    .title{
+                        color: var(--main-coffee-light, #F8EFEE);
+
+                        /* Desktop/Heading/Mobile/H1 */
+                        font-family: Garamond;
+                        font-size: 42px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 50px; /* 119.048% */
+                        letter-spacing: 1px;
+                        @include mq(lapS2){
+                            text-align: left;
+                            font-size: 64px;
+                            line-height: 68px; /* 106.25% */
+                        }
+                    }
+                    .description{
+                        color: var(--main-coffee-light, #F8EFEE);
+
+                        /* Text/400/Small */
+                        font-family: Gotham Light;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: 22px; /* 157.143% */
+                        letter-spacing: 1px;
+                        @include mq(lapS2){
+                            text-align: left;
+                            font-size: 16px;
+                            line-height: 24px;
+                            margin-bottom: 40px;
+                        }
+                    }
+                }
             }
         }
     }

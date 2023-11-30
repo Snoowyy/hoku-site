@@ -1,0 +1,241 @@
+.product-container {
+    display: flex;
+    padding: 40px 0px 80px 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    @include mq(lapS2) {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 28px;
+    }
+    &__product {
+        display: flex;
+        width: 328px;
+        height: 298px;
+        flex-direction: column;
+        align-items: flex-start;
+        @include mq(lapS2) {
+            width: 100%;
+            height: 583px;
+            gap: 24px;
+            img {
+                width: 626px;
+                height: 583px;
+            }
+        }
+        .title {
+            color: var(--main-gray-dark, #1D1D1D);
+            /* Desktop/Heading/Mobile/H6 */
+            font-family: Garamond;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px; /* 122.222% */
+            letter-spacing: 1px;
+        }
+        .amount{
+            gap: 16px;
+            color: var(--main-gray-dark, #1D1D1D);
+            /* Text/400/Extra Large */
+            font-family: Gotham Light;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 28px; /* 140% */
+            letter-spacing: 1px;
+            @include Mq(lapS2){ 
+                font-size: 16px;
+                line-height: 24px;
+
+            }
+        }
+    }
+}
+.show_all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mq(lapS2) {
+        padding: 80px 80px;
+    }
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 328px;
+        padding: 12px 32px;
+        border-radius: 4px;
+        background: var(--main-dark-coffee, #76563C);
+        color: var(--main-white, #FFF);
+        /* Text/600/Small */
+        font-family: Gotham Medium;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 22px; /* 157.143% */
+        letter-spacing: 1px;
+    }
+}
+.category-info {
+    @include mq(lapS2) {
+        width: 100%;
+    }
+    &__image{
+        position: relative;
+        overflow: hidden;
+        padding: 16px;
+        @include mq(lapS2){
+            padding: 0 40px;
+        }
+        &--filter{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            filter: blur(20px);
+            z-index: 1;
+            img{
+                width: 100%;
+                max-height: unset !important;
+                @include mq(lapS2){
+                    width: unset !important;
+                    height: unset !important;
+                    max-height: unset !important;
+                }
+            }
+        }
+        img{
+            position: relative;
+            z-index: 2;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            max-height: 448px;
+            @include mq(lapS2){
+                width: 731px;
+                height: 550px;
+                max-height: unset;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+    &__detail {
+        position: absolute;
+        z-index: 2;
+        gap: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 40px;
+        right: 40px;
+        &__title {
+            color: var(--main-coffee-light, #F8EFEE);
+            text-align: center;
+
+            /* Desktop/Heading/Mobile/H1 */
+            font-family: Garamond;
+            font-size: 42px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 50px; /* 119.048% */
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            @include mq(lapS2){
+                font-size: 64px;
+                line-height: 68px;
+            }
+        }
+        &__description {
+            max-width: 710px;
+            flex: 1 0 0;
+            color: var(--main-coffee-light, #F8EFEE);
+            text-align: center;
+
+            /* Text/400/Large */
+            font-family: 'Gotham-Book';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 24px;
+            letter-spacing: 1px;
+            margin: 0 auto;
+        }
+    }
+}
+.category-info-secondary {
+    width: 100%;
+    height: 652px;
+    background: var(--main-dark-coffee, #76563C);
+    @include mq(lapS2) {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    &__image {
+        padding-top: 60px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        overflow: hidden;
+        @include mq(lapS2) {
+            display: flex;
+            padding: 0 0;
+            position: relative;
+            right: 3%;
+        }
+    }
+    &__detail {
+        display: flex;
+        width: 328px;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        position: relative;
+        left: 10px;
+        top: -25px;
+        @include mq(lapS2) {
+            width: 100%;
+            padding-top: 10%;
+        }
+        &__title {
+            color: var(--main-coffee-light, #F8EFEE);
+
+            /* Desktop/Heading/Mobile/H1 */
+            font-family: Garamond;
+            font-size: 42px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 50px; /* 119.048% */
+            letter-spacing: 1px;
+            @include mq(lapS2) {
+                font-size: 64px;
+                color: var(--main-coffee-light, #F8EFEE);
+                text-align: right;
+                font-size: 64px;
+                line-height: 68px; /* 106.25% */
+            }
+        }
+        &__description {
+            color: var(--main-coffee-light, #F8EFEE);
+
+            /* Text/400/Large */
+            font-family: Gotham Light;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 24px; /* 150% */
+            letter-spacing: 1px;
+            @include mq(lapS2) {
+                color: var(--main-coffee-light, #F8EFEE);
+                text-align: right;
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+}

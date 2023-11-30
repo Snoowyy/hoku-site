@@ -17,7 +17,7 @@ $postId = get_the_ID();
                         <div class="swiper-slide__wrapper__image">
                             <img src="/wp-content/themes/customTheme/images/Lifestyle2.jpg" alt="">
                         </div>
-                        <div class="swiper-slide__wrapper__texts">
+                        <div class="swiper-slide__wrapper__texts-categories">
                             <p class="title">TIENDA</p>
                             <p class="description">Descubre la elegancia y comodidad en nuestra colección de zapatos para hombre, perfectos para cualquier ocasión. ¡Compra ahora!.</p>
                         </div>
