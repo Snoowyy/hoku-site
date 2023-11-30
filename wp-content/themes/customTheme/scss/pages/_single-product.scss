@@ -56,7 +56,7 @@
                 font-family: $fontFamily;
                 font-size: 16px;
                 font-style: normal;
-                font-weight: 500;
+                font-weight: 800;
                 line-height: 24px; /* 150% */
                 letter-spacing: 1px;
                 margin-bottom: 16px;
@@ -71,7 +71,7 @@
                 font-family: $fontFamily;
                 font-size: 16px;
                 font-style: normal;
-                font-weight: 500;
+                font-weight: 800;
                 line-height: 24px; /* 150% */
                 letter-spacing: 1px;
             }
@@ -121,7 +121,8 @@
                 }
             }
             .quantity,
-            .product_meta{
+            .product_meta,
+            .qib-button-wrapper{
                 display: none !important;
             }
             form{
@@ -167,7 +168,7 @@
                     font-family: $fontFamily;
                     font-size: 14px;
                     font-style: normal;
-                    font-weight: 500;
+                    font-weight: 800;
                     line-height: 22px;
                     letter-spacing: 1px;
                     border: 0;
@@ -241,7 +242,7 @@
                         font-family: $fontFamily;
                         font-size: 16px;
                         font-style: normal;
-                        font-weight: 500;
+                        font-weight: 800;
                         line-height: 24px; /* 150% */
                         letter-spacing: 1px;
                     }

@@ -60,7 +60,10 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 									 *
 									 * @since 2.1.0
 									 */
-									echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
+									// echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
+									echo '<p class="title">'.explode('-', $product_name)[0].'</p>';
+									echo '<p class="info">Talla: '.$_product->get_attributes()['pa_talla'].'</p>';
+									echo '<p class="info">Color: '.$_product->get_attributes()['pa_color'].'</p>';
 								}
 	
 								do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );

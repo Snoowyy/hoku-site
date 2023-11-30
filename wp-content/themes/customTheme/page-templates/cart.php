@@ -11,6 +11,13 @@ $methods_title = get_field('methods_title', $postId);
 $methods_description = get_field('methods_description', $postId);
 $methods_icons = get_field('methods_icons', $postId);
 $methods_disclaimer = get_field('methods_disclaimer', $postId);
+
+$featured_products = [
+    'title' => get_field('featured_title', $postId),
+    'subtitle' => get_field('featured_subtitle', $postId),
+    'main' => get_field('main_featured', $postId),
+    'products' => get_field('products', $postId)
+];
 ?>
 <?php
 /**
@@ -302,6 +309,8 @@ do_action( 'woocommerce_before_cart' ); ?>
         </div>
     </div>
 </section>
+
+<?php do_shortcode("[bannerInterest]"); ?>
 
 <style>
     .header .menu__logo,

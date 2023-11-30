@@ -173,5 +173,19 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
+    // Control Interest Slider
+    
+    const interestSwiper = new Swiper('.interest-swiper', {
+        speed: 500,
+        followFinger: true,
+        grabCursor: true,
+        slidesPerView: 1.4,
+        spaceBetween: 28,
+        breakpoints: {
+            1199: {
+                slidesPerView: 3,
+            }
+        }
+    });
 });
   

@@ -144,11 +144,13 @@ $featured_products = [
                 $product_data = wc_get_product($product->ID)?>
                 <div class="swiper-slide">
                     <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product->ID ), 'single-post-thumbnail' ); ?>
-                    <div class="image">
-                        <img src="<?php echo $image[0]; ?>" alt="<?php echo esc_html( $product->post_title ); ?>">
-                    </div>
-                    <h6 class="title"><?= $product->post_title ?></h6>
-                    <?php echo $product_data->get_price_html(); ?>
+                    <a href="<?php echo get_permalink($product->ID); ?>">
+                        <div class="image">
+                            <img src="<?php echo $image[0]; ?>" alt="<?php echo esc_html( $product->post_title ); ?>">
+                        </div>
+                        <h6 class="title"><?= $product->post_title ?></h6>
+                        <?php echo $product_data->get_price_html(); ?>
+                    </a>
                 </div>
                 <?php } ?>
                 <!-- If we need scrollbar -->

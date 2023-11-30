@@ -26,6 +26,9 @@
     }
     &__products{
         margin-bottom: 40px;
+        @include mq(lapS2){
+            margin-bottom: 120px;
+        }
         .woocommerce-cart-form{
             display: grid;
             gap: 32px;
