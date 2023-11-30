@@ -122,10 +122,10 @@
                     }
                     .button{
                         color: var(--main-white, #FFF);
-                        font-family: "Gotham-book";
+                        font-family: "Gotham-Book";
                         font-size: 14px;
                         font-style: normal;
-                        font-weight: 500;
+                        font-weight: 800;
                         line-height: 22px;
                         letter-spacing: 1px;
                         border-radius: 4px;
@@ -243,7 +243,7 @@
         }
         .counter{
             color: var(--main-coffee-light, #F8EFEE);
-            font-family: "Gotham-book";
+            font-family: "Gotham-Book";
             font-size: 12px;
             font-style: normal;
             font-weight: 400;
@@ -273,6 +273,71 @@
             &:last-child{
                 border-radius: 0 10px 10px 0;
             }
+        }
+    }
+}
+
+.interest_section{
+    padding: 80px 0;
+    background: var(--main-coffee-dim, #FFF9F9);
+    @include mq(lapS2){
+        padding: 120px 0;
+    }
+    .container{
+        padding: 0;
+    }
+    .interest-swiper{
+        padding: 0 16px;
+        .swiper-wrapper{
+            .swiper-slide{
+                .product-image{
+                    margin-bottom: 24px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        min-height: 242px;
+                        @include mq(lapS2){
+                            min-height: 500px;
+                        }
+                    }
+                }
+                .product-title{
+                    color: var(--main-gray-dark, #1D1D1D);
+                    font-family: Garamond;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px;
+                    letter-spacing: 1px;
+                }
+                .product-price{
+                    color: var(--main-gray-dark, #1D1D1D);
+                    font-family: 'Gotham-Book';
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 22px;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+    &__title{
+        color: var(--main-dark-coffee, #76563C);
+        text-align: center;
+        font-family: Garamond;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 38px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 0 16px;
+        margin-bottom: 32px;
+        @include mq(lapS2){
+            font-size: 42px;
+            line-height: 50px;
         }
     }
 }

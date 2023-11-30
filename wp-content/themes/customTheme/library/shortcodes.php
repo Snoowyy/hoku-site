@@ -149,4 +149,45 @@ function banner_categories(){
     echo $print;
 }
 add_shortcode('bannerCategories', 'banner_categories');
+
+/* START: Banner interest */
+function banner_interest(){
+    $args = array(
+        'status' => 'publish',
+        'limit' => 3, // Cantidad de productos al azar que deseas obtener
+        'orderby' => 'rand', // Ordenar al azar
+    );
+    
+    $random_products = wc_get_products($args);
+
+    $print = 
+    '<section class="interest_section">
+        <div class="container">
+            <p class="interest_section__title">Tambien te puede interesar</p>
+            <div class="interest-swiper swiper">
+                <div class="swiper-wrapper">';
+                    if ($random_products) {
+                        foreach ($random_products as $product) {
+                            $product_image = get_the_post_thumbnail($product->get_id(), 'thumbnail');
+                            $print .= 
+                            '<div class="swiper-slide">
+                                <a href="' . get_permalink($product->get_id()) . '">
+                                    <div class="product-image">' . $product_image . '</div>
+                                    <p class="product-title">' . $product->get_name() . '</p>
+                                    <p class="product-price">' . $product->get_price_html() . '</p>
+                                </a>
+                            </div>';
+                        }
+                    } else {
+                        $print .= '<p>No se encontraron productos.</p>';
+                    }
+                    $print .=
+                '</div>
+            </div>
+        </div>
+    </section>';
+
+    echo $print;
+}
+add_shortcode('bannerInterest', 'banner_interest');
 ?>

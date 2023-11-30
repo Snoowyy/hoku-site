@@ -84,10 +84,10 @@
             a {
                 padding: 5px 32px;
                 color: var(--main-coffee-light, #F8EFEE);
-                font-family: Gotham Medium;
+                font-family: 'Gotham-Book';
                 font-size: 14px;
                 font-style: normal;
-                font-weight: 500;
+                font-weight: 800;
                 line-height: 22px; /* 157.143% */
                 letter-spacing: 1px;
                 border-radius: 4px;
@@ -290,10 +290,10 @@
                 padding-top: 16px;
                 color: var(--main-gray-dark, #1D1D1D);
                 /* Link/Large */
-                font-family: Gotham Medium;
+                font-family: 'Gotham-Book';
                 font-size: 16px;
                 font-style: normal;
-                font-weight: 500;
+                font-weight: 800;
                 line-height: 24px; /* 150% */
                 letter-spacing: 1px;
                 text-decoration-line: underline;
@@ -383,10 +383,10 @@
             border-radius: 4px;
             background: var(--main-dark-coffee, #76563C);
             color: var(--main-coffee-light, #F8EFEE);
-            font-family: Gotham Medium;
+            font-family: 'Gotham-Book';
             font-size: 14px;
             font-style: normal;
-            font-weight: 500;
+            font-weight: 800;
             line-height: 22px; /* 157.143% */
             letter-spacing: 1px;
             @include Mq(lapS2) {
@@ -451,10 +451,10 @@
             }
             &__type {
                 color: var(--main-coffee-light, #F8EFEE);
-                font-family: Gotham Medium;
+                font-family: 'Gotham-Book';
                 font-size: 16px;
                 font-style: normal;
-                font-weight: 500;
+                font-weight: 800;
                 line-height: 24px; /* 150% */
                 letter-spacing: 1px;
             }
@@ -476,10 +476,10 @@
                 border-radius: 4px;
                 background: var(--main-dark-coffee, #76563C);
                 color: var(--main-coffee-light, #F8EFEE);
-                font-family: Gotham Medium;
+                font-family: 'Gotham-Book';
                 font-size: 14px;
                 font-style: normal;
-                font-weight: 500;
+                font-weight: 800;
                 line-height: 22px; /* 157.143% */
                 letter-spacing: 1px;
             }

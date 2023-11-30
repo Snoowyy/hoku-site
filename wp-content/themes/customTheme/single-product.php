@@ -78,14 +78,8 @@ if ( post_password_required() ) {
         </div>
     </div>
 </div>
-<section class="related">
-    <div class="container">
-        <?php
-        remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
-        do_action( 'woocommerce_after_single_product_summary' );
-        ?>
-    </div>
-</section>
+
+<?php do_shortcode("[bannerInterest]"); ?>
 
 <style>
     .header .menu__logo,
