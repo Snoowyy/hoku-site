@@ -127,5 +127,51 @@ document.addEventListener("DOMContentLoaded", function () {
         //     }
         // }
     });
+
+    // Control Update Quantity
+    let timeout;
+    let quantityInputs = document.querySelectorAll('button.qib-button');
+
+    quantityInputs.forEach(function(input) {
+        input.addEventListener('click', function() {
+            updateCart();
+        });
+    });
+
+    function updateCart(){
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+        timeout = setTimeout(function() {
+            // Comprobar si el botón de actualización del carrito existe antes de hacer clic
+            let updateCartButton = document.querySelector("[name='update_cart']");
+            if (updateCartButton) {
+                updateCartButton.disabled = false;
+                updateCartButton.click();
+            } else {
+                console.error('El botón de actualización del carrito no se encontró.');
+            }
+        }, 500);
+    }
+
+    // Control Coupon
+
+    let coupon = document.querySelector('.coupon__wrapper');
+    if(coupon){
+        coupon.querySelector('.coupon__wrapper__title').addEventListener('click', () => {
+            coupon.classList.toggle('active');
+        })
+    }
+
+    // Control Remove Coupon
+
+    let removeCoupon = document.querySelector('.woocommerce-remove-coupon');
+
+    if(removeCoupon){
+        removeCoupon.addEventListener('click', () => {
+            updateCart();
+        })
+    }
+
 });
   

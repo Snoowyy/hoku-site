@@ -233,6 +233,12 @@ function post_remove ()      //creating functions post_remove for removing menu 
 
 add_action('admin_menu', 'post_remove');   //adding action for triggering function call
 
+function woocommerce_button_proceed_to_checkout() { ?>
+    <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="checkout-button button alt wc-forward">
+        <?php esc_html_e( 'Ir a pagar', 'woocommerce' ); ?>
+    </a>
+    <?php
+}
 /*widgets*/
 // function widgets_de_tema()
 // {

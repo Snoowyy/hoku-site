@@ -1,0 +1,91 @@
+2023-11-27T04:43:02+00:00 CRITICAL Uncaught Error: Call to undefined function woocommerce_cart() in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php:10
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 10
+
+2023-11-27T05:30:09+00:00 CRITICAL Uncaught ArgumentCountError: 3 arguments are required, 2 given in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php:105
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php(105): sprintf('<a href="%s">%s...', 'http://hoku-sit...')
+#1 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#3 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#4 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 105
+
+2023-11-27T05:30:31+00:00 CRITICAL Unclosed '{' on line 99 does not match ')' in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 106
+
+2023-11-27T05:30:53+00:00 CRITICAL syntax error, unexpected token "}", expecting "," or ";" in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 107
+
+2023-11-27T05:31:03+00:00 CRITICAL syntax error, unexpected token "}", expecting "," or ";" in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 107
+
+2023-11-27T05:31:05+00:00 CRITICAL syntax error, unexpected token "}", expecting "," or ";" in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 107
+
+2023-11-27T05:31:19+00:00 CRITICAL Uncaught Error: Value of type null is not callable in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php:106
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 106
+
+2023-11-27T06:36:42+00:00 CRITICAL Uncaught TypeError: Unsupported operand types: string + int in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php:75
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 75
+
+2023-11-27T06:37:40+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Variation::get_pa_talla() in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php:75
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 75
+
+2023-11-27T06:40:02+00:00 CRITICAL Uncaught Error: Undefined constant "pa_talla" in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php:75
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 75
+
+2023-11-27T06:41:38+00:00 CRITICAL Uncaught Error: Call to undefined function split() in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php:74
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 74
+
+2023-11-27T06:42:27+00:00 CRITICAL Uncaught Error: Call to undefined function split() in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php:74
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 74
+
+2023-11-27T06:42:33+00:00 CRITICAL Uncaught Error: Call to undefined function split() in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php:74
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 74
+
+2023-11-27T06:42:40+00:00 CRITICAL Uncaught Error: Call to undefined function split() in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php:74
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 74
+
+2023-11-27T07:37:08+00:00 CRITICAL syntax error, unexpected token "echo", expecting "," or ";" in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/page-templates/cart.php on line 112
+
