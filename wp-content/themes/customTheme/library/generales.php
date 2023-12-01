@@ -53,10 +53,10 @@ function my_wp_nav_menu_items( $items, $args ) {
                 <ul>
                     '.$items.'
                     <li class="menu-icon">
-                        <div id="user_icon" class="icon">
+                        <a href="/login"><div id="user_icon" class="icon">
                             <img src="'.$userLogo['url'].'" alt="'.$userLogo['alt'].'" />
                             <p>Mi Cuenta</p>
-                        </div>
+                        </div></a>
                     </li>
                     <li class="menu-icon">
                         <div id="search_icon" class="icon">
@@ -71,7 +71,7 @@ function my_wp_nav_menu_items( $items, $args ) {
         $icons_wrapper =
         '<div class="menu__icons">
             <div id="user_icon" class="icon">
-                <img src="'.$userLogo['url'].'" alt="'.$userLogo['alt'].'" />
+                <a href="/login"><img src="'.$userLogo['url'].'" alt="'.$userLogo['alt'].'" /></a>
             </div>
             <div id="search_icon" class="icon">
                 <img src="'.$searchLogo['url'].'" alt="'.$searchLogo['alt'].'" />
