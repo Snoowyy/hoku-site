@@ -187,5 +187,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+
+    // Control Shipping Info
+
+    // Expande siempre la sección de dirección de envío
+    let shippingCheckbox = document.getElementById('ship-to-different-address-checkbox');
+    if (shippingCheckbox) {
+        shippingCheckbox.checked = true;
+        document.querySelector('.shipping_address').style.display = 'block';
+
+        // Opcional: Oculta el checkbox ya que no es necesario
+        let shippingLabel = document.querySelector('#ship-to-different-address');
+        if (shippingLabel) {
+            shippingLabel.style.display = 'none';
+        }
+    }
 });
   

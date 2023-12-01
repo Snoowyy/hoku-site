@@ -239,6 +239,176 @@ function woocommerce_button_proceed_to_checkout() { ?>
     </a>
     <?php
 }
+
+add_filter( 'woocommerce_checkout_fields', 'misha_email_first' );
+
+function misha_email_first( $checkout_fields ) {
+    $checkout_fields['billing']['billing_email']['placeholder'] = '*Correo electrónico';
+	$checkout_fields['billing']['billing_email']['priority'] = 4;
+    
+    $checkout_fields['billing']['billing_first_name']['placeholder'] = '*Nombre';
+	$checkout_fields['billing']['billing_first_name']['priority'] = 5;
+
+    $checkout_fields['billing']['billing_last_name']['placeholder'] = '*Apellidos';
+	$checkout_fields['billing']['billing_last_name']['priority'] = 6;
+
+    unset($checkout_fields['billing']['billing_company']);
+    unset($checkout_fields['billing']['billing_country']);
+    unset($checkout_fields['billing']['billing_address_1']);
+    unset($checkout_fields['billing']['billing_address_2']);
+    unset($checkout_fields['billing']['billing_city']);
+    unset($checkout_fields['billing']['billing_state']);
+    unset($checkout_fields['billing']['billing_postcode']);
+    unset($checkout_fields['billing']['billing_phone']);
+
+    $checkout_fields['shipping']['shipping_address_1']['placeholder'] = '*Ingrese su dirección';
+	$checkout_fields['shipping']['shipping_address_1']['priority'] = 14;
+
+    $checkout_fields['shipping']['shipping_address_2']['placeholder'] = 'Casa, apartamento, etc (Opcional)';
+	$checkout_fields['shipping']['shipping_address_2']['priority'] = 15;
+
+    $checkout_fields['shipping']['shipping_city']['placeholder'] = '*Ciudad';
+	$checkout_fields['shipping']['shipping_city']['priority'] = 16;
+
+	$checkout_fields['shipping']['shipping_state']['priority'] = 17;
+
+    $checkout_fields['shipping']['shipping_postcode']['placeholder'] = 'Código postal';
+	$checkout_fields['shipping']['shipping_postcode']['priority'] = 18;
+
+    unset($checkout_fields['shipping']['shipping_first_name']);
+    unset($checkout_fields['shipping']['shipping_last_name']);
+    unset($checkout_fields['shipping']['shipping_company']);
+    
+    unset($checkout_fields['order']['order_comments']);
+
+	return $checkout_fields;
+}
+
+add_filter('woocommerce_billing_fields', 'custom_woocommerce_billing_fields');
+
+function custom_woocommerce_billing_fields($fields) {
+
+    // Añadiendo un campo tipo select
+    $fields['billing_id_type'] = array(
+        'label' => __('Tipo de documento', 'woocommerce'),
+        'required' => true,
+        'clear' => false,
+        'type' => 'select',
+        'options' => array(
+            '' => __('Tipo de documento', 'woocommerce'),
+            'option_1' => __('Cédula de Ciudadania', 'woocommerce'),
+            'option_2' => __('Cédula de Extranjeria', 'woocommerce'),
+        ),
+        'class' => array('my-css-select'),
+        'priority' => 7,
+    );
+
+    // Añadiendo un campo tipo texto
+    $fields['billing_id_number'] = array(
+        'label' => __('Ingresa tu número de identificación', 'woocommerce'),
+        'placeholder' => _x('Ingresa tu número de identificación', 'placeholder', 'woocommerce'),
+        'required' => true,
+        'clear' => true,
+        'type' => 'text',
+        'class' => array('my-css-text'),
+        'priority' => 8,
+    );
+
+    return $fields;
+}
+
+add_filter('woocommerce_shipping_fields', 'custom_woocommerce_shipping_fields');
+
+function custom_woocommerce_shipping_fields($fields) {
+
+    // Añadiendo un campo tipo texto
+    $fields['shipping_telephone'] = array(
+        'label' => __('Teléfono', 'woocommerce'),
+        'placeholder' => _x('Teléfono', 'placeholder', 'woocommerce'),
+        // 'required' => false,
+        'clear' => true,
+        'type' => 'text',
+        'class' => array('my-css-text'),
+        'priority' => 90,
+    );
+
+    // Añadiendo un campo tipo texto
+    $fields['shipping_same_address'] = array(
+        'label' => __('Direccion misma que envio', 'woocommerce'),
+        // 'required' => false,
+        'clear' => true,
+        'type' => 'checkbox',
+        'class' => array('my-css-text'),
+        'priority' => 91,
+    );
+
+    // Añadiendo un campo tipo texto
+    $fields['shipping_gift'] = array(
+        'label' => __('Enviar como regalo', 'woocommerce'),
+        // 'required' => false,
+        'clear' => true,
+        'type' => 'checkbox',
+        'class' => array('my-css-text'),
+        'priority' => 92,
+    );
+
+    return $fields;
+}
+
+add_action('woocommerce_checkout_update_order_meta', 'custom_checkout_field_update_order_meta');
+
+function custom_checkout_field_update_order_meta($order_id) {
+    if (!empty($_POST['billing_id_type'])) {
+        update_post_meta($order_id, 'billing_id_type', sanitize_text_field($_POST['billing_id_type']));
+    }
+    if (!empty($_POST['billing_id_number'])) {
+        update_post_meta($order_id, 'billing_id_number', sanitize_text_field($_POST['billing_id_number']));
+    }
+    if (!empty($_POST['shipping_phone'])) {
+        update_post_meta($order_id, 'shipping_phone', sanitize_text_field($_POST['shipping_phone']));
+    }
+}
+
+add_action('woocommerce_admin_order_data_after_billing_address', 'custom_checkout_field_display_admin_order_meta', 10, 1);
+
+function custom_checkout_field_display_admin_order_meta($order){
+    $id_number = get_post_meta($order->get_id(), 'billing_id_number', true);
+    $id_type_value = get_post_meta($order->get_id(), 'billing_id_type', true);
+    
+    $id_type_options = array(
+        'option_1' => __('Cédula de Ciudadania', 'woocommerce'),
+        'option_2' => __('Cédula de Extranjeria', 'woocommerce'),
+    );
+    $id_type_label = isset($id_type_options[$id_type_value]) ? $id_type_options[$id_type_value] : '';
+
+    if ($id_type_label) {
+        echo '<p><strong>'.__('Tipo de Documento', 'woocommerce').':</strong> ' . $id_type_label . '</p>';
+    }
+    if ($id_number) {
+        echo '<p><strong>'.__('Número de Identificación', 'woocommerce').':</strong> ' . $id_number . '</p>';
+    }
+}
+
+add_action('woocommerce_admin_order_data_after_shipping_address', 'custom_shipping_field_display_admin_order_meta', 10, 1);
+
+function custom_shipping_field_display_admin_order_meta($order) {
+    $phone = get_post_meta($order->get_id(), 'shipping_phone', true);
+
+    if ($phone) {
+        echo '<p><strong>'.__('Teléfono de Envío', 'woocommerce').':</strong> ' . $phone . '</p>';
+    }
+}
+
+add_filter('woocommerce_shipping_fields', 'custom_required_shipping_fields');
+
+function custom_required_shipping_fields($fields) {
+    foreach ($fields as $key => $field) {
+        $fields[$key]['required'] = true;
+    }
+
+    return $fields;
+}
+
 /*widgets*/
 // function widgets_de_tema()
 // {
