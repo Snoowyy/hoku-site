@@ -1,3 +1,159 @@
+.products {
+    &__container {
+        display: flex;
+        padding-top: 40px;
+        flex-direction: column;
+        align-items: center;
+        @include mq(lapS2) {
+            flex-direction:row;
+            flex-wrap: wrap;
+            flex: 0 0 calc(30%);
+            gap: 25px;
+        }
+        &__product {
+            display: flex;
+            width: 328px;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            @include mq(lapS2) {
+                width: 100%;
+                img {
+                    max-width: 410px;
+                    min-height: 410px;
+                }
+            }
+            .title {
+                color: var(--main-gray-dark, #1D1D1D);
+                /* Desktop/Heading/Mobile/H6 */
+                font-family: Garamond;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 22px; /* 122.222% */
+                letter-spacing: 1px;
+                @include mq(lapS2) {
+                    /* Desktop/Heading/Desktop/H6 */
+                    font-size: 20px;;
+                    line-height: 24px; /* 120% */
+                }
+            }
+            .amount{
+                gap: 16px;
+                color: var(--main-gray-dark, #1D1D1D);
+                /* Text/400/Extra Large */
+                font-family: Gotham Light;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 28px; /* 140% */
+                letter-spacing: 1px;
+                @include mq(lapS2){ 
+                    /* Text/400/Small */
+                    font-size: 14px;
+                    line-height: 22px; /* 157.143% */
+                }
+            }
+
+        }
+    }
+    &__filter{
+        display: flex;
+        padding: 24px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        @include mq(lapS2) {
+            display: flex;
+            padding: 40px 0px;
+            align-items: flex-start;
+            gap: 32px;
+        }
+        &__button {
+            display: flex;
+            width: 100%;
+            padding: 12px 32px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            background: var(--main-coffee, #AA8364);
+            color: var(--main-white, #FFF);
+
+            /* Text/600/Small */
+            font-family: Gotham Medium;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 22px; /* 157.143% */
+            letter-spacing: 1px;
+            @include mq(lapS2) {
+                display: none;
+            }
+        }
+        &__selects {
+            width: 100%;
+        }
+    }
+}
+.accordion {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    height: 24px;
+    @include mq(lapS2) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        width: 100%;
+        height: auto;
+        gap: 34px;
+        position: relative;
+    }
+    &__divider {
+        margin: 30px 0;
+        width: 100%;
+        height: 1px;
+        align-self: stretch;
+        background: var(--main-coffee, #AA8364);
+    }
+    @include mq(lapS2) {
+        .accordion-header {
+            align-items: flex-start;
+            gap: 34px;
+        }
+    }
+    .accordion-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 30px;
+        @include mq(lapS2) {
+            position: absolute;
+            left: 0;
+        }
+        .variation {
+            display: flex;
+            flex: 0 0 calc(20% - 10px); /* Ajusta el ancho para 5 items por fila, con un espacio de 10px entre ellos */
+            @include mq(lapS2) {
+                flex: 0 0 0;
+                min-width: 50px;
+            }
+            padding: 10px;
+            min-height: 50px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--wf-dark-gray, #AAA);
+            color: var(--main-gray-dark, #1D1D1D);
+            background-color: white;
+            font-family: Roboto;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px; /* 150% */
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+    }
+}
 .wc-block-grid {
     &__products{
         gap: 40px;

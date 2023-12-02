@@ -53,11 +53,13 @@ $thirds_products = array_slice($products, 4, 2);
         $product_data = wc_get_product($product->ID);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product->ID ), 'single-post-thumbnail' );
         ?>
-            <div class="product-container__product">
-                <img src="<?php echo $image[0]; ?>" alt="<?php echo esc_html( $product->post_title ); ?>">
-                <h6 class="title"><?= $product->post_title ?></h6>
-                <?php echo $product_data->get_price_html(); ?>
-            </div>
+            <a href="<?= $product_data->get_permalink(); ?>">
+                <div class="product-container__product">
+                    <img src="<?php echo $image[0]; ?>" alt="<?php echo esc_html( $product->post_title ); ?>">
+                    <h6 class="title"><?= $product->post_title ?></h6>
+                    <?php echo $product_data->get_price_html(); ?>
+                </div>
+            </a>
         <?php } ?>
     </div>
     <div class="category-info">
@@ -77,11 +79,13 @@ $thirds_products = array_slice($products, 4, 2);
         $product_data = wc_get_product($product->ID);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product->ID ), 'single-post-thumbnail' );
         ?>
-            <div class="product-container__product">
-                <img src="<?php echo $image[0]; ?>" alt="<?php echo esc_html( $product->post_title ); ?>">
-                <h6 class="title"><?= $product->post_title ?></h6>
-                <?php echo $product_data->get_price_html(); ?>
-            </div>
+            <a href="<?= $product_data->get_permalink(); ?>">
+                <div class="product-container__product">
+                    <img src="<?php echo $image[0]; ?>" alt="<?php echo esc_html( $product->post_title ); ?>">
+                    <h6 class="title"><?= $product->post_title ?></h6>
+                    <?php echo $product_data->get_price_html(); ?>
+                </div>
+            </a>
         <?php } ?>
     </div>
     <div class="category-info-secondary">
@@ -98,11 +102,13 @@ $thirds_products = array_slice($products, 4, 2);
         $product_data = wc_get_product($product->ID);
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product->ID ), 'single-post-thumbnail' );
         ?>
-            <div class="product-container__product">
-                <img src="<?php echo $image[0]; ?>" alt="<?php echo esc_html( $product->post_title ); ?>">
-                <h6 class="title"><?= $product->post_title ?></h6>
-                <?php echo $product_data->get_price_html(); ?>
-            </div>
+            <a href="<?= $product_data->get_permalink(); ?>">
+                <div class="product-container__product">
+                    <img src="<?php echo $image[0]; ?>" alt="<?php echo esc_html( $product->post_title ); ?>">
+                    <h6 class="title"><?= $product->post_title ?></h6>
+                    <?php echo $product_data->get_price_html(); ?>
+                </div>
+            </a>
         <?php } ?>
     </div>
     <div class="show_all">
