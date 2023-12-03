@@ -1,0 +1,108 @@
+.checkout-section{
+    padding: 65px 0 80px;
+    @include mq(lapS2){
+        padding: 70px 0 200px;
+    }
+    .woocommerce-form-coupon-toggle{
+        display: none;
+    }
+    .checkout-section__wrapper__item,
+    .shipping_address{
+        border-bottom: 1px solid var(--main-dark-coffee, #76563C);
+        .title{
+            color: var(--main-gray-dark, #1D1D1D);
+            /* Desktop/Heading/Mobile/H4 */
+            font-family: Garamond;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 38px;
+            letter-spacing: 1px;
+            padding: 40px 0 32px;
+        }
+        .woocommerce-billing-fields__field-wrapper,
+        .woocommerce-shipping-fields__field-wrapper{
+            // max-height: 0;
+            overflow: hidden;
+            display: grid;
+            gap: 32px;
+            .checkbox{
+                display: block;
+                order: 1001;
+                padding-bottom: 40px;
+                height: unset;
+                align-items: flex-start;
+                margin-top: -12px;
+            }
+            button{
+                order: 1000;
+                padding: 12px 32px;
+                border-radius: 4px;
+                background: var(--main-dark-coffee, #76563C);
+                color: var(--main-white, #FFF);
+                font-family: 'Gotham-Book';
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 800;
+                line-height: 22px;
+                letter-spacing: 1px;
+                text-align: center;
+                justify-content: center;
+                border: 0;
+                width: 100%;
+            }
+            p{
+                &:not(.wooccm-type-checkbox){
+                    label{
+                        display: none;
+                    }
+                }
+            }
+            .wooccm-type-checkbox{
+                order: 1001;
+                &.wooccm-field-wooccm10{
+                    .checkbox{
+                        padding-bottom: 0;
+                    }
+                }
+                .optional{
+                    display: none;
+                }
+            }
+        }
+    }
+    &__wrapper{
+        &__item{
+            .shop_table{
+                display: none;
+            }
+        }
+    }
+    &__title{
+        color: var(--main-dark-coffee, #76563C);
+        /* Desktop/Heading/Mobile/H3 */
+        font-family: Garamond;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 38px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 40px 0;
+        @include mq(lapS2){
+            padding: 80px 0 40px;
+            font-size: 42px;
+            line-height: 50px;
+        }
+    }
+}
+
+#shipping_country_field{
+    display: none;
+}
+
+.place-order{
+    .woocommerce-form__label{
+        display: none;
+    }
+}
