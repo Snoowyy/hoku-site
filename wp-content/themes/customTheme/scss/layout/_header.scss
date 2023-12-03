@@ -124,11 +124,18 @@
                 display: flex;
                 gap: 22px;
                 align-items: center;
+                #search_icon{
+                    svg{
+                        width: 28px;
+                        height: 28px;
+                    }
+                }
                 #search_icon,
                 #user_icon{
                     display: none;
                     @include mq(lapS2){
-                        display: block;
+                        display: flex;
+                        align-items: center;
                     }
                 }
                 #cart_icon{

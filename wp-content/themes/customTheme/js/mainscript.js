@@ -202,5 +202,32 @@ document.addEventListener("DOMContentLoaded", function () {
             shippingLabel.style.display = 'none';
         }
     }
+
+    // Control checkbox states
+    let checkBoxes = document.querySelectorAll('input[type="checkbox"]');
+
+    if(checkBoxes){
+        checkBoxes.forEach(element => {
+            element.addEventListener('click', () => {
+                element.parentElement.classList.toggle('checked');
+            })
+        });
+    }
+
+    // Control Placeholders
+    setTimeout(() => {
+        if(document.getElementById('shipping_address_1')){
+            document.getElementById('shipping_address_1').placeholder = '*Ingrese su dirección';
+            document.getElementById('shipping_address_2').placeholder = 'Casa, apartamento, etc (Opcional)';
+        }
+    }, 100);
+
+    // Control Checkout Newsletter
+    let checkNewslet = document.querySelector('#shipping_newsletter');
+    if(checkNewslet){
+        checkNewslet.addEventListener('click', () => {
+            document.querySelector('#mailpoet_woocommerce_checkout_optin').checked = checkNewslet.checked;
+            console.log('AJUA' + document.querySelector('#mailpoet_woocommerce_checkout_optin').checked);
+        })
+    }
 });
-  

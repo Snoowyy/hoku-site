@@ -24,5 +24,8 @@ require_once( 'library/utilities.php' );
 /** Pagina de shortcodes */
 require_once( 'library/shortcodes.php' );
 
+/** Pagina de modificaciones de woocommerce */
+require_once( 'library/woocommerce.php' );
+
 /** Pagina de opciones ACF */
 ?>

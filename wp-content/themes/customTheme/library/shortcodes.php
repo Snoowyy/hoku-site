@@ -3,8 +3,6 @@
 function banner_newsletter(){
     $newsletterTitle = get_field('newsletter_title', 'option');
     $newsletterDescription = get_field('newsletter_description', 'option');
-    $newsletterInput = get_field('newsletter_input', 'option');
-    $newsletterButton = get_field('newsletter_button', 'option');
     $newsletterImage = get_field('newsletter_image', 'option');
 
     $print = 
@@ -15,8 +13,7 @@ function banner_newsletter(){
             <div class="newsletter-section__wrapper">
                 <p class="title">'.$newsletterTitle.'</p>
                 <p class="description">'.$newsletterDescription.'</p>
-                <input type="email" name="" id="" placeholder="'.$newsletterInput.'">
-                <button type="button">'.$newsletterButton.'</button>
+                '.do_shortcode("[mailpoet_form id='1']").'
             </div>
             <div class="newsletter-section__image">
                 <img src="'.$newsletterImage['url'].'" alt="'.$newsletterImage['alt'].'">

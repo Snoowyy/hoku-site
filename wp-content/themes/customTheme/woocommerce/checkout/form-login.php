@@ -22,14 +22,14 @@ if ( is_user_logged_in() || 'no' === get_option( 'woocommerce_enable_checkout_lo
 }
 
 ?>
-<div class="woocommerce-form-login-toggle">
-	<?php wc_print_notice( apply_filters( 'woocommerce_checkout_login_message', esc_html__( 'Returning customer?', 'woocommerce' ) ) . ' <a href="#" class="showlogin">' . esc_html__( 'Click here to login', 'woocommerce' ) . '</a>', 'notice' ); ?>
+<div class="w">
+	<?php wc_print_notice( apply_filters( 'woocommerce_checkout_login_message', esc_html__( '¿Tienes una cuenta?', 'woocommerce' ) ) . ' <a href="#" class="showlogin">' . esc_html__( 'Iniciar sesión', 'woocommerce' ) . '</a>', 'notice' ); ?>
 </div>
 <?php
 
 woocommerce_login_form(
 	array(
-		'message'  => esc_html__( 'If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing section.', 'woocommerce' ),
+		'message'  => esc_html__( 'Si ya has comprado con nosotros antes, por favor ingresa tus datos a continuación. Si eres un cliente nuevo, por favor procede a la sección de Facturación.', 'woocommerce' ),
 		'redirect' => wc_get_checkout_url(),
 		'hidden'   => true,
 	)

@@ -83,9 +83,12 @@ if ( post_password_required() ) {
 
 <style>
     .header .menu__logo,
-    .header .menu__icons {
+    .header .menu__icons #user_icon img,
+    .header .menu__icons #search_icon svg,
+    .header .menu__icons #cart_icon img{
         filter: brightness(0);
     }
+
     .header.open .menu__icons,
     .header.scrolled .menu__logo,
     .header.scrolled .menu__icons {

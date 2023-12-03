@@ -6,7 +6,7 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title><?php bloginfo( 'name' );  wp_title(); ?></title>
+    <title><?php wp_title(); ?></title>
     
     <meta name="generator" content="CD <?php bloginfo( 'version' ); ?>" />
     <meta name="description" content="<?php bloginfo( 'description' ); ?>" />

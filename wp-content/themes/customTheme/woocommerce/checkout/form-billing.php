@@ -39,6 +39,10 @@ defined( 'ABSPATH' ) || exit;
 			woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
 		}
 		?>
+		<label id="checkout_newsletter" class="checkbox">
+			<input type="checkbox" class="input-checkbox " name="shipping_newsletter" id="shipping_newsletter" value="1">
+			Enviarme novedades y ofertas por correo electrónico
+		</label>
 		<button id="next_step" type="button" class="">Continuar</button>
 	</div>
 

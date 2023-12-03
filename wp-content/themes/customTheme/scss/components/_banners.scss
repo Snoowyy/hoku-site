@@ -57,45 +57,46 @@
             letter-spacing: 1px;
             margin-bottom: 32px;
         }
-        input[type="email"]{
-            width: 100%;
-            padding: 16px;
-            border-bottom: solid var(--main-coffee-light, #F8EFEE);
-            border-width: 0 0 1px 0;
-            background-color: transparent;
-            color: var(--main-coffee-light, #F8EFEE);
-            /* Text/400/Large */
-            font-family: "Gotham-Book";
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 300;
-            line-height: 24px; /* 150% */
-            letter-spacing: 1px;
-            margin-bottom: 16px;
+        form.mailpoet_form{
+            padding: 0 !important;
+            display: grid;
             @include mq(lapS2){
-                width: 65%;
+                grid-template-columns: 1fr 0.4fr;
             }
-            &::placeholder{
+            input[type="email"]{
+                width: 100%;
+                padding: 16px !important;
+                border-bottom: solid var(--main-coffee-light, #F8EFEE);
+                border-width: 0 0 1px 0;
+                background-color: transparent;
                 color: var(--main-coffee-light, #F8EFEE);
+                /* Text/400/Large */
+                font-family: "Gotham-Book";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 24px;
+                letter-spacing: 1px;
+                margin-bottom: 16px;
+                &::placeholder{
+                    color: var(--main-coffee-light, #F8EFEE);
+                }
             }
-        }
-        button{
-            color: var(--main-white, #FFF);
-            /* Text/600/Small */
-            font-family: "Gotham-Book";
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 800;
-            line-height: 22px; /* 157.143% */
-            letter-spacing: 1px;
-            border-radius: 4px;
-            background: var(--main-coffee, #AA8364);
-            padding: 12px 32px;
-            border: 0;
-            width: 100%;
-            cursor: pointer;
-            @include mq(lapS2){
-                width: 34%;
+            input[type="submit"]{
+                color: var(--main-white, #FFF);
+                /* Text/600/Small */
+                font-family: "Gotham-Book";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 800;
+                line-height: 22px;
+                letter-spacing: 1px;
+                border-radius: 4px;
+                background: var(--main-coffee, #AA8364);
+                padding: 18px 32px !important;
+                border: 0;
+                width: 100%;
+                cursor: pointer;
             }
         }
     }
