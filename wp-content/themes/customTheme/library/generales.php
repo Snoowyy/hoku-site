@@ -60,8 +60,7 @@ function my_wp_nav_menu_items( $items, $args ) {
                     </li>
                     <li class="menu-icon">
                         <div id="search_icon" class="icon">
-                            <img src="'.$searchLogo['url'].'" alt="'.$searchLogo['alt'].'" />
-                            <p>Buscar</p>
+                            '.do_shortcode('[fibosearch]').'
                         </div>
                     </li>
                 </ul>
@@ -74,7 +73,7 @@ function my_wp_nav_menu_items( $items, $args ) {
                 <a href="/login"><img src="'.$userLogo['url'].'" alt="'.$userLogo['alt'].'" /></a>
             </div>
             <div id="search_icon" class="icon">
-                <img src="'.$searchLogo['url'].'" alt="'.$searchLogo['alt'].'" />
+                '.do_shortcode('[fibosearch]').'
             </div>
             <div id="cart_icon" class="icon">
                 <img src="'.$cartLogo['url'].'" alt="'.$cartLogo['alt'].'" />
