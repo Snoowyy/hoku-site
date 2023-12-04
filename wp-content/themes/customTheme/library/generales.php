@@ -58,12 +58,6 @@ function my_wp_nav_menu_items( $items, $args ) {
                             <p>Mi Cuenta</p>
                         </div></a>
                     </li>
-                    <li class="menu-icon">
-                        <div id="search_icon" class="icon">
-                            '. do_shortcode('[fibosearch]') .'
-                            <p>Buscar</p>
-                        </div>
-                    </li>
                 </ul>
             </div>
         </div>';

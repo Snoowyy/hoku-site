@@ -230,4 +230,72 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log('AJUA' + document.querySelector('#mailpoet_woocommerce_checkout_optin').checked);
         })
     }
+
+    // Control SearchBar Button
+    let searchButton = document.querySelectorAll('.dgwt-wcas-search-submit');
+    let pElement = document.createElement('p');
+    pElement.textContent = 'Buscar';
+
+    
+    searchButton.forEach(element => {
+        element.appendChild(pElement);
+    });
+
+    // Control Checkout
+    const fistStep = document.querySelector('.woocommerce-billing-fields__field-wrapper');
+    const firstInputs = document.querySelectorAll('.woocommerce-billing-fields__field-wrapper .wooccm-required-field');
+    const firstButton = document.getElementById('next_step');
+
+    const secondStep = document.querySelector('.woocommerce-shipping-fields__field-wrapper');
+    const secondInputs = document.querySelectorAll('.woocommerce-shipping-fields__field-wrapper .wooccm-required-field:not(#shipping_state)');
+    const secondButton = document.getElementById('final_step');
+
+    const thirdStep = document.querySelector('.woocommerce-checkout-review-order');
+
+    const checkInputs = () => {
+        let allFilled = true;
+        firstInputs.forEach(input => {
+            if (input.value.trim() === '') {
+                allFilled = false;
+            }
+        });
+        firstButton.disabled = !allFilled;
+    };
+
+    firstInputs.forEach(input => {
+        input.addEventListener('input', checkInputs);
+    });
+
+    document.querySelector('#shipping_state_field').addEventListener('click', () => {
+        document.querySelector('.select2-results__options').addEventListener('click', checkInputs);
+    });
+
+
+
+    firstButton.addEventListener('click', () => {
+        fistStep.classList.remove('active');
+        secondStep.classList.add('active');
+        fistStep.parentElement.classList.add('editable');
+    })
+
+    const checkSecondInputs = () => {
+        let allFilled = true;
+        secondInputs.forEach(input => {
+            if (input.value.trim() === '' || !document.querySelector('.woocommerce-shipping-fields__field-wrapper #shipping_state').value.trim()) {
+                allFilled = false;
+            }
+        });
+        secondButton.disabled = !allFilled;
+    };
+    
+    secondInputs.forEach(input => {
+        input.addEventListener('input', checkSecondInputs);
+    });
+
+    secondButton.addEventListener('click', () => {
+        secondStep.classList.remove('active');
+        thirdStep.classList.add('active');
+        console.log(thirdStep);
+        secondStep.parentElement.classList.add('editable');
+    })
 });

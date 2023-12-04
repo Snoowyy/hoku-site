@@ -41,7 +41,7 @@ defined( 'ABSPATH' ) || exit;
 					woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
 				}
 				?>
-				<button id="final_step" type="button" class="">Continuar</button>
+				<button id="final_step" type="button" class="" disabled>Continuar</button>
 			</div>
 
 			<?php do_action( 'woocommerce_after_checkout_shipping_form', $checkout ); ?>

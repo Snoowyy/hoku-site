@@ -32,6 +32,25 @@ add_filter('woocommerce_checkout_get_value','__return_empty_string',10);
 // Remover el hook original
 remove_action('woocommerce_checkout_before_customer_details', array( 'mailpoet_woocommerce_checkout_optin_present', 'checkoutCheckbox' ));
 
+add_filter( 'woocommerce_cart_shipping_method_full_label', 'sww_wc_free_shipping_label', 10, 2 ); 
+
+function sww_wc_free_shipping_label( $label, $method ) {
+
+	if ( 0 == $method->cost ) {
+		$label = 'Gratis';
+	}
+
+	return $label;
+}
+
+/* Add to the functions.php file of your theme/plugin */
+
+add_filter( 'woocommerce_order_button_text', 'wc_custom_order_button_text' ); 
+
+function wc_custom_order_button_text() {
+    return __( 'Realizar pago', 'woocommerce' ); 
+}
+
 // Añadir el hook en la nueva posición
 // add_action('woocommerce_after_checkout_billing_form', array( 'mailpoet_woocommerce_checkout_optin', 'checkoutCheckbox' ));
 

@@ -47,12 +47,16 @@ $banner = get_field('banner', $postId);
     .header .menu__logo,
     .header .menu__icons #user_icon img,
     .header .menu__icons #search_icon svg,
-    .header .menu__icons #cart_icon img{
+    .header .menu__icons #cart_icon img,
+    .header .menu__icons .hamburguer{
         filter: brightness(0);
     }
     .header.open .menu__icons,
     .header.scrolled .menu__logo,
-    .header.scrolled .menu__icons {
+    .header.scrolled .menu__icons #user_icon img,
+    .header.scrolled .menu__icons #search_icon svg,
+    .header.scrolled .menu__icons #cart_icon img,
+    .header.scrolled .menu__icons .hamburguer{
         filter: unset;
     }
     .header:not(.scrolled) .header__content .menu__wrapper__items .menu-item a{

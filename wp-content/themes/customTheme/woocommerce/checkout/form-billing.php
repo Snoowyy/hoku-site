@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php do_action( 'woocommerce_before_checkout_billing_form', $checkout ); ?>
 
-	<div class="woocommerce-billing-fields__field-wrapper">
+	<div class="woocommerce-billing-fields__field-wrapper active">
 		<?php
 		$fields = $checkout->get_checkout_fields( 'billing' );
 
@@ -43,7 +43,7 @@ defined( 'ABSPATH' ) || exit;
 			<input type="checkbox" class="input-checkbox " name="shipping_newsletter" id="shipping_newsletter" value="1">
 			Enviarme novedades y ofertas por correo electrónico
 		</label>
-		<button id="next_step" type="button" class="">Continuar</button>
+		<button id="next_step" type="button" class="" disabled>Continuar</button>
 	</div>
 
 	<?php do_action( 'woocommerce_after_checkout_billing_form', $checkout ); ?>

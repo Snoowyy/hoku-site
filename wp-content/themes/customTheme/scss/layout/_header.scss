@@ -130,7 +130,6 @@
                         height: 28px;
                     }
                 }
-                #search_icon,
                 #user_icon{
                     display: none;
                     @include mq(lapS2){
@@ -227,7 +226,9 @@
                 right: 50%;
             }
         }
-        #cart_icon{
+        #cart_icon,
+        #search_icon{
+            transition: all 0s;
             opacity: 0;
             pointer-events: none;
             @include mq(lapS2){

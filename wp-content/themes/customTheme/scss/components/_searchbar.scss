@@ -1,3 +1,198 @@
+.dgwt-wcas-darkoverl-on{
+    position: fixed;
+    width: 100%;
+}
+
 .dgwt-wcas-darkened-overlay{
-    opacity: 0.8 !important;
+    opacity: 0 !important;
+}
+
+.dgwt-wcas-search-wrapp{
+    position: unset !important;
+    &.dgwt-wcas-layout-icon-open{
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(180deg, rgba(29, 29, 29, 0.00) 7.88%, #1D1D1D 43.31%);
+            opacity: 0.8;
+            z-index: -1;
+        }
+    }
+}
+
+body{
+    .dgwt-wcas-search-wrapp{
+        .dgwt-wcas-search-form{
+            left: 50% !important;
+            transform: translateX(-50%);
+            padding: 0 16px !important;
+            width: 100% !important;
+            max-width: 1440px !important;
+            margin: 0 auto !important;
+            background-color: unset !important;
+            min-width: unset !important;
+            @include mq(lapS2){
+                padding: 0 80px !important;
+            }
+            .dgwt-wcas-sf-wrapp{
+                background: unset;
+                display: flex;
+                input[type=search].dgwt-wcas-search-input{
+                    border-radius: 0 !important;
+                    border: solid var(--main-coffee-light, #F8EFEE);
+                    border-color: var(--main-coffee-light, #F8EFEE) !important;
+                    border-width: 0 0 1px;
+                    border-radius: unset;
+                    background-color: transparent;
+    
+                    color: var(--main-coffee-light, #F8EFEE);
+                    font-family: 'Gotham-Book';
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 24px;
+                    letter-spacing: 1px;
+
+                    padding: 16px !important;
+                    &::placeholder{
+                        color: var(--main-coffee-light, #F8EFEE);
+                        font-family: 'Gotham-Book';
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: 24px;
+                        letter-spacing: 1px;
+                    }
+                    &:hover{
+                        background-color: transparent !important;
+                    }
+                }
+                .dgwt-wcas-close{
+                    svg{
+                        path{
+                            fill: var(--main-coffee-light, #F8EFEE);
+                        }
+                    }
+                }
+                .dgwt-wcas-search-submit{
+                    display: flex !important;
+                    position: relative;
+                    width: unset;
+                    max-width: unset;
+                    height: unset;
+                    max-height: unset;
+                    inset: unset !important;
+                    padding: 12px 32px;
+                    border-radius: 4px;
+                    background: var(--main-coffee, #AA8364);
+                    opacity: 0.5;
+                    p{
+                        color: var(--main-white, #FFF);
+                        font-family: 'Gotham-Book';
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 22px;
+                        letter-spacing: 1px;
+                    }
+                    svg{
+                        display: none;
+                    }
+                    &:hover{
+                        background: var(--main-coffee, #AA8364);
+                        box-shadow: unset;
+                        border-radius: unset;
+                    }
+                }
+            }
+        }
+        &.dgwt-wcas-search-filled{
+            .dgwt-wcas-search-form{
+                .dgwt-wcas-sf-wrapp{
+                    .dgwt-wcas-search-submit{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    .dgwt-wcas-suggestions-wrapp{
+        margin-top: 32px !important;
+        background: transparent;
+        margin: 0 auto;
+        border: 0;
+        padding: 0 16px 32px;
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        display: grid;
+        gap: 40px;
+        max-height: 78vh !important;
+        @include mq(lapS2){
+            padding: 0 80px 32px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 80px 28px;
+            max-height: 82vh !important;
+        }
+        .dgwt-wcas-suggestion{
+            display: grid;
+            padding: 0 !important;
+            gap: 24px;
+            background-color: #FFF;
+            border-radius: 10px;
+            .dgwt-wcas-si{
+                width: 100%;
+                height: 350px;
+                img{
+                    background: transparent;
+                    border: 0;
+                    border-radius: unset;
+                    margin: unset;
+                    padding: unset;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                    max-height: unset;
+                    max-width: unset;
+                }
+            }
+            .dgwt-wcas-content-wrapp{
+                display: grid;
+                justify-items: start;
+                gap: 8px;
+                .dgwt-wcas-sp{
+                    padding: 0;
+                }
+                .dgwt-wcas-st-title{
+                    color: var(--main-gray-dark, #1D1D1D);
+                    font-family: Garamond;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 22px;
+                    letter-spacing: 1px;
+                    @include mq(lapS2){
+                        line-height: 24px;
+                        font-weight: 400;
+                    }
+                }
+                .woocommerce-Price-amount{
+                    color: var(--main-gray-dark, #1D1D1D);
+                    font-family: 'Gotham-Book';
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 22px;
+                    letter-spacing: 1px;
+                }
+            }
+            &.dgwt-wcas-suggestion-selected{
+                background-color: #FFF;
+            }
+        }
+    }
 }

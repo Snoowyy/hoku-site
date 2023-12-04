@@ -59,6 +59,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"],
+input[type="tel"],
 textarea,
 select{
   border: solid var(--main-dark-coffee, #76563C);
@@ -79,7 +80,6 @@ select{
 
 .select2{
   &-container{
-    margin-top: 4px !important;
     &--default .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-results__option--highlighted[data-selected]{
       background-color: var(--main-coffee, #AA8364) !important;
     }
@@ -98,7 +98,7 @@ select{
       font-size: 16px;
       font-style: normal;
       font-weight: 300;
-      line-height: 24px;
+      line-height: 24px !important;
       letter-spacing: 1px;
     }
     &__placeholder{
