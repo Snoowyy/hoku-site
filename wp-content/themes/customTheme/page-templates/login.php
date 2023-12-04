@@ -25,7 +25,7 @@ $banner = get_field('banner', $postId);
         <p class="form__send login__form_container__button">
             <?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
             <button type="submit" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>"><?php esc_html_e( 'Continuar', 'woocommerce' ); ?></button>
-            <input type="hidden" name="redirect" value="<?php echo esc_url( $redirect_url ); ?>" />
+            <input type="hidden" name="redirect" value="<?php echo esc_url( '/desktop' ); ?>" />
         </p>
         <input name="rememberme" type="checkbox" id="rememberme" value="forever" <?php checked( $rememberme ); ?> />
         <label for="rememberme"><?php esc_html_e( 'Recordar mis datos' ); ?></label>

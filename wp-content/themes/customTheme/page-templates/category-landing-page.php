@@ -1,6 +1,6 @@
 <?php
 /*=================
-Template Name: CLP
+Template Name: Category Listing
 ===================*/
 get_header('wordpress');
 

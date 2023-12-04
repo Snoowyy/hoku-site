@@ -1,6 +1,6 @@
 <?php
 /*=================
-Template Name: PLP
+Template Name: Product Listing
 ===================*/
 get_header('wordpress');
 
@@ -54,7 +54,7 @@ $material = get_terms('pa_material');
         <button id="openModalBtn" class="products__filter__button">Filtros</button>
         <div class="products__filter__selects">
             <div class="accordion">
-                <div class="accordion-item">
+                <div class="accordion-item" data-index="1">
                     <div class="accordion-header">
                         Talla 
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -66,15 +66,8 @@ $material = get_terms('pa_material');
                             </g>
                         </svg>
                     </div>
-                    <div class="accordion-content">
-                        <?php foreach ($talla as $value) { ?>
-                            <button class="variation">
-                                <?= $value->name ?>
-                            </button>
-                        <?php } ?>
-                    </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item" data-index="2">
                     <div class="accordion-header">
                         Color 
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -86,16 +79,8 @@ $material = get_terms('pa_material');
                             </g>
                         </svg>
                     </div>
-                    <div class="accordion-content">
-                        <?php foreach ($color as $value) {
-                            $color_ = get_term_meta($value->term_id, 'product_attribute_color', true);
-                        ?>
-                            <button class="variation" style="background-color: <?= esc_attr($color_) ?>">
-                            </button>
-                        <?php } ?>
-                    </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item" data-index="3">
                     <div class="accordion-header">
                         Material 
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -107,15 +92,8 @@ $material = get_terms('pa_material');
                             </g>
                         </svg>
                     </div>
-                    <div class="accordion-content">
-                        <?php foreach ($material as $value) { ?>
-                            <button class="variation">
-                                <?= $value->name ?>
-                            </button>
-                        <?php } ?>
-                    </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item" data-index="4">
                     <div class="accordion-header">
                         Precio 
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -127,15 +105,8 @@ $material = get_terms('pa_material');
                             </g>
                         </svg>
                     </div>
-                    <div class="accordion-content">
-                        <?php foreach ($material as $value) { ?>
-                            <button class="variation">
-                                <?= $value->name ?>
-                            </button>
-                        <?php } ?>
-                    </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item" data-index="5">
                     <div class="accordion-header">
                         Organizar por 
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -147,17 +118,47 @@ $material = get_terms('pa_material');
                             </g>
                         </svg>
                     </div>
-                    <div class="accordion-content">
-                        <div class="variation">
-                            Mayor a menor
-                        </div>
-                        <div class="variation">
-                            Menor a mayor
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
+        <div class="accordion-content" data-header="1">
+            <?php foreach ($talla as $value) { ?>
+                <button class="variation">
+                    <?= $value->name ?>
+                </button>
+            <?php } ?>
+        </div>
+        <div class="accordion-content" data-header="2">
+            <?php foreach ($color as $value) {
+                $color_ = get_term_meta($value->term_id, 'product_attribute_color', true);
+            ?>
+                <button class="variation" style="background-color: <?= esc_attr($color_) ?>">
+                </button>
+            <?php } ?>
+        </div>
+        <div class="accordion-content" data-header="3">
+            <?php foreach ($material as $value) { ?>
+                <button class="variation">
+                    <?= $value->name ?>
+                </button>
+            <?php } ?>
+        </div>
+        <div class="accordion-content" data-header="4">
+            <?php foreach ($material as $value) { ?>
+                <button class="variation">
+                    <?= $value->name ?>
+                </button>
+            <?php } ?>
+        </div>
+        <div class="accordion-content" data-header="5">
+            <div class="variation">
+                Mayor a menor
+            </div>
+            <div class="variation">
+                Menor a mayor
+            </div>
+        </div>
+        <hr class="products__filter__selects__divider"></hr>
     </div>
     <div class="products__container">
         <?php foreach ($products as $product) { 
@@ -321,21 +322,35 @@ $material = get_terms('pa_material');
             var header = item.querySelector(".accordion-header");
 
             header.addEventListener("click", function () {
+                debugger;
+                var accordionItems = document.querySelectorAll(".accordion-content.active");
+                accordionItems.forEach(function (active_item) {
+                    active_item.classList.remove("active");
+                })
                 var accordionItems = document.querySelectorAll(".accordion-item.active");
                 accordionItems.forEach(function (active_item) {
                     active_item.classList.remove("active");
                 })
-
-                if(item == prevFilter){
-                    item.classList.remove("active");
-                    prevFilter = undefined;
-                    return
+                item_content = document.querySelector(`[data-header="${item.dataset.index}"]`);
+                if (item_content) {
+                    if(item_content && item_content == prevFilter){
+                        item_content.classList.remove("active");
+                        item.classList.remove("active");
+                        prevFilter = undefined;
+                        return
+                    }
+                    item_content.classList.add("active");
+                    prevFilter = item_content;
+                } else {
+                    if(item == prevFilter){
+                        item.classList.remove("active");
+                        prevFilter = undefined;
+                        return
+                    }
+                    prevFilter = item;
                 }
-                
                 item.classList.add("active");
 
-
-                prevFilter = item;
             });
         });
     });

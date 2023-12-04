@@ -24,9 +24,9 @@ $customer_orders = wc_get_orders($args);
 ?>
 
 <div class="container">
-    <h3 class="title">MI CUENTA</h3>
     <div class="desktop">
         <div class="desktop__navigation">
+            <h3>MI CUENTA</h3>
             <select id="navigation">
                 <?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
                     <option value="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></option>
@@ -36,7 +36,7 @@ $customer_orders = wc_get_orders($args);
         <?php if ( $customer_orders ) : ?>
         <div class="desktop__orders">
             <h4>Pedidos</h4>
-            <div class="desktop__orders__order__columns">
+            <div class="desktop__orders__columns">
                 <span>Orden</span>
                 <span>Fecha</span>
                 <span>Estado</span>
@@ -47,7 +47,7 @@ $customer_orders = wc_get_orders($args);
             $item_count = $order->get_item_count();
             ?>
                 <div class="desktop__orders__order">
-                    <span><b><?php echo _x( '#', 'hash before order number', 'woocommerce' ) . $order->id; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></b></span>
+                    <span><b><?php echo _x( '#', 'hash before order number', 'woocommerce' ) . $order->get_id(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></b></span>
                     <span><time datetime="<?php echo esc_attr( $order->get_date_created()->date( 'c' ) ); ?>"><?php echo esc_html( wc_format_datetime( $order->get_date_created() ) ); ?></time></span>
                     <span><?php echo esc_html( wc_get_order_status_name( $order->get_status() ) ); ?></span>
                     <span><?php
@@ -60,7 +60,7 @@ $customer_orders = wc_get_orders($args);
                     if ( ! empty( $actions ) ) {
                         foreach ( $actions as $key => $action ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
                             if($action['name'] == 'View') {
-                                echo '<a class="button" href="' . '/view-order?order=' . $order->id . '" class="button ' . sanitize_html_class( $key ) . '">' . 'Ver pedido' . '</a>';
+                                echo '<a class="button" href="' . '/view-order?order=' . $order->get_id() . '" class="button ' . sanitize_html_class( $key ) . '">' . 'Ver pedido' . '</a>';
                             }
                         }
                     }
@@ -91,7 +91,5 @@ $customer_orders = wc_get_orders($args);
     }
 </style>
 <script>
-    var dynamic = document.getElementById('navigation');
-    dynamic.setAttribute('size', dynamic.childElementCount)
 </script>
 <?php get_footer(); ?>
