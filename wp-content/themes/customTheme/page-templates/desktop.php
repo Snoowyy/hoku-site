@@ -13,32 +13,41 @@ $allowed_html = array(
 ?>
 <div class="container">
     <div class="desktop">
-        <div class="desktop__navigation">
-            <h3>MI CUENTA</h3>
-            <select id="navigation">
-                <?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
-                    <option>
-                        <a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
-                    </option>
-                <?php endforeach; ?>
-            </select>
-        </div>
-        <div class="desktop__dashboard">
-            <h4>
-                <?= get_the_title($postId) ?>
-            </h4>
-            <div class="desktop__dashboard__description">
-                <p>
-                    <?php
-                        printf(
-                            /* translators: 1: user display name 2: logout url */
-                            wp_kses( __( 'Hola <b>%1$s</b> (¿No eres <b>%1$s</b>? <a href="%2$s">Cerrar sesión</a>)', 'woocommerce' ), $allowed_html ),
-                            '<strong>' . esc_html( $current_user->display_name ) . '</strong>',
-                            esc_url( wc_logout_url() )
-                        );
-                    ?>
-                </p>
-                <p><?= $description ?></p>
+        <h3>MI CUENTA</h3>
+        <div class="desktop__container">
+            <div class="desktop__navigation">
+                <select onchange="redirectOnChange(this)">
+                    <option value="/desktop">Escritorio</option>
+                    <option value="/orders">Pedidos</option>
+                    <option value="/address">Dirección</option>
+                    <option value="/account">Detalles de la cuenta</option>
+                    <option value="/desktop">Salir</option>
+                </select>
+                <div class="desktop__navigation__wrapper">
+                    <a href="/desktop" class="active">Escritorio</a>
+                    <a href="/orders">Pedidos</a>
+                    <a href="/address">Dirección</a>
+                    <a href="/account">Detalles de la cuenta</a>
+                    <a href="/desktop">Salir</a>
+                </div>
+            </div>
+            <div class="desktop__dashboard">
+                <h4>
+                    <?= get_the_title($postId) ?>
+                </h4>
+                <div class="desktop__dashboard__description">
+                    <p>
+                        <?php
+                            printf(
+                                /* translators: 1: user display name 2: logout url */
+                                wp_kses( __( 'Hola <b>%1$s</b> (¿No eres <b>%1$s</b>? <a href="%2$s">Cerrar sesión</a>)', 'woocommerce' ), $allowed_html ),
+                                '<strong>' . esc_html( $current_user->display_name ) . '</strong>',
+                                esc_url( wc_logout_url() )
+                            );
+                        ?>
+                    </p>
+                    <p><?= $description ?></p>
+                </div>
             </div>
         </div>
     </div>
@@ -63,8 +72,4 @@ $allowed_html = array(
         color: var(--main-gray-dark, #1D1D1D);
     }
 </style>
-<script>
-    var dynamic = document.getElementById('navigation');
-    dynamic.setAttribute('size', dynamic.childElementCount)
-</script>
 <?php get_footer(); ?>

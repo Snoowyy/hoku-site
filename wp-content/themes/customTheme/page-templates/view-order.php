@@ -34,63 +34,78 @@ $allowed_html = array(
 
 <div class="container">
     <div class="desktop">
-        <div class="desktop__navigation">
-            <h3>MI CUENTA</h3>
-            <select id="navigation">
-                <?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
-                    <option value="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></option>
-                <?php endforeach; ?>
-            </select>
-        </div>
-        <div class="desktop__order">
-            <h4>Pedidos</h4>
-            <p class="desktop__order__description">
-                <?php
-                    printf(
-                        /* translators: 1: user display name 2: logout url */
-                        wp_kses( __( 'Orden %1$s fue creada en %2$s su actual estado es %3$s', 'woocommerce' ), $allowed_html ),
-                        '<b>' . esc_html( $order->get_id() ) . '</b>',
-                        '<b>' . esc_html( wc_format_datetime( $order->get_date_created() ) ) . '</b>',
-                        '<b>' . esc_html( wc_get_order_status_name( $order->get_status() ) ) . '</b>'
-                    );
-                ?>
-            </p>
-            <a class="desktop__order__return">Volver</a>
-            <div class="desktop__order__detail">
-                <h4>Detalles de la orden</h4>
-                <?php foreach ($order->get_items() as $item_id => $item ) {
-                    $product = $item->get_product();
-                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product->get_parent_id() ), 'single-post-thumbnail' );
-                ?>
-                    <div class="desktop__order__detail__product">
-                        <img src="<?= $image[0]; ?>" alt="">
-                        <div class="desktop__order__detail__product__detail">
-                            <h5><?= $product->get_title() ?></h5>
-                            <p>Cantidad: <?= $item->get_quantity() ?></p>
-                            <p><?= $product->get_attribute_summary() ?></p>
-                            <p><b>Subtotal: <?= get_woocommerce_currency_symbol( get_woocommerce_currency() ) .number_format($item->get_subtotal()) ?></b></p>
-                            <p>Metodo de pago:  Tarjeta de credito</p>
-                            <p><b>Total: <?= get_woocommerce_currency_symbol( get_woocommerce_currency() ) .number_format($item->get_total()) ?></b></p>
+        <h3>MI CUENTA</h3>
+        <div class="desktop__container">
+            <div class="desktop__navigation">
+                <select onchange="redirectOnChange(this)">
+                    <option value="/orders">Pedidos</option>
+                    <option value="/desktop">Escritorio</option>
+                    <option value="/address">Dirección</option>
+                    <option value="/account">Detalles de la cuenta</option>
+                    <option value="/desktop">Salir</option>
+                </select>
+                <div class="desktop__navigation__wrapper">
+                    <a href="/desktop">Escritorio</a>
+                    <a href="/orders" class="active">Pedidos</a>
+                    <a href="/address">Dirección</a>
+                    <a href="/account">Detalles de la cuenta</a>
+                    <a href="/desktop">Salir</a>
+                </div>
+            </div>
+            <div class="desktop__order">
+                <h4>Pedidos</h4>
+                <div class="desktop__order__actions">
+                    <p class="desktop__order__actions__description">
+                        <?php
+                            printf(
+                                /* translators: 1: user display name 2: logout url */
+                                wp_kses( __( 'Orden %1$s fue creada en %2$s su actual estado es %3$s', 'woocommerce' ), $allowed_html ),
+                                '<b>' . esc_html( $order->get_id() ) . '</b>',
+                                '<b>' . esc_html( wc_format_datetime( $order->get_date_created() ) ) . '</b>',
+                                '<b>' . esc_html( wc_get_order_status_name( $order->get_status() ) ) . '</b>'
+                            );
+                        ?>
+                    </p>
+                    <a class="desktop__order__actions__return" href="/orders">Volver</a>
+                </div>
+                <div class="desktop__order__detail">
+                    <h4>Detalles de la orden</h4>
+                    <?php foreach ($order->get_items() as $item_id => $item ) {
+                        $product = $item->get_product();
+                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $product->get_parent_id() ), 'single-post-thumbnail' );
+                    ?>
+                        <div class="desktop__order__detail__product">
+                            <img src="<?= $image[0]; ?>" alt="">
+                            <div class="desktop__order__detail__product__detail">
+                                <h5><?= $product->get_title() ?></h5>
+                                <p>Cantidad: <?= $item->get_quantity() ?></p>
+                                <p><?= $product->get_attribute_summary() ?></p>
+                                <p><b>Subtotal: <?= get_woocommerce_currency_symbol( get_woocommerce_currency() ) .number_format($item->get_subtotal()) ?></b></p>
+                                <p>Metodo de pago:  Tarjeta de credito</p>
+                                <p><b>Total: <?= get_woocommerce_currency_symbol( get_woocommerce_currency() ) .number_format($item->get_total()) ?></b></p>
+                            </div>
+                        </div>
+                    <?php }?>
+                    <div class="desktop__order__detail__address__container">
+                        <div class="desktop__order__detail__address">
+                            <h4>Dirección de envio</h4>
+                            <p><?= $shipping_address_1 ?></p>
+                            <p><?= $shipping_address_2 ?></p>
+                            <p><?= WC()->countries->countries[ $shipping_country ]; ?></p>
+                            <p><?= $shipping_city ?></p>
+                            <p><?= $shipping_postcode ?></p>
+                            <p><?= $shipping_phone ?></p>
+                        </div>
+                        <div class="desktop__order__detail__address">
+                            <h4>Dirección de facturación</h4>
+                            <p><?= $billing_address_1 ?></p>
+                            <p><?= $billing_address_2 ?></p>
+                            <p><?= WC()->countries->countries[ $billing_country ]; ?></p>
+                            <p><?= $billing_city ?></p>
+                            <p><?= $billing_postcode ?></p>
+                            <p><?= $billing_phone ?></p>
                         </div>
                     </div>
-                <?php }?>
-                <h4>Dirección de envio</h4>
-                <div class="desktop__order__detail__address">
-                    <p><?= $shipping_address_1 ?></p>
-                    <p><?= $shipping_address_2 ?></p>
-                    <p><?= WC()->countries->countries[ $shipping_country ]; ?></p>
-                    <p><?= $shipping_city ?></p>
-                    <p><?= $shipping_postcode ?></p>
-                    <p><?= $shipping_phone ?></p>
-                </div>
-                <h4>Dirección de facturación</h4>
-                <div class="desktop__order__detail__address">
-                    <p><?= $billing_address_1 ?></p>
-                    <p><?= $billing_address_2 ?></p>
-                    <p><?= WC()->countries->countries[ $billing_country ]; ?></p>
-                    <p><?= $billing_city ?></p>
-                    <p><?= $billing_postcode ?></p>
-                    <p><?= $billing_phone ?></p>
                 </div>
             </div>
         </div>

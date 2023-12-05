@@ -11,5 +11,13 @@
         </div>
     </div>
 </footer>
+<script>
+    function redirectOnChange(selectElement) {
+        var selectedValue = selectElement.value;
 
+        if (selectedValue) {
+            window.location.href = selectedValue;
+        }
+    }
+</script>
 <?php wp_footer() ?>

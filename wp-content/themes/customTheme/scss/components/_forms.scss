@@ -76,6 +76,7 @@ select{
   &::placeholder{
     color: var(--main-dark-coffee, #76563C);
   }
+  -webkit-appearance: none;
 }
 
 .select2{
