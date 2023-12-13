@@ -25,9 +25,24 @@ $args = array(
 $products = get_posts($args);
 
 // Obtiene todos los términos de la taxonomía del atributo
-$color = get_terms('pa_color');
-$talla = get_terms('pa_talla');
-$material = get_terms('pa_material');
+$color_filter = array(
+    'taxonomy' => 'pa_color',
+    'hide_empty' => true,
+);
+isset($_GET['color']) ? $color_filter['include'] = explode(',',$_GET['color']) : [];
+$talla_filter = array(
+    'taxonomy' => 'pa_talla',
+    'hide_empty' => true,
+);
+isset($_GET['talla']) ? $talla_filter['include'] = explode(',',$_GET['talla']) : [];
+$material_filter = array(
+    'taxonomy' => 'pa_material',
+    'hide_empty' => true,
+);
+isset($_GET['material']) ? $material_filter['include'] = explode(',',$_GET['material']) : [];
+$color = get_terms( $color_filter );
+$talla = get_terms( $talla_filter );
+$material = get_terms( $material_filter );
 ?>
 <section class="main-banner">
     <div class="main-swiper swiper">
@@ -322,7 +337,6 @@ $material = get_terms('pa_material');
             var header = item.querySelector(".accordion-header");
 
             header.addEventListener("click", function () {
-                debugger;
                 var accordionItems = document.querySelectorAll(".accordion-content.active");
                 accordionItems.forEach(function (active_item) {
                     active_item.classList.remove("active");
