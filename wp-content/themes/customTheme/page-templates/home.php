@@ -18,59 +18,30 @@ $featured_products = [
     'main' => get_field('main_featured', $postId),
     'products' => get_field('products', $postId)
 ];
+$carrousel = get_field('carrousel', $postId);
 
 ?>
 <section class="main-banner">
     <div class="main-swiper swiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="swiper-slide__wrapper" style="
-                    background-image: url('wp-content/themes/customTheme/images/Lifestyle.jpg');
-                ">
-                    <div class="container">
-                        <div class="swiper-slide__wrapper__image">
-                            <img src="wp-content/themes/customTheme/images/Lifestyle.jpg" alt="">
-                        </div>
-                        <div class="swiper-slide__wrapper__texts">
-                            <p class="title">PASO A LA ELEGANCIA</p>
-                            <p class="description">Encuentra el par perfecto en nuestra colección de zapatos. Comodidad y estilo que te harán destacar.</p>
-                            <a href="#" class="button">Descubre más</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-slide__wrapper" style="
-                    background-image: url('wp-content/themes/customTheme/images/Lifestyle3.jpg');
-                ">
-                    <div class="container">
-                        <div class="swiper-slide__wrapper__image">
-                            <img src="wp-content/themes/customTheme/images/Lifestyle3.jpg" alt="">
-                        </div>
-                        <div class="swiper-slide__wrapper__texts">
-                            <p class="title">PASO A LA ELEGANCIA</p>
-                            <p class="description">Encuentra el par perfecto en nuestra colección de zapatos. Comodidad y estilo que te harán destacar.</p>
-                            <a href="#" class="button">Descubre más</a>
+            <?php foreach ($carrousel as $slide) { ?>
+                <div class="swiper-slide">
+                    <div class="swiper-slide__wrapper" style="
+                        background-image: url('<?= $slide['image']?>');">
+                        <div class="container">
+                            <div class="swiper-slide__wrapper__image">
+                                <img src="<?= $slide['image']?>" alt="">
+                            </div>
+                            <div class="swiper-slide__wrapper__texts">
+                                <p class="title"><?= $slide['title'] ?></p>
+                                <p class="description"><?= $slide['description']?></p>
+                                <a href="<?= $slide['cta']?>" class="button">Descubre más</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="swiper-slide__wrapper" style="
-                    background-image: url('wp-content/themes/customTheme/images/Lifestyle.jpg');
-                ">
-                    <div class="container">
-                        <div class="swiper-slide__wrapper__image">
-                            <img src="wp-content/themes/customTheme/images/Lifestyle.jpg" alt="">
-                        </div>
-                        <div class="swiper-slide__wrapper__texts">
-                            <p class="title">PASO A LA ELEGANCIA</p>
-                            <p class="description">Encuentra el par perfecto en nuestra colección de zapatos. Comodidad y estilo que te harán destacar.</p>
-                            <a href="#" class="button">Descubre más</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php }?>
+
         </div>
         <div class="scroll-bar">
             <div id="main_banner_slider_prev" class="swiper-button-prev"></div>
