@@ -147,6 +147,25 @@ $gothamFonts: (
   }
 }
 
+$garamondFonts: (
+  "Garamond": (
+    ("Regular", 300, normal),
+    ("Regular", 400, normal),
+    ("Bold", 700, normal)
+  )
+);
+
+@each $font-family, $weights in $garamondFonts {
+  @each $weight in $weights {
+    @font-face {
+      font-family: unquote($font-family);
+      src: url('#{$base-path}garamond/#{$font-family}-#{nth($weight, 1)}.ttf') format('truetype');
+      font-weight: nth($weight, 2);
+      font-style: nth($weight, 3);
+    }
+  }
+}
+
 @mixin display(){
   font-family: "Gotham-Book", sans-serif;
   font-size: 54px;

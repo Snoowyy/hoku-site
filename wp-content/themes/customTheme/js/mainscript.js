@@ -266,17 +266,19 @@ document.addEventListener("DOMContentLoaded", function () {
         input.addEventListener('input', checkInputs);
     });
 
-    document.querySelector('#shipping_state_field').addEventListener('click', () => {
-        document.querySelector('.select2-results__options').addEventListener('click', checkInputs);
-    });
+    if(document.querySelector('#shipping_state_field')){
+        document.querySelector('#shipping_state_field').addEventListener('click', () => {
+            document.querySelector('.select2-results__options').addEventListener('click', checkInputs);
+        });
+    }
 
-
-
-    firstButton.addEventListener('click', () => {
-        fistStep.classList.remove('active');
-        secondStep.classList.add('active');
-        fistStep.parentElement.classList.add('editable');
-    })
+    if(firstButton){
+        firstButton.addEventListener('click', () => {
+            fistStep.classList.remove('active');
+            secondStep.classList.add('active');
+            fistStep.parentElement.classList.add('editable');
+        })
+    }
 
     const checkSecondInputs = () => {
         let allFilled = true;
@@ -288,14 +290,19 @@ document.addEventListener("DOMContentLoaded", function () {
         secondButton.disabled = !allFilled;
     };
     
-    secondInputs.forEach(input => {
-        input.addEventListener('input', checkSecondInputs);
-    });
+    if(secondInputs){
+        secondInputs.forEach(input => {
+            input.addEventListener('input', checkSecondInputs);
+        });
+    }
 
-    secondButton.addEventListener('click', () => {
-        secondStep.classList.remove('active');
-        thirdStep.classList.add('active');
-        console.log(thirdStep);
-        secondStep.parentElement.classList.add('editable');
-    })
+    if(secondButton){
+        secondButton.addEventListener('click', () => {
+            secondStep.classList.remove('active');
+            thirdStep.classList.add('active');
+            console.log(thirdStep);
+            secondStep.parentElement.classList.add('editable');
+        })
+    }
+
 });
