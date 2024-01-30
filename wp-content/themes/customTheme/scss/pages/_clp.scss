@@ -19,7 +19,6 @@
         @include mq(lapS2) {
             width: 100%;
             height: 583px;
-            gap: 24px;
             img {
                 width: 626px;
                 height: 583px;
@@ -38,9 +37,9 @@
         .amount{
             gap: 16px;
             color: var(--main-gray-dark, #1D1D1D);
-            /* Text/400/Extra Large */
-            font-family: "Gotham";
-            font-size: 20px;
+            /*  */
+            font-family: "Gotham Light";
+            font-size: 14px;
             font-style: normal;
             font-weight: 300;
             line-height: 28px; /* 140% */
@@ -64,13 +63,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 328px;
         padding: 12px 32px;
         border-radius: 4px;
         background: var(--main-dark-coffee, #76563C);
         color: var(--main-white, #FFF);
         /* Text/600/Small */
-        font-family: "Gotham";
+        font-family: "Gotham Medium";
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
@@ -156,7 +154,7 @@
             text-align: center;
 
             /* Text/400/Large */
-            font-family: 'Gotham';
+            font-family: 'Gotham Light';
             font-size: 16px;
             font-style: normal;
             font-weight: 300;
@@ -224,7 +222,7 @@
             color: var(--main-coffee-light, #F8EFEE);
 
             /* Text/400/Large */
-            font-family: "Gotham";
+            font-family: "Gotham Light";
             font-size: 16px;
             font-style: normal;
             font-weight: 300;

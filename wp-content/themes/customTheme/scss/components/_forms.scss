@@ -12,7 +12,7 @@ body{
           height: auto;
           border: 0;
           color: var(--main-gray-dark, #1D1D1D);
-          font-family: 'Gotham';
+          font-family: 'Gotham Light';
           font-size: 16px;
           font-style: normal;
           font-weight: 300;
@@ -37,7 +37,7 @@ body{
               max-width: 60px;
               border: 0;
               color: var(--main-gray-dark, #1D1D1D);
-              font-family: 'Gotham';
+              font-family: 'Gotham Light';
               font-size: 16px;
               font-style: normal;
               font-weight: 300;
@@ -66,7 +66,7 @@ select{
   border-width: 0 0 1px;
   padding: 16px;
   color: var(--main-dark-coffee, #76563C);
-  font-family: 'Gotham';
+  font-family: 'Gotham Light';
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
@@ -95,7 +95,7 @@ select{
     &__rendered{
       padding: 0 !important;
       color: var(--main-dark-coffee, #76563C) !important;
-      font-family: 'Gotham';
+      font-family: 'Gotham Light';
       font-size: 16px;
       font-style: normal;
       font-weight: 300;
@@ -104,7 +104,7 @@ select{
     }
     &__placeholder{
       color: var(--main-dark-coffee, #76563C) !important;
-      font-family: 'Gotham';
+      font-family: 'Gotham Light';
       font-size: 16px;
       font-style: normal;
       font-weight: 300;
@@ -122,7 +122,7 @@ select{
   &-results{
     &__option{
       color: var(--main-gray-dark, #1D1D1D) !important;
-      font-family: 'Gotham';
+      font-family: 'Gotham Light';
       font-size: 16px;
       font-style: normal;
       font-weight: 300;
@@ -144,7 +144,7 @@ select{
   color: var(--main-coffee, #AA8364);
 
   /* Text/600/Small */
-  font-family: "Gotham";
+  font-family: "Gotham Medium";
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -159,7 +159,7 @@ select{
     border-radius: 4px;
     background: var(--main-dark-coffee, #76563C);
     color: var(--main-white, #FFF);
-    font-family: 'Gotham';
+    font-family: 'Gotham Medium';
     font-size: 14px;
     font-style: normal;
     font-weight: 800;
@@ -193,7 +193,7 @@ input[type="checkbox"] + label,
   cursor: pointer;
   color: var(--main-gray-dark, #1D1D1D);
   /* Text/400/Large */
-  font-family: 'Gotham';
+  font-family: 'Gotham Light';
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
