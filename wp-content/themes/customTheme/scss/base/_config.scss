@@ -126,25 +126,46 @@ $aleoFonts: (
   }
 }
 
-$gothamFonts: (
-  "Gotham": (
-    ("Thin", 100, normal),
-    ("Light", 300, normal),
-    ("Book", 400, normal),
-    ("Medium", 500, normal),
-    ("Bold", 700, normal)
-  )
-);
+// $gothamFonts: (
+//   "Gotham": (
+//     ("Thin", 100, normal),
+//     ("Light", 300, normal),
+//     ("Book", 400, normal),
+//     ("Medium", 500, normal),
+//     ("Bold", 700, normal)
+//   )
+// );
 
-@each $font-family, $weights in $gothamFonts {
-  @each $weight in $weights {
-    @font-face {
-      font-family: unquote($font-family);
-      src: url('#{$base-path}gotham/#{$font-family}-#{nth($weight, 1)}.ttf') format('truetype');
-      font-weight: nth($weight, 2);
-      font-style: nth($weight, 3);
-    }
-  }
+// @each $font-family, $weights in $gothamFonts {
+//   @each $weight in $weights {
+//     @font-face {
+//       font-family: unquote($font-family);
+//       src: url('#{$base-path}gotham/#{$font-family}-#{nth($weight, 1)}.ttf') format('truetype');
+//       font-weight: nth($weight, 2);
+//       font-style: nth($weight, 3);
+//     }
+//   }
+// }
+
+@font-face {
+  font-family: "Gotham Light";
+  src: url('#{$base-path}gotham/Gotham-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham Medium";
+  src: url('#{$base-path}gotham/Gotham-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham Bold";
+  src: url('#{$base-path}gotham/Gotham-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
 }
 
 $garamondFonts: (
