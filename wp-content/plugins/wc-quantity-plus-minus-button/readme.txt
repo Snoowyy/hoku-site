@@ -4,7 +4,7 @@ Contributors: codersaiful, codeastrology, unikforce, fazlebari, autocircled
 Tags: woocommerce quantity, plus minus button, quantity, qty button
 Requires at least: 4.0.0
 Tested up to: 6.4.2
-Stable tag: 1.1.9
+Stable tag: 1.2.0
 Requires PHP: 5.4
 License: GPL3+
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -165,6 +165,7 @@ That's it. So easy, Right !!!
 == Change log ==
 
 = 1.1.9 =
+* Nonce issue fixed.
 * Added: new setting field added for input box height and width.
 * Add input box width change option
 * Add input box height change option

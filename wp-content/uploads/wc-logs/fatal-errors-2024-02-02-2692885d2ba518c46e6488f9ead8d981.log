@@ -1,0 +1,8 @@
+2024-02-02T03:59:27+00:00 CRITICAL Uncaught Error: Call to a member function get_name() on string in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/single-product.php:7
+Stack trace:
+#0 /shared/httpd/hoku-site/htdocs/wp-includes/template-loader.php(106): include()
+#1 /shared/httpd/hoku-site/htdocs/wp-blog-header.php(19): require_once('/shared/httpd/h...')
+#2 /shared/httpd/hoku-site/htdocs/index.php(17): require('/shared/httpd/h...')
+#3 {main}
+  thrown in /shared/httpd/hoku-site/htdocs/wp-content/themes/customTheme/single-product.php on line 7
+
