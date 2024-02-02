@@ -13,7 +13,32 @@
             align-items: center;
             justify-content: space-between;
             padding: 16px 0;
+            &__message{
+                position: absolute;
+                width: 100%;
+                z-index: 2;
+                left: 0;
+                top: 0;
+                background-color: #373737;
+                padding: 16px 0 10px;
+                p{
+                    text-align: center;
+                    font-family: 'Gotham Medium';
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                    color: #FFF;
+
+                }
+            }
             &__logo{
+                &.gap{
+                    padding-top: 74px;
+                    @include mq(lapS2){
+                        padding-top: 50px;
+                    }
+                }
                 a{
                     display: flex;
                     width: 62px;
@@ -40,6 +65,12 @@
                     top: unset;
                     left: unset;
                     height: auto;
+                }
+                &.gap{
+                    padding-top: 74px;
+                    @include mq(lapS2){
+                        padding-top: 50px;
+                    }
                 }
                 &__items{
                     ul{
@@ -124,6 +155,12 @@
                 display: flex;
                 gap: 22px;
                 align-items: center;
+                &.gap{
+                    padding-top: 74px;
+                    @include mq(lapS2){
+                        padding-top: 50px;
+                    }
+                }
                 #search_icon{
                     svg{
                         width: 28px;
@@ -403,6 +440,46 @@
             letter-spacing: 1px;
             border-radius: 4px;
             border: 1px solid var(--main-coffee, #AA8364);
+        }
+    }
+}
+
+.cky-consent-container{
+    left: 16px !important;
+    right: 16px !important;
+    width: unset !important;
+    @include mq(lapS2){
+        width: 80vw !important;
+        max-width: 760px !important;
+    }
+    .cky-consent-bar{
+        padding: 32px 16px !important;
+        @include mq(lapS2){
+            padding: 32px 40px !important;
+        }
+        .cky-title{
+            display: none !important;
+        }
+        .cky-notice-group{
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            @include mq(lapS2){
+                grid-template-columns: 1.2fr 0.8fr !important;
+                gap: 10px !important;
+            }
+            .cky-notice-des{
+                p{
+                    font-family: 'Gotham Light' !important;
+                    font-size: 16px !important;
+                    line-height: 24px !important;
+                    letter-spacing: 1px !important;
+                    font-weight: 300 !important;
+                    text-align: left !important;
+                }
+            }
+            .cky-notice-btn-wrapper{
+                margin-top: 0 !important;
+            }
         }
     }
 }

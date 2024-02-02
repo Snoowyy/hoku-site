@@ -70,7 +70,7 @@
         &__button {
             display: flex;
             width: 100%;
-            padding: 12px 32px;
+            padding: 14px 32px 8px;
             justify-content: center;
             align-items: center;
             border-radius: 4px;
@@ -84,6 +84,7 @@
             font-weight: 500;
             line-height: 22px; /* 157.143% */
             letter-spacing: 1px;
+            border: 0;
             @include mq(lapS2) {
                 display: none;
             }

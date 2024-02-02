@@ -130,7 +130,7 @@
                         letter-spacing: 1px;
                         border-radius: 4px;
                         background: var(--main-coffee, #AA8364);
-                        padding: 12px 32px;
+                        padding: 14px 32px 8px;;
                         border: 0;
                         width: 100%;
                         cursor: pointer;
@@ -257,6 +257,7 @@
 .pride-swiper{
     overflow: hidden;
     margin-bottom: 32px;
+    border-radius: 10px;
     @include mq(lapS2){
         margin-bottom: 60px;
     }
@@ -264,6 +265,7 @@
         .swiper-slide{
             width: fit-content;
             overflow: hidden;
+            display: flex;
             img{
                 width: 100%;
             }

@@ -35,20 +35,32 @@ function my_wp_nav_menu_items( $items, $args ) {
     $menu = wp_get_nav_menu_object($args->menu);
     
     if( $args->theme_location == 'header-menu' ) {
+        $message = get_field('header_message', $menu);
         $logo = get_field('logo_image', $menu);
         $userLogo = get_field('user_image', $menu);
         $searchLogo = get_field('search_image', $menu);
         $cartLogo = get_field('cart_image', $menu);
 
+        if($message){
+            $gap = ' gap';
+            $header__message =
+            '<div class="menu__message">
+                <p>'.$message.'</p>
+            </div>';
+        }else{
+            $gap = '';
+            $header__message = '';
+        }
+
         $html_logo =
-        '<div class="menu__logo">
+        '<div class="menu__logo'.$gap.'">
             <a href="'.home_url().'">
                 <img src="'.$logo['url'].'" alt="'.$logo['alt'].'" />
             </a>
         </div>';
 
         $items_wrapper =
-        '<div class="menu__wrapper">
+        '<div class="menu__wrapper'.$gap.'">
             <div class="menu__wrapper__items">
                 <ul>
                     '.$items.'
@@ -63,7 +75,7 @@ function my_wp_nav_menu_items( $items, $args ) {
         </div>';
 
         $icons_wrapper =
-        '<div class="menu__icons">
+        '<div class="menu__icons'.$gap.'">
             <div id="user_icon" class="icon">
                 <a href="/login"><img src="'.$userLogo['url'].'" alt="'.$userLogo['alt'].'" /></a>
             </div>
@@ -94,7 +106,7 @@ function my_wp_nav_menu_items( $items, $args ) {
         });
        </script>';
 
-        $items = $html_logo . $items_wrapper . $icons_wrapper;
+        $items = $header__message . $html_logo . $items_wrapper . $icons_wrapper;
     }
     else if( $args->theme_location == 'footer-menu' ){
         $locations = get_nav_menu_locations();
