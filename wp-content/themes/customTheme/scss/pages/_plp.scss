@@ -26,7 +26,7 @@
             .title {
                 color: var(--main-gray-dark, #1D1D1D);
                 /* Desktop/Heading/Mobile/H6 */
-                font-family: Garamond;
+                font-family: "Garamond", sans-serif;
                 font-size: 18px;
                 font-style: normal;
                 font-weight: 400;
@@ -42,7 +42,7 @@
                 gap: 16px;
                 color: var(--main-gray-dark, #1D1D1D);
                 /* Text/400/Extra Large */
-                font-family: "Gotham Light";
+                font-family: "Gotham Light", sans-serif;
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 300;
@@ -78,7 +78,7 @@
             color: var(--main-white, #FFF);
 
             /* Text/600/Small */
-            font-family: "Gotham Medium";
+            font-family: "Gotham Medium", sans-serif;
             font-size: 14px;
             font-style: normal;
             font-weight: 500;

@@ -82,7 +82,7 @@ select{
 
 input[type="submit"]{
   display: block;
-  font-family: "Gotham Medium";
+  font-family: "Gotham Medium", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 21px;
@@ -163,7 +163,7 @@ input[type="submit"]{
   color: var(--main-coffee, #AA8364);
 
   /* Text/600/Small */
-  font-family: "Gotham Medium";
+  font-family: "Gotham Medium", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;

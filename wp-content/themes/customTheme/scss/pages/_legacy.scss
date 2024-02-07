@@ -19,7 +19,7 @@
         padding: 0 16px;
         &__title{
             color: var(--main-dark-coffee, #76563C);
-            font-family: Garamond;
+            font-family: "Garamond", sans-serif;
             font-size: 34px;
             font-style: normal;
             font-weight: 400;
@@ -107,7 +107,7 @@
         }
         &__title{
             color: var(--main-dark-coffee, #76563C);
-            font-family: Garamond;
+            font-family: "Garamond", sans-serif;
             font-size: 48px;
             font-style: normal;
             font-weight: 400;
@@ -181,7 +181,7 @@
         }
         &__title{
             color: var(--main-coffee-light, #F8EFEE);
-            font-family: Garamond;
+            font-family: "Garamond", sans-serif;
             font-size: 42px;
             font-style: normal;
             font-weight: 400;

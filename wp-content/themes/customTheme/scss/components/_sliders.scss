@@ -88,7 +88,7 @@
                         
                         text-align: center;
                         /* Desktop/Heading/Mobile/H1 */
-                        font-family: Garamond;
+                        font-family: "Garamond", sans-serif;
                         font-size: 42px;
                         font-style: normal;
                         font-weight: 400;
@@ -106,7 +106,7 @@
                         color: var(--main-coffee-light, #F8EFEE);
 
                         /* Text/400/Small */
-                        font-family: "Gotham Light";
+                        font-family: "Gotham Light", sans-serif;
                         font-size: 14px;
                         font-style: normal;
                         font-weight: 300;
@@ -122,7 +122,7 @@
                     }
                     .button{
                         color: var(--main-white, #FFF);
-                        font-family: "Gotham Medium";
+                        font-family: "Gotham Medium", sans-serif;
                         font-size: 14px;
                         font-style: normal;
                         font-weight: 800;
@@ -162,7 +162,7 @@
                         color: var(--main-coffee-light, #F8EFEE);
 
                         /* Desktop/Heading/Mobile/H1 */
-                        font-family: Garamond;
+                        font-family: "Garamond", sans-serif;
                         font-size: 42px;
                         font-style: normal;
                         font-weight: 400;
@@ -178,7 +178,7 @@
                         color: var(--main-coffee-light, #F8EFEE);
 
                         /* Text/400/Small */
-                        font-family: "Gotham Light";
+                        font-family: "Gotham Light", sans-serif;
                         font-size: 14px;
                         font-style: normal;
                         font-weight: 300;
@@ -243,7 +243,7 @@
         }
         .counter{
             color: var(--main-coffee-light, #F8EFEE);
-            font-family: "Gotham Light";
+            font-family: "Gotham Light", sans-serif;
             font-size: 12px;
             font-style: normal;
             font-weight: 400;
@@ -306,7 +306,7 @@
                 }
                 .product-title{
                     color: var(--main-gray-dark, #1D1D1D);
-                    font-family: Garamond;
+                    font-family: "Garamond", sans-serif;
                     font-size: 20px;
                     font-style: normal;
                     font-weight: 400;
@@ -328,7 +328,7 @@
     &__title{
         color: var(--main-dark-coffee, #76563C);
         text-align: center;
-        font-family: Garamond;
+        font-family: "Garamond", sans-serif;
         font-size: 34px;
         font-style: normal;
         font-weight: 400;
