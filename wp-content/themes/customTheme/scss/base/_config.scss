@@ -148,21 +148,21 @@ $aleoFonts: (
 // }
 
 @font-face {
-  font-family: "Gotham Light";
+  font-family: "Gotham Light", sans-serif;
   src: url('#{$base-path}gotham/Gotham-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Gotham Medium";
+  font-family: "Gotham Medium", sans-serif;
   src: url('#{$base-path}gotham/Gotham-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Gotham Bold";
+  font-family: "Gotham Bold", sans-serif;
   src: url('#{$base-path}gotham/Gotham-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;

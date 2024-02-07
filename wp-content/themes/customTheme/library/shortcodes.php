@@ -165,7 +165,7 @@ function banner_interest(){
                 <div class="swiper-wrapper">';
                     if ($random_products) {
                         foreach ($random_products as $product) {
-                            $product_image = get_the_post_thumbnail($product->get_id(), 'thumbnail');
+                            $product_image = get_the_post_thumbnail($product->get_id(), 'single-post-thumbnail');
                             $print .= 
                             '<div class="swiper-slide">
                                 <a href="' . get_permalink($product->get_id()) . '">

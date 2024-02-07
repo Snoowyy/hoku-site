@@ -27,18 +27,18 @@
         .title {
             color: var(--main-gray-dark, #1D1D1D);
             /* Desktop/Heading/Mobile/H6 */
-            font-family: Garamond;
-            font-size: 18px;
+            font-family: "Garamond", sans-serif;
+            font-size: 20px;
             font-style: normal;
             font-weight: 400;
-            line-height: 22px; /* 122.222% */
+            line-height: 24px; /* 122.222% */
             letter-spacing: 1px;
         }
         .amount{
             gap: 16px;
             color: var(--main-gray-dark, #1D1D1D);
             /*  */
-            font-family: "Gotham Light";
+            font-family: "Gotham Light", sans-serif;
             font-size: 14px;
             font-style: normal;
             font-weight: 300;
@@ -68,7 +68,7 @@
         background: var(--main-dark-coffee, #76563C);
         color: var(--main-white, #FFF);
         /* Text/600/Small */
-        font-family: "Gotham Medium";
+        font-family: "Gotham Medium", sans-serif;
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
@@ -135,7 +135,7 @@
             text-align: center;
 
             /* Desktop/Heading/Mobile/H1 */
-            font-family: Garamond;
+            font-family: "Garamond", sans-serif;
             font-size: 42px;
             font-style: normal;
             font-weight: 400;
@@ -204,7 +204,7 @@
             color: var(--main-coffee-light, #F8EFEE);
 
             /* Desktop/Heading/Mobile/H1 */
-            font-family: Garamond;
+            font-family: "Garamond", sans-serif;
             font-size: 42px;
             font-style: normal;
             font-weight: 400;
@@ -222,7 +222,7 @@
             color: var(--main-coffee-light, #F8EFEE);
 
             /* Text/400/Large */
-            font-family: "Gotham Light";
+            font-family: "Gotham Light", sans-serif;
             font-size: 16px;
             font-style: normal;
             font-weight: 300;

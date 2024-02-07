@@ -9,7 +9,7 @@
     h3 {
         color: var(--main-gray-dark, #1D1D1D);
         /* Desktop/Heading/Mobile/H3 */
-        font-family: Garamond;
+        font-family: "Garamond", sans-serif;
         font-size: 34px;
         font-style: normal;
         font-weight: 400;
@@ -20,7 +20,7 @@
     h4{
         color: var(--main-gray-dark, #1D1D1D);
         /* Desktop/Heading/Desktop/H4 */
-        font-family: Garamond;
+        font-family: "Garamond", sans-serif;
         font-size: 30px;
         font-style: normal;
         font-weight: 400;
@@ -68,7 +68,7 @@
                 align-self: stretch;
                 color: var(--main-gray-dark, #1D1D1D);
                 /* Text/400/Large */
-                font-family: "Gotham Light";
+                font-family: "Gotham Light", sans-serif;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 300;
@@ -100,7 +100,7 @@
                 color: var(--main-gray-dark, #1D1D1D);
     
                 /* Text/400/Large */
-                font-family: "Gotham Light";
+                font-family: "Gotham Light", sans-serif;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 300;
@@ -108,7 +108,7 @@
                 letter-spacing: 1px;
                 b {
                     /* Text/600/Large */
-                    font-family: "Gotham Medium";
+                    font-family: "Gotham Medium", sans-serif;
                     font-weight: 500;
                 }
                 a {
@@ -141,7 +141,7 @@
             &__description {
                 color: var(--main-gray-dark, #1D1D1D);
                 /* Text/400/Large */
-                font-family: "Gotham Light";
+                font-family: "Gotham Light", sans-serif;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 300;
@@ -149,7 +149,7 @@
                 letter-spacing: 1px;
                 b {
                     /* Text/600/Large */
-                    font-family: "Gotham Medium";
+                    font-family: "Gotham Medium", sans-serif;
                     font-weight: bold;
                 }
                 @include mq(lapS2) {
@@ -167,7 +167,7 @@
                 width: 100%;
                 color: var(--main-coffee, #AA8364);
                 /* Text/600/Small */
-                font-family: "Gotham Medium";
+                font-family: "Gotham Medium", sans-serif;
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 500;
@@ -209,7 +209,7 @@
                     h5 {
                         color: var(--main-dark-coffee, #76563C);
                         /* Desktop/Heading/Mobile/H5 */
-                        font-family: Garamond;
+                        font-family: "Garamond", sans-serif;
                         font-size: 24px;
                         font-style: normal;
                         font-weight: 400;
@@ -220,7 +220,7 @@
                         color: var(--main-gray-dark, #1D1D1D);
 
                         /* Text/400/Large */
-                        font-family: "Gotham Light";
+                        font-family: "Gotham Light", sans-serif;
                         font-size: 16px;
                         font-style: normal;
                         font-weight: 300;
@@ -246,7 +246,7 @@
                     color: var(--main-gray-dark, #1D1D1D);
 
                     /* Text/400/Large */
-                    font-family: "Gotham Light";
+                    font-family: "Gotham Light", sans-serif;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 300;
@@ -257,7 +257,7 @@
                     color: var(--main-gray-dark, #1D1D1D);
     
                     /* Link/Large */
-                    font-family: "Gotham Medium";
+                    font-family: "Gotham Medium", sans-serif;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 500;
@@ -278,7 +278,7 @@
                 p {
                     color: var(--main-gray-dark, #1D1D1D);
                     /* Text/400/Large */
-                    font-family: "Gotham Light";
+                    font-family: "Gotham Light", sans-serif;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 300;
@@ -300,7 +300,7 @@
         &__description {
             color: var(--main-gray-dark, #1D1D1D);
             /* Text/400/Large */
-            font-family: "Gotham Light";
+            font-family: "Gotham Light", sans-serif;
             font-size: 16px;
             font-style: normal;
             font-weight: 300;
@@ -308,7 +308,7 @@
             letter-spacing: 1px;
             b {
                 /* Text/600/Large */
-                font-family: "Gotham Medium";
+                font-family: "Gotham Medium", sans-serif;
                 font-weight: bold;
             }
         }
@@ -323,7 +323,7 @@
             width: 100%;
             color: var(--main-coffee, #AA8364);
             /* Text/600/Small */
-            font-family: "Gotham Medium";
+            font-family: "Gotham Medium", sans-serif;
             font-size: 14px;
             font-style: normal;
             font-weight: 500;
@@ -343,7 +343,7 @@
                 span {
                     color: var(--main-gray-dark, #1D1D1D);
                     /* Text/400/Large */
-                    font-family: "Gotham Light";
+                    font-family: "Gotham Light", sans-serif;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 300;
@@ -373,7 +373,7 @@
             span {
                 color: var(--main-gray-dark, #1D1D1D);
                 /* Text/600/Large */
-                font-family: "Gotham Medium";
+                font-family: "Gotham Medium", sans-serif;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 500;
@@ -397,7 +397,7 @@
                 background: var(--main-dark-coffee, #76563C);
                 color: var(--main-white, #FFF);
                 /* Text/600/Small */
-                font-family: "Gotham Medium";
+                font-family: "Gotham Medium", sans-serif;
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 500;
@@ -422,7 +422,7 @@
         &__description {
             color: var(--main-gray-dark, #1D1D1D);
             /* Text/400/Large */
-            font-family: "Gotham Light";
+            font-family: "Gotham Light", sans-serif;
             font-size: 16px;
             font-style: normal;
             font-weight: 300;
@@ -430,7 +430,7 @@
             letter-spacing: 1px;
             b {
                 /* Text/600/Large */
-                font-family: "Gotham Medium";
+                font-family: "Gotham Medium", sans-serif;
                 font-weight: bold;
             }
             @include mq(lapS2) {
@@ -448,7 +448,7 @@
             width: 100%;
             color: var(--main-coffee, #AA8364);
             /* Text/600/Small */
-            font-family: "Gotham Medium";
+            font-family: "Gotham Medium", sans-serif;
             font-size: 14px;
             font-style: normal;
             font-weight: 500;

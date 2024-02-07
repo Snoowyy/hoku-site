@@ -50,7 +50,7 @@
         &__title {
             color: var(--main-dark-coffee, #76563C);
             /* Desktop/Heading/Mobile/H2 */
-            font-family: Garamond;
+            font-family: "Garamond", sans-serif;
             font-size: 38px;
             font-style: normal;
             font-weight: 400;
@@ -64,7 +64,7 @@
         &__detail {
             color: var(--main-dark-coffee, #76563C);
             /* Text/400/Large */
-            font-family: "Gotham Light";
+            font-family: "Gotham Light", sans-serif;
             font-size: 16px;
             font-style: normal;
             font-weight: 300;
@@ -143,7 +143,7 @@
             color: var(--main-gray-dark, #1D1D1D);
             text-align: center;
             /* Desktop/Heading/Mobile/H5 */
-            font-family: Garamond;
+            font-family: "Garamond", sans-serif;
             font-size: 24px;
             font-style: normal;
             font-weight: 400;
@@ -161,7 +161,7 @@
             color: var(--main-gray, #373737);
             text-align: center;
             /* Text/400/Large */
-            font-family: "Gotham Light";
+            font-family: "Gotham Light", sans-serif;
             font-size: 16px;
             font-style: normal;
             font-weight: 300;
@@ -187,7 +187,7 @@
         color: var(--main-gray-dark, #1D1D1D);
         text-align: center;
         /* Desktop/Heading/Desktop/H3 */
-        font-family: Garamond;
+        font-family: "Garamond", sans-serif;
         font-size: 42px;
         font-style: normal;
         font-weight: 400;
@@ -206,7 +206,7 @@
         text-align: center;
         margin-bottom: 16px;
         /* Text/400/Large */
-        font-family: "Gotham Light";
+        font-family: "Gotham Light", sans-serif;
         font-size: 16px;
         font-style: normal;
         font-weight: 300;
@@ -248,7 +248,7 @@
                 gap: 16px;
                 color: var(--main-gray-dark, #1D1D1D);
                 /* Text/400/Extra Large */
-                font-family: "Gotham Light";
+                font-family: "Gotham Light", sans-serif;
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 300;
@@ -263,7 +263,7 @@
             &__name {
                 color: var(--main-dark-coffee, #76563C);
                 /* Desktop/Heading/Desktop/H1 */
-                font-family: Garamond;
+                font-family: "Garamond", sans-serif;
                 font-size: 64px;
                 font-style: normal;
                 font-weight: 400;
@@ -277,7 +277,7 @@
             &__content {
                 color: var(--main-gray-dark, #1D1D1D);
                 /* Text/400/Large */
-                font-family: "Gotham Light";
+                font-family: "Gotham Light", sans-serif;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 300;
@@ -346,7 +346,7 @@
                 .title{
                     color: var(--main-gray-dark, #1D1D1D);
                     /* Desktop/Heading/Desktop/H6 */
-                    font-family: Garamond;
+                    font-family: "Garamond", sans-serif;
                     font-size: 20px;
                     font-style: normal;
                     font-weight: 400;
@@ -360,7 +360,7 @@
                 .amount {
                     color: var(--main-gray-dark, #1D1D1D);
                     /* Text/400/Small */
-                    font-family: "Gotham Light";
+                    font-family: "Gotham Light", sans-serif;
                     font-size: 14px;
                     font-style: normal;
                     font-weight: 300;
@@ -461,7 +461,7 @@
             }
             &__title {
                 color: var(--main-coffee-light, #F8EFEE);
-                font-family: Garamond;
+                font-family: "Garamond", sans-serif;
                 font-size: 48px;
                 font-style: normal;
                 font-weight: 400;

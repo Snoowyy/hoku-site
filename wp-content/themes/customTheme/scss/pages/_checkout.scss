@@ -18,7 +18,7 @@
         .title{
             color: var(--main-gray-dark, #1D1D1D);
             /* Desktop/Heading/Mobile/H4 */
-            font-family: Garamond;
+            font-family: "Garamond", sans-serif;
             font-size: 30px;
             font-style: normal;
             font-weight: 400;
@@ -127,7 +127,7 @@
         }
         .title{
             color: var(--main-dark-coffee, #76563C);
-            font-family: Garamond;
+            font-family: "Garamond", sans-serif;
             font-size: 30px;
             font-style: normal;
             font-weight: 400;
@@ -240,7 +240,7 @@
     &__title{
         color: var(--main-dark-coffee, #76563C);
         /* Desktop/Heading/Mobile/H3 */
-        font-family: Garamond;
+        font-family: "Garamond", sans-serif;
         font-size: 34px;
         font-style: normal;
         font-weight: 400;
