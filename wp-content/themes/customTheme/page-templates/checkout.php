@@ -198,6 +198,9 @@ $checkout = WC()->checkout();
     .header:not(.scrolled) .header__content .menu__wrapper__items .menu-item a{
         color: var(--main-gray-dark, #1D1D1D);
     }
+    input[type="checkbox"]:checked+label::after, .noptin-integration-subscription-checkbox.checked::after, .checkbox.checked::after {
+        top: 6px;
+    }
 </style>
 
 <?php get_footer(); ?>
