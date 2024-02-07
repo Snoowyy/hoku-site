@@ -8,7 +8,7 @@
 }
 
 .single-product{
-    padding: 80px 0 120px;
+    padding: 150px 0 120px;
     .container{
         @include mq(lapS2){
             display: grid;
@@ -127,9 +127,15 @@
             form{
                 table{
                     width: 100%;
+                    border-top: 1px solid #AA8364;
+                    tr:first-child{
+                        margin-top: 35px;
+                    }
                     tr{
                         display: flex;
                         flex-direction: column;
+                        border-bottom: 1px solid #AA8364;
+                        margin-bottom: 35px;
                         th{
                             text-align: left;
                             margin-bottom: 16px;
