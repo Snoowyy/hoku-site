@@ -19,7 +19,10 @@
         @include mq(lapS2) {
             width: 100%;
             height: 583px;
-            img {
+        }
+        img {
+            object-fit: contain;
+            @include mq(lapS2) {
                 width: 626px;
                 height: 583px;
             }
@@ -63,7 +66,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 14px 32px 8px;;
+        padding: 12px 32px 12px;
         border-radius: 4px;
         background: var(--main-dark-coffee, #76563C);
         color: var(--main-white, #FFF);
@@ -74,6 +77,10 @@
         font-weight: 500;
         line-height: 22px; /* 157.143% */
         letter-spacing: 1px;
+        transition: all 300ms ease-in-out;
+        &:hover{
+            background: var(--main-coffee, #AA8364);
+        }
     }
 }
 .category-info {
@@ -154,7 +161,7 @@
             text-align: center;
 
             /* Text/400/Large */
-            font-family: 'Gotham Light';
+            font-family: "Gotham Light", sans-serif;
             font-size: 16px;
             font-style: normal;
             font-weight: 300;

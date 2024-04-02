@@ -129,7 +129,7 @@
                         line-height: 22px;
                         letter-spacing: 1px;
                         border-radius: 4px;
-                        background: var(--main-coffee, #AA8364);
+                        background: red;
                         padding: 14px 32px 8px;;
                         border: 0;
                         width: 100%;
@@ -137,6 +137,9 @@
                         justify-content: center;
                         @include mq(lapS2){
                             width: fit-content;
+                        }
+                        &:hover{
+                            background: var(--main-dark-coffee, #76563C);
                         }
                     }
                 }
@@ -315,7 +318,7 @@
                 }
                 .product-price{
                     color: var(--main-gray-dark, #1D1D1D);
-                    font-family: 'Gotham Light';
+                    font-family: "Gotham Light", sans-serif;
                     font-size: 14px;
                     font-style: normal;
                     font-weight: 300;
