@@ -306,3 +306,76 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+window.onload = function() { 
+    setTimeout(() => {
+        const singleAddButton = document.querySelector(".single_add_to_cart_button");
+        if(singleAddButton){
+            singleAddButton.innerHTML = "ADD TO QUOTE";
+        }
+        
+        const quoteQuantity = document.querySelector('th.product-quantity');
+        if (quoteQuantity) {
+            const span = document.createElement('span');
+            span.className = 'yards';
+            span.textContent = ' (yards)';
+            quoteQuantity.appendChild(span);
+        }
+    
+        const inputWithoutEnter = document.querySelector(".lakit-search__field");
+        inputWithoutEnter.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+            }
+        });
+        const continueButton = document.querySelector(".checkout");
+        if(continueButton){
+            continueButton.innerHTML = "CONTINUE SHOPPING";
+            continueButton.classList.add("lakit-cart__close-button");
+            continueButton.removeAttribute('href');
+        }
+        
+        const viewQuoteButton = document.querySelectorAll(".wc-forward:not(.checkout)");
+        if(viewQuoteButton.length > 0){
+            viewQuoteButton.forEach(element => {
+                element.innerHTML = "VIEW QUOTE";
+            });
+        }
+
+        document.querySelector('#submit_quote').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('#place_order').click();
+        });
+
+    }, 500);
+
+    setTimeout(() => {
+        document.querySelector(".loader-container").classList.add("page-loaded");
+    }, 600);
+};
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    setTimeout(() => {
+        for (let starIndex = 0; starIndex < 5; starIndex++) {
+            let starElement = document.querySelector(`.star-${starIndex + 1}`);
+            starElement.addEventListener('mouseover', () => {
+                setStar(starIndex + 1);
+            });
+            starElement.addEventListener('mouseout', () => {
+                cleanStar();
+            });
+        }
+    }, 500);
+});
+
+function setStar(id){
+    for (let starIndex = 0; starIndex < id; starIndex++) {
+        document.querySelector(`.star-${starIndex + 1}`).classList.add('hovered');
+    }
+}
+
+function cleanStar(){
+    for (let starIndex = 0; starIndex < 5; starIndex++) {
+        document.querySelector(`.star-${starIndex + 1}`).classList.remove('hovered');
+    }
+}
