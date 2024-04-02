@@ -89,7 +89,7 @@
                 font-family: "Gotham Medium", sans-serif;
                 font-size: 14px;
                 font-style: normal;
-                font-weight: 800;
+                font-weight: 500;
                 line-height: 22px; /* 157.143% */
                 letter-spacing: 1px;
                 border-radius: 4px;
@@ -298,7 +298,7 @@
                 font-family: "Gotham Medium", sans-serif;
                 font-size: 16px;
                 font-style: normal;
-                font-weight: 800;
+                font-weight: 500;
                 line-height: 24px; /* 150% */
                 letter-spacing: 1px;
                 text-decoration-line: underline;
@@ -346,6 +346,10 @@
                         min-height: 178px;
                         margin-bottom: 24px;
                     }
+                    
+                        img{
+                            max-width: 408px;
+                        } 
                 }
                 .title{
                     color: var(--main-gray-dark, #1D1D1D);

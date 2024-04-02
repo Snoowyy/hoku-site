@@ -1,11 +1,18 @@
 .breadcrum{
-    color: var(--main-dark-coffee, #76563C);
-    font-family: "Gotham Light", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 24px;
-    letter-spacing: 1px;
+    display: flex;
+    color: #FFF;
+    gap: 4px;
+    .separator{
+        font-family: "Gotham Light", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 1px;
+        text-align: left;
+    }
+    &.dark{
+        color: #000;
+    }
     &.top{
         padding: 65px 0 0;
         margin-top: 40px;
@@ -13,5 +20,13 @@
             padding: 70px 0 0;
             margin-top: 80px;
         }
+    }
+    &__item{
+        font-family: "Gotham Light", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 1px;
+        text-align: left;
     }
 }
