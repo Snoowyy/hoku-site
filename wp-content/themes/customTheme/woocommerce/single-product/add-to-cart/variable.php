@@ -35,7 +35,9 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 			<tbody>
 				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 					<tr>
-						<th class="label"><label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label></th>
+						<th class="label">
+							<label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label>
+						</th>
 						<td class="value">
 							<?php
 								wc_dropdown_variation_attribute_options(
@@ -48,6 +50,14 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 								echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
 							?>
 						</td>
+						<?php if(esc_attr( sanitize_title( $attribute_name ) ) == "pa_color"){ ?>
+							<td class="size_message">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1.39 18.3606L3.16 16.6006L4.58 18.0006L5.64 16.9506L4.22 15.5406L5.64 14.1206L8.11 16.6006L9.17 15.5406L6.7 13.0606L8.11 11.6506L9.53 13.0606L10.59 12.0006L9.17 10.5906L10.59 9.17063L13.06 11.6506L14.12 10.5906L11.65 8.11062L13.06 6.70062L14.47 8.11062L15.54 7.05063L14.12 5.64062L15.54 4.22062L18 6.70062L19.07 5.64062L16.6 3.16063L18.36 1.39062L22.61 5.64062L5.64 22.6106L1.39 18.3606Z" fill="#76563C"/>
+								</svg>
+								<p>Guia de tallas</p>
+							</td>
+						<?php } ?>
 					</tr>
 				<?php endforeach; ?>
 			</tbody>

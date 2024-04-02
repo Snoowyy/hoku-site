@@ -75,7 +75,7 @@
                         }
                         .info{
                             color: var(--main-gray-dark, #1D1D1D);
-                            font-family: 'Gotham Light';
+                            font-family: "Gotham Light", sans-serif;
                             font-size: 16px;
                             font-style: normal;
                             font-weight: 300;
@@ -90,7 +90,7 @@
                     .product-remove{
                         a{
                             color: var(--main-gray-dark, #1D1D1D);
-                            font-family: 'Gotham Medium';
+                            font-family: "Gotham Medium", sans-serif;
                             font-size: 16px;
                             font-style: normal;
                             font-weight: 900;
@@ -106,7 +106,7 @@
                 top: 0;
                 right: 0;
                 color: var(--main-gray-dark, #1D1D1D);
-                font-family: 'Gotham Bold';
+                font-family: "Gotham Bold", sans-serif;
                 font-size: 14px;
                 line-height: 22px;
                 font-style: normal;
@@ -134,7 +134,7 @@
             }
             &--title{
                 color: var(--main-gray-dark, #1D1D1D);
-                font-family: 'Gotham Medium';
+                font-family: "Gotham Medium", sans-serif;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 800;
@@ -143,7 +143,7 @@
             }
             &--description{
                 color: var(--main-gray-dark, #1D1D1D);
-                font-family: 'Gotham Light';
+                font-family: "Gotham Light", sans-serif;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 300;
@@ -170,7 +170,7 @@
                 display: flex;
                 justify-content: space-between;
                 color: var(--main-dark-coffee, #76563C);
-                font-family: 'Gotham Medium';
+                font-family: "Gotham Medium", sans-serif;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 800;
@@ -179,7 +179,7 @@
                 margin-bottom: 12px;
                 span{
                     color: var(--main-gray-dark, #1D1D1D);
-                    font-family: 'Gotham Light';
+                    font-family: "Gotham Light", sans-serif;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 300;
@@ -210,7 +210,7 @@
                         }
                         label{
                             color: var(--main-dark-coffee, #76563C);
-                            font-family: 'Gotham Medium';
+                            font-family: "Gotham Medium", sans-serif;
                             font-size: 16px;
                             font-style: normal;
                             font-weight: 800;
@@ -231,7 +231,7 @@
                             border-radius: 4px;
                             background: var(--main-dark-coffee, #76563C);
                             color: var(--main-white, #FFF);
-                            font-family: 'Gotham Medium';
+                            font-family: "Gotham Medium", sans-serif;
                             font-size: 14px;
                             font-style: normal;
                             font-weight: 800;
@@ -254,7 +254,7 @@
                 display: flex;
                 justify-content: space-between;
                 color: var(--main-dark-coffee, #76563C);
-                font-family: 'Gotham Medium';
+                font-family: "Gotham Medium", sans-serif;
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 800;
@@ -270,7 +270,7 @@
                     border-radius: 4px;
                     background: var(--main-dark-coffee, #76563C);
                     color: var(--main-white, #FFF);
-                    font-family: 'Gotham Medium';
+                    font-family: "Gotham Medium", sans-serif;
                     font-size: 14px;
                     font-style: normal;
                     font-weight: 800;

@@ -38,8 +38,13 @@ $thirds_products = array_slice($products, 4, 2);
                             <img src="<?= $header['banner'] ?>" alt="">
                         </div>
                         <div class="swiper-slide__wrapper__texts-categories">
-                            <h1 class="title"><?= $header['title'] ?></h1>
-                            <p class="description"><?= $header['description'] ?></p>
+                            <div class="breadcrum">
+                                <a href="/" class="breadcrum__item">Inicio</a>
+                                <span class="separator">/</span>
+                                <p class="breadcrum__item"><?php echo get_the_title(); ?></p>
+                            </div>
+                            <h1 class="title"><?php echo $header['title']; ?></h1>
+                            <p class="description"><?php echo $header['description']; ?></p>
                         </div>
                     </div>
                 </div>

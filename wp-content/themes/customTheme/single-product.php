@@ -27,6 +27,13 @@ if ( post_password_required() ) {
         </div>
         <div class="single-product__summary">
             <div class="single-product__summary__titles">
+            <div class="breadcrum dark">
+                                <a href="/" class="breadcrum__item">Inicio</a>
+                                <span class="separator">/</span>
+                                <a href="<?php echo get_permalink(1032); ?>" class="breadcrum__item">Tienda</a>
+                                <span class="separator">/</span>
+                                <p class="breadcrum__item"><?php echo get_the_title(); ?></p>
+                            </div>
                 <h1 class="title"><?php echo $title; ?></h1>
                 <p class="price"><?php echo $price; ?></p>
                 <p class="description"><?php echo $short_desc; ?></p>

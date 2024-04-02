@@ -1,7 +1,259 @@
-/*
-Theme Name: customTheme
-Theme URL: ''
-Description: Template base de Wordpress para Desarrollos con webpack
-Version: 0.1
-Author: : Andrés Barreto
-*/
+.fabric-buttons-container {
+    margin: auto !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 16px !important;
+}
+
+.fabric-button {
+    font-family: Montserrat !important;
+    width: 290px !important;
+    height: 20px !important;
+    text-align: center !important;
+    padding: 22px 32px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    font-size: 11px !important;
+    line-height: 20px !important;
+    letter-spacing: 0.5px !important;
+}
+
+.fabric-primary-button {
+    background-color: #91b334 !important;
+    color: #ffffff !important;
+}
+
+.fabric-primary-button:hover {
+    background-color: #ABCA51 !important;
+    color: #ffffff !important;
+}
+
+.fabric-secondary-button {
+    color: #2E2E2E !important;
+    border: 1px solid #2E2E2E !important;
+}
+
+.fabric-secondary-button:hover {
+    background-color: #2E2E2E !important;
+    color: #ffffff !important;
+}
+
+.fabric-secondary-button:hover>svg path {
+    fill: #2E2E2E !important;
+    stroke: #ffffff !important;
+}
+
+.lakit-cart__count {
+    display: none !important;
+}
+
+.nilah-body .lakit-woofilters_block_item.b--normal .lakit-woofilters-ul li.active>a:before,
+.nilah-body .lakit-woofilters_block_item.b--normal .lakit-woofilters-ul li:hover>a:before {
+    background-color: #91B334 !important;
+    border-color: #91B334 !important;
+}
+
+.cat-item.active {
+    pointer-events: none !important;
+}
+
+.product_item--title a,
+.product_item--category .zone-term-list,
+.product_item--tags .zone-term-list {
+    max-width: 240px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+}
+
+.button.checkout.wc-forward.lakit-cart__close-button {
+    position: relative !important;
+    border-radius: unset !important;
+    inset: unset !important;
+}
+
+html body.page-template div.lakit-site-wrapper .elementor-element.loader-container#loader-id {
+    background-color: #FFF !important;
+}
+
+.page-loaded {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.lakit-woofilters-ul li>a:before{
+    position: absolute !important;
+    top: 2px !important;
+    left: -22px !important;
+}
+
+.lakit-woofilters-ul li>a:after {
+    position: absolute !important;
+    top: 8px !important;
+    left: -19px !important;
+}
+
+.lakit-woofilters_block_item{
+    width: 100% !important;
+}
+
+.lakit-woofilters{
+    position: sticky !important;
+    top: var(--header-height) !important;
+}
+
+.lakit-woofilters-ul > .cat-item{
+    position: relative !important;
+}
+
+.children {
+    margin-left: 0 !important;
+}
+
+.lakit-woofilters-ul .children .cat-item{
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    padding-left: 22px !important;
+}
+
+.lakit-woofilters-ul > .cat-item > a{
+    display: block !important;
+    font-family: "Maven Pro", Sans-Serif !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    letter-spacing: 0px !important;
+    text-align: left !important;
+    color: #2E2E2E !important;
+    padding-bottom: 16px !important;
+    margin-bottom: 16px !important;
+    border: solid #E8E8E8 !important;
+    border-width: 0 0 1px !important;
+    pointer-events: none !important;
+}
+
+.lakit-woofilters-ul > .cat-item > a:before{
+    display: none !important;
+}
+
+.lakit-woofilters-ul > .cat-item > a:after{
+    content: "" !important;
+    width: 48px !important;
+    height: 1px !important;
+    background-color: #91B334 !important;
+    opacity: 1 !important;
+    left: 0px !important;
+    top: unset !important;
+    bottom: -1px !important;
+    pointer-events: none !important;
+}
+
+.cat-item .narrow{
+    position: absolute !important;
+    top: 0px !important;
+    left: 0px !important;
+    width: 100% !important;
+    height: 24px !important;
+}
+
+.cat-item .narrow i{
+    position: absolute !important;
+    right: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+}
+
+.woofilter-litem{
+    transition: all 300ms ease !important;
+}
+
+.woofilter-litem:hover{
+    background-color: #ABCA51 !important;
+}
+
+.quantity .qty-minus i,
+.quantity .qty-plus i{
+    vertical-align: unset !important;
+}
+
+body p.stars span{
+    display: flex;
+}
+
+body p.stars a{
+    min-height: 16px !important;
+    min-width: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+body p.stars a:before{
+    min-width: 14px !important;
+    min-height: 14px !important;
+    padding: 1px !important;
+    font-size: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+body .star-rating::before{
+    color: #DADADA !important;
+    letter-spacing: 2px !important;
+}
+
+body .star-rating span::before{
+    letter-spacing: 2px !important;
+}
+
+body .star-rating span::before,
+body p.stars:hover,
+body p.stars.selected{
+    color: #ABCA51 !important;
+}
+
+body p.stars:hover a:before{
+    /* content: ""; /* vacio */
+    content: "" !important;
+}
+
+body p.stars.selected a.active~a:hover:before,
+body p.stars a.hovered:before,
+body p.stars a:hover:before{
+    /* content: ""; /* relleno */
+    content: "" !important;
+}
+
+.comment_container .avatar{
+    display: none !important;
+}
+
+.meta{
+    color: #2E2E2E !important;
+    font-family: "Montserrat", Sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+    letter-spacing: 0px !important;
+    text-align: left !important;
+}
+
+.meta .woocommerce-review__author,
+.meta .woocommerce-review__verified{
+    font-weight: 500 !important;
+}
+
+.comment-text .description{
+    font-family: "Montserrat", Sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    letter-spacing: 0px !important;
+    text-align: left !important;
+}

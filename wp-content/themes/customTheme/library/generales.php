@@ -32,6 +32,7 @@ if (function_exists('register_nav_menus')) {
 add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
 
 function my_wp_nav_menu_items( $items, $args ) {
+    global $custom_header_message_present;
     $menu = wp_get_nav_menu_object($args->menu);
     
     if( $args->theme_location == 'header-menu' ) {
@@ -42,12 +43,15 @@ function my_wp_nav_menu_items( $items, $args ) {
         $cartLogo = get_field('cart_image', $menu);
 
         if($message){
+            $custom_header_message_present = true;
+            // AQUI DEBO AÑADIR LA CLASE AL BODY... ESTA ES LA VALIDACION
             $gap = ' gap';
             $header__message =
             '<div class="menu__message">
                 <p>'.$message.'</p>
             </div>';
         }else{
+            $custom_header_message_present = false;
             $gap = '';
             $header__message = '';
         }
@@ -221,6 +225,19 @@ function my_wp_nav_menu_items( $items, $args ) {
         $items = $items_wrapper;
     }
     return $items;
+}
+
+// Agrega el filtro `body_class`
+add_filter('body_class', 'add_custom_body_class');
+
+function add_custom_body_class($classes) {
+    global $custom_header_message_present;
+
+    if ($custom_header_message_present) {
+    }
+    $classes[] = 'header__message'; // Agrega tu clase personalizada
+
+    return $classes;
 }
 
 function prefix_nav_description( $item_output, $item, $depth, $args ) {

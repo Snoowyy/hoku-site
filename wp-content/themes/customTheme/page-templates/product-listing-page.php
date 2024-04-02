@@ -55,6 +55,11 @@ $material = get_terms( $material_filter );
                             <img src="<?= $banner ?>" alt="">
                         </div>
                         <div class="swiper-slide__wrapper__texts-categories">
+                        <div class="breadcrum">
+                                <a href="/" class="breadcrum__item">Inicio</a>
+                                <span class="separator">/</span>
+                                <p class="breadcrum__item"><?php echo get_the_title(); ?></p>
+                            </div>
                             <p class="title"><?= $title ?></p>
                             <p class="description"><?= $description ?></p>
                         </div>
