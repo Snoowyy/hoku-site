@@ -14,7 +14,7 @@ $banner = get_field('banner', $postId);
         </div>
         <img src="<?= $banner ?>" alt="<?php echo $info_image['alt']; ?>">
     </div>
-    <form method="post" class="container login__form_container">
+    <form id="login" method="post" class="container login__form_container">
         <h4>Iniciar sesión</h4>
         <p class="login__form_container__input">
             <input placeholder="Correo electrónico * " type="text" name="username" id="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( $_POST['username'] ) : ''; ?>" /><?php //@codingStandardsIgnoreLine ?>
@@ -36,14 +36,48 @@ $banner = get_field('banner', $postId);
             <p>
                 Únete a nuestra comunidad de amantes del calzado. Regístrate para acceder a ofertas exclusivas y mantenerte al tanto de las últimas tendencias. ¡Únete hoy!
             </p>
-            <a class="button_white">Registrarse</a>
+            <a onclick="open_register()" class="button_white">Registrarse</a>
         </div>
+    </form>
+    <form id="register" method="post" class="container login__form_container" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
+
+        <?php do_action( 'woocommerce_register_form_start' ); ?>
+        <p class="login__form_container__input">
+            <label for="reg_username"><?php esc_html_e( 'Nombre de usuario', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
+            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+        </p>
+
+        <p class="login__form_container__input">
+            <label for="reg_email"><?php esc_html_e( 'Email', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
+            <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
+        </p>
+        
+        <p class="login__form_container__input">
+            <label for="reg_password"><?php esc_html_e( 'Password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
+            <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" autocomplete="new-password" />
+        </p>
+
+        <?php do_action( 'woocommerce_register_form' ); ?>
+
+        <p class="form__send login__form_container__button">
+            <?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
+            <button type="submit" name="register" value="<?php esc_attr_e( 'Registrarse', 'woocommerce' ); ?>"><?php esc_html_e( 'Registrarse', 'woocommerce' ); ?></button>
+            <input type="hidden" name="redirect" value="<?php echo esc_url( '/desktop' ); ?>" />
+        </p>
+        <div class="login__register_container">
+            <a onclick="open_register()" class="button_white">Volver</a>
+        </div>
+        <?php do_action( 'woocommerce_register_form_end' ); ?>
+
     </form>
 </div>
 <?php do_shortcode("[bannerHelp]"); ?>
 <?php do_shortcode("[BannerNewsletter]"); ?>
 <?php do_action( 'woocommerce_auth_page_footer' ); ?>
 <style>
+    #register {
+        display: none;
+    }
     .header .menu__logo,
     .header .menu__icons #user_icon img,
     .header .menu__icons #search_icon svg,
@@ -63,4 +97,17 @@ $banner = get_field('banner', $postId);
         color: var(--main-gray-dark, #1D1D1D);
     }
 </style>
+<script>
+    function open_register() {
+        form_login = document.getElementById("login");
+        form_register = document.getElementById("register");
+        if (form_login.style.display == 'none') {
+            form_login.style.display = 'flex';
+            form_register.style.display = 'none';
+        } else {
+            form_login.style.display = 'none';
+            form_register.style.display = 'flex';
+        }
+    }
+</script>
 <?php get_footer(); ?>
