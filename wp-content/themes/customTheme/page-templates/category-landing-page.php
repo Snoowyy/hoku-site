@@ -176,10 +176,10 @@ $thirds_products = array_slice($products, 4, 2);
             <?php } ?>
         </div>
         <div class="accordion-content" data-header="5">
-            <div class="variation">
+            <div class="variation" style="min-width: 135px !important;">
                 Mayor a menor
             </div>
-            <div class="variation">
+            <div class="variation" style="min-width: 135px !important;">
                 Menor a mayor
             </div>
         </div>
@@ -360,10 +360,10 @@ $thirds_products = array_slice($products, 4, 2);
                             </svg>
                         </div>
                         <div class="accordion-content">
-                            <div class="variation">
+                            <div class="variation" style="min-width: 135px !important;">
                                 Mayor a menor
                             </div>
-                            <div class="variation">
+                            <div class="variation" style="min-width: 135px !important;">
                                 Menor a mayor
                             </div>
                         </div>
