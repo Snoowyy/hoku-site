@@ -240,6 +240,8 @@ function add_custom_body_class($classes) {
     return $classes;
 }
 
+add_filter( 'walker_nav_menu_start_el', 'prefix_nav_description', 10, 4 );
+
 function prefix_nav_description( $item_output, $item, $depth, $args ) {
     if ( !empty( $item->description ) ) {
         $item_output = str_replace( $args->link_after . '</a>', '<span class="menu-item-description">' . $item->description . '</span>' . $args->link_after . '</a>', $item_output );
@@ -247,10 +249,25 @@ function prefix_nav_description( $item_output, $item, $depth, $args ) {
  
     return $item_output;
 }
-add_filter( 'walker_nav_menu_start_el', 'prefix_nav_description', 10, 4 );
+
+add_action('admin_menu', 'post_remove');
 
 function post_remove (){ 
    remove_menu_page('edit.php');
 }
 
-add_action('admin_menu', 'post_remove');
+add_action('wp_ajax_update_cart_item_qty', 'update_cart_item_quantity');
+add_action('wp_ajax_nopriv_update_cart_item_qty', 'update_cart_item_quantity');
+
+function update_cart_item_quantity() {
+    check_ajax_referer('update-cart-item-qty', 'security');
+
+    $cart_item_key = sanitize_text_field($_POST['cart_item_key']);
+    $quantity = intval($_POST['quantity']);
+
+    if ($quantity > 0 && WC()->cart->set_quantity($cart_item_key, $quantity)) {
+        wp_send_json_success(['message' => 'Carrito actualizado.']);
+    } else {
+        wp_send_json_error(['message' => 'Error al actualizar el carrito.']);
+    }
+}

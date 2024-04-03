@@ -88,6 +88,8 @@ class ComposerStaticInit9f4fbd40d285907cc278c858e910d5af
         'MercadoPago\\Woocommerce\\Hooks\\Product' => __DIR__ . '/../..' . '/src/Hooks/Product.php',
         'MercadoPago\\Woocommerce\\Hooks\\Scripts' => __DIR__ . '/../..' . '/src/Hooks/Scripts.php',
         'MercadoPago\\Woocommerce\\Hooks\\Template' => __DIR__ . '/../..' . '/src/Hooks/Template.php',
+        'MercadoPago\\Woocommerce\\IO\\Downloader' => __DIR__ . '/../..' . '/src/IO/Downloader.php',
+        'MercadoPago\\Woocommerce\\IO\\LogFile' => __DIR__ . '/../..' . '/src/IO/LogFile.php',
         'MercadoPago\\Woocommerce\\Interfaces\\LogInterface' => __DIR__ . '/../..' . '/src/Interfaces/LogInterface.php',
         'MercadoPago\\Woocommerce\\Interfaces\\MercadoPagoGatewayInterface' => __DIR__ . '/../..' . '/src/Interfaces/MercadoPagoGatewayInterface.php',
         'MercadoPago\\Woocommerce\\Interfaces\\MercadoPagoPaymentBlockInterface' => __DIR__ . '/../..' . '/src/Interfaces/MercadoPagoPaymentBlockInterface.php',

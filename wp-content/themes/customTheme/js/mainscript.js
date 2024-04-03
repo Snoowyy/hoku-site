@@ -227,7 +227,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if(checkNewslet){
         checkNewslet.addEventListener('click', () => {
             document.querySelector('#mailpoet_woocommerce_checkout_optin').checked = checkNewslet.checked;
-            console.log('AJUA' + document.querySelector('#mailpoet_woocommerce_checkout_optin').checked);
         })
     }
 
@@ -245,10 +244,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const fistStep = document.querySelector('.woocommerce-billing-fields__field-wrapper');
     const firstInputs = document.querySelectorAll('.woocommerce-billing-fields__field-wrapper .wooccm-required-field');
     const firstButton = document.getElementById('next_step');
+    const firstEdit = document.querySelector('#edit_first');
 
     const secondStep = document.querySelector('.woocommerce-shipping-fields__field-wrapper');
     const secondInputs = document.querySelectorAll('.woocommerce-shipping-fields__field-wrapper .wooccm-required-field:not(#shipping_state)');
     const secondButton = document.getElementById('final_step');
+    const secondEdit = document.querySelector('#edit_second');
 
     const thirdStep = document.querySelector('.woocommerce-checkout-review-order');
 
@@ -277,6 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
             fistStep.classList.remove('active');
             secondStep.classList.add('active');
             fistStep.parentElement.classList.add('editable');
+            firstEdit.classList.add('active');
         })
     }
 
@@ -300,8 +302,29 @@ document.addEventListener("DOMContentLoaded", function () {
         secondButton.addEventListener('click', () => {
             secondStep.classList.remove('active');
             thirdStep.classList.add('active');
-            console.log(thirdStep);
             secondStep.parentElement.classList.add('editable');
+            secondEdit.classList.add('active');
+        })
+    }
+
+    if(firstEdit){
+        firstEdit.addEventListener('click', () => { 
+            fistStep.classList.add('active');
+            secondStep.classList.remove('active');
+            fistStep.parentElement.classList.remove('editable');
+            firstEdit.classList.remove('active');
+            thirdStep.classList.remove('active');
+            secondStep.parentElement.classList.remove('editable');
+            secondEdit.classList.remove('active');
+        })
+    }
+
+    if(secondEdit){
+        secondEdit.addEventListener('click', () => { 
+            secondStep.classList.add('active');
+            thirdStep.classList.remove('active');
+            secondStep.parentElement.classList.remove('editable');
+            secondEdit.classList.remove('active');
         })
     }
 

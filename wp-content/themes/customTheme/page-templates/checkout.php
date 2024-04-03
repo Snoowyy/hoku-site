@@ -145,12 +145,14 @@ $checkout = WC()->checkout();
                     <?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
             
                     <div class="col2-set" id="customer_details">
-                        <div class="col-1">
+                        <div class="col-1 info_wrapper">
                             <?php do_action( 'woocommerce_checkout_billing' ); ?>
+                            <p id="edit_first" class="edit-button" data-edit="1">Editar</p>
                         </div>
             
-                        <div class="col-2">
+                        <div class="col-2 info_wrapper">
                             <?php do_action( 'woocommerce_checkout_shipping' ); ?>
+                            <p id="edit_second" class="edit-button" data-edit="2">Editar</p>
                         </div>
                     </div>
             

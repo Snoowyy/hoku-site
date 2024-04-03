@@ -82,7 +82,7 @@
             align-items: center;
             align-self: stretch;
             a {
-                padding: 14px 32px 8px;;
+                padding: 12px 32px 12px;;
                 //padding: 5px 32px;
                 color: var(--main-coffee-light, #F8EFEE);
                 background: var(--main-dark-coffee, #76563C);
@@ -387,7 +387,7 @@
             padding: 32px;
         }
         button {
-            padding: 14px 32px 8px;;
+            padding: 12px 32px 12px;;
             border-radius: 4px;
             background: var(--main-dark-coffee, #76563C);
             color: var(--main-coffee-light, #F8EFEE);
@@ -484,7 +484,7 @@
             &__button {
                 margin-top: 24px;
                 display: flex;
-                padding: 16px 30px 8px;
+                padding: 12px 30px 12px;
                 justify-content: center;
                 align-items: center;
                 border-radius: 4px;

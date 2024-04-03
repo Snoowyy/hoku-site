@@ -1,10 +1,10 @@
 === Mercado Pago payments for WooCommerce ===
 Contributors:
 Tags: ecommerce, mercadopago, woocommerce
-Requires at least: 5.6
+Requires at least: 6.3
 Tested up to: 6.4
-Requires PHP: 7.4 to 8.3
-Stable tag: 7.2.1
+Requires PHP: 7.4
+Stable tag: 7.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -136,15 +136,10 @@ Check out our <a href="https://www.mercadopago.com.br/developers/pt/plugins_sdks
 
 == Changelog ==
 
-= v7.2.1 (15/02/2024) =
-* Added:
-- We have added a warning banner for when the language configured in worpress does not have the translation in our plugin.
+= v7.3.1 (25/03/2024) =
 * Changed:
-- Improvements have been made to the readme and changelog files so that the markdown makes more sense to our users.
-- Now our plugin constructs the URLs for the assets using the absolute path instead of the relative path.
-- Prevent block scripts from loading on admin screens and do not load block scripts in checkouts that do not use Checkout Blocks.
-- We've reduced the size of the metadata sent in the payment.
-* Fixed:
-- We've fixed the currency conversion calculation.
+- Person type update for PSE
+- Improve the layout of the admin buttons
+- Adjusting the translation of checkout pro for Spanish-speaking countries
 
 [See changelog for all versions](https://github.com/mercadopago/cart-woocommerce/blob/main/CHANGELOG.md).
